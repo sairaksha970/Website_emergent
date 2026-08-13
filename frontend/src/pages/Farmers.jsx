@@ -29,7 +29,7 @@ export default function Farmers() {
             <div><strong>100<span>%</span></strong><small>fair trade</small></div>
           </div>
         </div>
-        <div className="quality-photo"><img src={assets.farmer} alt="Farmer partners with cattle at a village collection point" data-testid="farmers-feature-image" /><span className="photo-caption">Village collection · Twice daily</span></div>
+        <div className="quality-photo"><img src={assets.farm} alt="Green fields at a Sairaksha partner farm" data-testid="farmers-feature-image" /><span className="photo-caption">Partner farms · Fresh twice daily</span></div>
       </section>
 
       <section className="purity section-pad" data-testid="empowerment-section">

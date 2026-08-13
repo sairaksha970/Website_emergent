@@ -24,19 +24,29 @@ export const assets = {
   shrine: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/qm3rlhlz_Temple.webp",
   dusk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/2k51sprr_Factory_2.webp",
   packing: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/7tdwqg3x_Factory_6.webp",
+  farm: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/p1tba127_Farm.webp",
+  plantInterior: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/yxctv1h4_Factory_3.webp",
+  tanker: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/kw7g4obz_Fleet_3.webp",
+  aerial: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1plxtpg9_Factory_ariel.webp",
+  fleetGarland: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/bx513jer_Fleet_1.webp",
   farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
 };
 
 export const factoryGallery = [
   { title: "The gates of Sairaksha", caption: "Our name on the wall — Santhipuram 7th Mile, Kuppam", image: assets.gate },
   { title: "The Kuppam plant", caption: "Our main processing unit in Kuppam, Andhra Pradesh", image: assets.exterior },
-  { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
+  { title: "A fleet we call our own", caption: "Milk vans blessed and ready for the day's routes", image: assets.fleetGarland },
   { title: "Green by design", caption: "Lawns and open sky around the main processing block", image: assets.lawns },
-  { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
+  { title: "The heart of processing", caption: "Pasteurisation lines and CIP systems in stainless steel", image: assets.plantInterior },
+  { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
   { title: "Where every day begins", caption: "The campus shrine at the heart of our plant", image: assets.shrine },
+  { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
+  { title: "Milk on the move", caption: "Tankers linking chilling centres to the main plant", image: assets.tanker },
+  { title: "Straight from the farm", caption: "Green fields and kitchen gardens at our partner farms", image: assets.farm },
   { title: "People behind every pack", caption: "Careful packing and quality checks on the floor", image: assets.production },
   { title: "Evenings at the plant", caption: "Stone pathways leading to the processing halls", image: assets.dusk },
   { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
+  { title: "Kuppam from above", caption: "Silos, chillers and processing halls under one blue roof", image: assets.aerial },
 ];
 
 export const products = [
