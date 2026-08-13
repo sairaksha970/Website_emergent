@@ -98,7 +98,7 @@ export const timeline = [
   { year: "2012", title: "Foundation", text: "Sairaksha Dairy Products Private Limited was incorporated on 7 June 2012, beginning its journey with liquid milk operations of approximately 5,000 litres per day.", tag: "5,000 Litres / Day" },
   { year: "2015", title: "A Connected Network", text: "Our collection network expanded with chilling centres at Rayakotai, Indure and Thirupathur, connecting village-level milk procurement with our Kuppam processing and packing operations.", tag: "3 Chilling Centres" },
   { year: "2019", title: "Multi-State Reach", text: "Distribution expanded across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana, supported by our own fleet of insulated vehicles.", tag: "4 States" },
-  { year: "2022", title: "Scale with Care", text: "Daily sales volumes grew to approximately 50,000 litres of milk and curd, together with approximately 2,000 kg of paneer every day, marking a significant milestone in our growth journey.", tag: "50,000 Litres / Day" },
+  { year: "2022", title: "Scale with Care", text: "Daily sales volumes grew to approximately 70,000 litres of milk and curd, together with approximately 2,000 kg of paneer every day, marking a significant milestone in our growth journey.", tag: "70,000 Litres / Day" },
   { year: "2024", title: "₹100 Crore Turnover", text: "As on 31 March 2024, the company achieved a turnover of approximately ₹100 crore, supported by expanded operations and 2,00,000 litres of storage capacity at Kuppam.", tag: "₹100 Crore" },
   { year: "2027", title: "The SMP Vision", text: "Sairaksha Dairy is planning a Skimmed Milk Powder (SMP) plant at Kuppam with a proposed capacity of 25 MT per day — expanding our product portfolio, strengthening the local dairy ecosystem and creating approximately 300 employment and livelihood opportunities.", tag: "25 MT / Day" },
 ];
@@ -106,10 +106,10 @@ export const timeline = [
 export const fssaiNumber = "10118010000287";
 
 export const locations = [
-  { name: "Rayakotai CC", capacity: "50,000 L / day", role: "Chilling centre" },
-  { name: "Indure CC", capacity: "10,000 L / day", role: "Chilling centre" },
-  { name: "Thirupathur CC", capacity: "50,000 L / day", role: "Chilling centre" },
-  { name: "Kuppam Packing Unit", capacity: "70,000 L / day production", role: "Main plant · Chittoor Dist" },
+  { name: "Kuppam Packing Unit", capacity: "2,00,000 litres / day", role: "Main plant · Chittoor Dist" },
+  { name: "Rayakotai CC", capacity: "50,000 litres / day", role: "Chilling centre" },
+  { name: "Thirupathur CC", capacity: "50,000 litres / day", role: "Chilling centre" },
+  { name: "Indure CC", capacity: "10,000 litres / day", role: "Chilling centre" },
 ];
 
 export const empowerment = [

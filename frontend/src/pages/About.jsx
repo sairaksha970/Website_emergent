@@ -3,10 +3,10 @@ import { assets, fssaiNumber, timeline } from "@/data";
 
 const scaleMetrics = [
   { value: "₹100 Crore", label: "Turnover as on 31 March 2024" },
-  { value: "50,000 L / day", label: "Milk & curd sales" },
+  { value: "70,000 litres / day", label: "Milk & curd sales" },
   { value: "2,000 kg / day", label: "Paneer sales" },
-  { value: "70,000 L / day", label: "Kuppam plant handling capacity" },
-  { value: "2,00,000 L", label: "Storage capacity" },
+  { value: "2,00,000 litres / day", label: "Kuppam plant processing capacity" },
+  { value: "2,00,000 litres", label: "Storage capacity" },
   { value: "200+", label: "People at work" },
   { value: "23", label: "Insulated vehicles" },
   { value: "₹3.5 Crore", label: "Approx. stocks maintained at any time" },
@@ -29,8 +29,8 @@ export default function About() {
           <h2>Built slowly.<br /><em>Grown with purpose.</em></h2>
           <div className="about-copy">
             <p>SAIRAKSHA DAIRY PRODUCTS PRIVATE LIMITED is a closely held company incorporated on 7 June 2012, with a clear purpose: to build a dependable dairy business rooted in quality, discipline and long-term relationships.</p>
-            <p>What began with just 5,000 litres of liquid milk per day has grown into a well-established dairy operation handling approximately 50,000 litres of milk and curd and 2,000 kg of paneer every day.</p>
-            <p>Our main processing facility at Kuppam, Andhra Pradesh, has a production capacity of approximately 70,000 litres per day and storage capacity of 2,00,000 litres. Our operations are supported by three strategically located chilling centres within an 80-kilometre radius and an owned fleet of 23 insulated vehicles, enabling efficient collection, processing and distribution.</p>
+            <p>What began with just 5,000 litres of liquid milk per day has grown into a well-established dairy operation selling approximately 70,000 litres of milk and curd and 2,000 kg of paneer every day.</p>
+            <p>Our main processing facility at Kuppam, Andhra Pradesh, has a processing capacity of approximately 2,00,000 litres per day and storage capacity of 2,00,000 litres. Our operations are supported by three strategically located chilling centres within an 80-kilometre radius and an owned fleet of 23 insulated vehicles, enabling efficient collection, processing and distribution.</p>
             <p>Today, Sairaksha Dairy serves customers across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana, with a growing reputation for consistency, quality and reliability.</p>
           </div>
         </div>
@@ -117,7 +117,6 @@ export default function About() {
       </section>
 
       <section className="future section-pad" data-testid="promise-section">
-        <div className="future-label">OUR PROMISE <span>✦</span></div>
         <div>
           <h2>From farmers<br /><em>to families.</em></h2>
           <p>Dairy is more than a business. It is a relationship that connects farmers, employees, partners and consumers.</p>

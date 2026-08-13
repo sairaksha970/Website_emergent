@@ -53,7 +53,7 @@ export default function Home() {
             <Link className="text-button" to="/about" data-testid="hero-our-story-button">Discover our story <ArrowUpRight size={16} /></Link>
           </div>
           <div className="hero-proof" data-testid="hero-proof-stats">
-            <div><strong>50k<span>+</span></strong><small>litres sold daily</small></div>
+            <div><strong>70k<span>+</span></strong><small>litres sold daily</small></div>
             <div><strong>23</strong><small>insulated vehicles</small></div>
             <div><strong>200</strong><small>people at work</small></div>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
           <h2>Closer to the source.<br /><em>Stricter about quality.</em></h2>
           <p>Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
           <ul>{["Pasteurised & homogenised processing", "A connected cold chain from village to home", "Licensed and equipped to food safety standards"].map((item) => <li key={item}><span><Check size={13} /></span>{item}</li>)}</ul>
-          <div className="facility-callout"><strong>70,000</strong><span>litres processed daily<br />at our main plant</span></div>
+          <div className="facility-callout"><strong>2,00,000</strong><span>litres processed daily<br />at our main plant</span></div>
         </div>
       </section>
 
@@ -153,7 +153,6 @@ export default function Home() {
       </section>
 
       <section className="future section-pad" data-testid="future-project-section">
-        <div className="future-label">LOOKING AHEAD <span>✦</span></div>
         <div>
           <h2>A bigger future,<br /><em>still close to home.</em></h2>
           <p>Our planned SMP manufacturing unit in Kuppam will create around 300 local opportunities and serve a region rich in milk production.</p>

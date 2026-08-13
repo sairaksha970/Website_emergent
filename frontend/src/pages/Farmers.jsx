@@ -35,7 +35,6 @@ export default function Farmers() {
       <section className="purity section-pad" data-testid="empowerment-section">
         <div className="section-heading">
           <div><div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>HOW WE EMPOWER FARMERS</span></div><h2>Partners, not just<br /><em>suppliers.</em></h2></div>
-          <p>From fair pricing to veterinary care, our farmer programs are designed so that when Sairaksha grows, our villages grow with us.</p>
         </div>
         <div className="purity-grid empower-grid" data-testid="empowerment-grid">
           {empowerment.map((item) => {
@@ -54,7 +53,6 @@ export default function Farmers() {
       <section className="licences section-pad" data-testid="collection-network-section">
         <div className="section-heading">
           <div><div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE COLLECTION NETWORK</span></div><h2>Chilled at the source,<br /><em>close to the farm.</em></h2></div>
-          <p>Milk is chilled within hours of collection at our village-linked centres, then directed to the main plant at Kuppam for processing.</p>
         </div>
         <div className="licence-grid location-grid" data-testid="location-grid">
           {locations.map((location) => (
