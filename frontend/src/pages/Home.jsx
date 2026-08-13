@@ -8,7 +8,11 @@ const purityIcons = { ShieldCheck, Thermometer, FlaskConical, PackageCheck };
 export default function Home() {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
-  const previewProducts = products.filter((p) => ["Full Cream Milk", "Fresh Curd", "Lite Paneer", "Unsweetened Khova"].includes(p.name) || (p.brand === "Sri Lakshmi"));
+  const previewKeys = ["Full Cream Milk|Gomukhi", "Fresh Curd|Gomukhi", "Paneer|Amogh", "Unsweetened Khova|Amogh", "Full Cream Milk|Sri Lakshmi"];
+  const previewProducts = previewKeys.map((key) => {
+    const [name, brand] = key.split("|");
+    return products.find((p) => p.name === name && p.brand === brand);
+  }).filter(Boolean);
 
   return (
     <>

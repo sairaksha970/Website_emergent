@@ -14,6 +14,11 @@ export const assets = {
   amoghPaneer: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/dwz4f7ws_Amogh_paneer.webp",
   gomukhiDtMilk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/2lcol9gq_Gomukhi_dt_milk.webp",
   gomukhiStandardized: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/46gnc871_gomukhi_standardized_milk.webp",
+  gomukhiToned: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/9e9yqdm6_gomukhi_toned_milk_pouches.webp",
+  slFullCream: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/h5gd1ulh_srilakshmi_fullcream_milk.webp",
+  slStandardised: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/5pi0zjr5_srilakshmi_standardized_milk.webp",
+  slButterMilk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/avwzv8vh_srilakshmi_buttermilk.webp",
+  slCurd: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/q4g421og_srilakshmi_curd.webp",
   farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
 };
 
@@ -27,7 +32,7 @@ export const factoryGallery = [
 export const products = [
   { name: "Full Cream Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Rich, creamy and full of natural goodness.", tags: ["Rich & Creamy", "Pasteurised", "100% Vegetarian"] },
   { name: "Standardized Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiStandardized, note: "Consistent richness in every pouch.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
-  { name: "Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Multiple pouch sizes for every family.", tags: ["Balanced Fat", "Multiple Packs", "Daily Fresh"] },
+  { name: "Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiToned, note: "Multiple pouch sizes for every family.", tags: ["Balanced Fat", "Multiple Packs", "Daily Fresh"] },
   { name: "Double Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiDtMilk, note: "Light on fat, full on nutrition.", tags: ["Low Fat", "Pasteurised", "100% Vegetarian"] },
   { name: "Fresh Curd", brand: "Gomukhi", category: "Cultured", image: assets.curd, note: "Made with pure cow milk — thick and naturally set.", tags: ["Cow Milk", "Naturally Set", "Fresh & Healthy"] },
   { name: "Curd", brand: "Amogh", category: "Cultured", image: assets.amoghCurd, note: "Convenient family pouches — farm fresh for a healthy family.", tags: ["Multiple Packs", "Protein Rich", "Farm Fresh"] },
@@ -35,7 +40,11 @@ export const products = [
   { name: "Paneer", brand: "Amogh", category: "Dairy foods", image: assets.amoghPaneer, note: "Soft, power-packed protein — perfect for curries, tikka and salads.", tags: ["High Protein", "Soft Texture", "500g – 1Kg Packs"] },
   { name: "Lite Paneer", brand: "Amogh", category: "Dairy foods", image: assets.paneer, note: "Power packed protein, lighter on fat.", tags: ["High Protein", "Lite", "Everyday Use"] },
   { name: "Unsweetened Khova", brand: "Amogh", category: "Dairy foods", image: assets.khova, note: "For healthy sweets and festive cooking.", tags: ["Pure Milk", "No Added Sugar", "Festive Ready"] },
+  { name: "Full Cream Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slFullCream, note: "Rich and creamy — care for your health in every glass.", tags: ["Rich & Creamy", "Pasteurised", "100% Vegetarian"] },
+  { name: "Standardised Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slStandardised, note: "Consistent quality, pasteurised and homogenised.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
   { name: "Double Toned Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.toned, note: "Pasteurised & homogenised — care for your health.", tags: ["Low Fat", "Pasteurised", "Daily Fresh"] },
+  { name: "Butter Milk", brand: "Sri Lakshmi", category: "Cultured", image: assets.slButterMilk, note: "Light, refreshing and cooling — the everyday thirst quencher.", tags: ["Refreshing", "Light", "Daily Fresh"] },
+  { name: "Curd", brand: "Sri Lakshmi", category: "Cultured", image: assets.slCurd, note: "Thick, naturally set curd in family pouches.", tags: ["Naturally Set", "Fresh & Healthy", "Multiple Packs"] },
 ];
 
 export const brands = [
