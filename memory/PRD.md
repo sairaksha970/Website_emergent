@@ -1,33 +1,49 @@
-# Sairaksha Dairy Website PRD
+# PRD — Sairaksha Dairy Products Pvt Ltd Website
 
 ## Original problem statement
-Build a marketing website for Sairaksha Dairy Products Pvt Ltd with three brands — Gomukhi, Amogh, and Sri Lakshmi — using the uploaded product imagery. The site should help visitors discover products, contact the dairy for bulk/distributor enquiries, and understand the company profile, facilities, quality promise, and growth story. Official phone, email, and WhatsApp details are to remain clearly marked placeholders until provided.
+Build a website for Sairaksha Dairy Products Pvt Ltd (brands: Gomukhi, Amogh, Sri Lakshmi) to showcase the company profile, factory infrastructure, and product range, and to attract distributors/bulk enquiries. The user liked the initial "organic & earthy" template, colors and hero section and asked to keep them unchanged. The site must have 5 pages — Home, About Us, Products, Farmers, Contact Us — with content/layouts referenced from screenshots of the user's drafted Lovable project and media from their Google Drive.
 
-## Architecture decisions
-- React single-page marketing site with responsive section navigation.
-- Product data is local to the frontend for a fast, browse-first experience.
-- Uploaded product images are used from the provided public asset URLs.
-- No authentication, database, or third-party API is needed for the current public website.
-- Contact interactions use visible placeholder notices until official details are supplied.
+## User personas
+- Retail customers discovering the brands and product range
+- Distributors / bulk buyers (hotels, caterers, institutions) sending enquiries
+- Dairy farmers evaluating a procurement partnership
+- Business visitors verifying credibility (licences, turnover, infrastructure)
 
-## Implemented
-- Editorial, organic visual system with Playfair Display, Inter, forest green, cream, copper and product-led imagery.
-- Hero section with brand story, proof metrics, and primary CTAs.
-- Brand strip and product filtering for all three brands.
-- Product cards for Gomukhi, Amogh, and Sri Lakshmi using the five supplied product images.
-- Company story, operating metrics, quality promise, facilities, licenses context, and future SMP project section.
-- Contact section with WhatsApp, phone, and email placeholder states.
-- Responsive mobile navigation and layout with unique data-testid coverage for user-facing/interactive elements.
-- Added a featured Kuppam plant image to the Our Promise section plus a dedicated Inside Kuppam gallery using the four infrastructure uploads: plant exterior, fleet, processing equipment, and production floor.
-- Added gallery captions, responsive bento layout, Inside Kuppam navigation, and click-to-enlarge lightbox viewing with close control.
+## Architecture
+- Frontend: React 19 + react-router-dom (BrowserRouter), 5 routed pages, custom CSS (organic & earthy theme, Playfair Display + Inter), lucide-react icons
+- Backend: FastAPI with /api prefix, MongoDB via motor (MONGO_URL / DB_NAME from env)
+- Data: static content in src/data.js; enquiries persisted in MongoDB `enquiries` collection
 
-## Prioritized backlog
-- P0: Replace phone, email, and WhatsApp placeholders with official business details.
-- P1: Add any future factory/portfolio images or certification close-ups if available.
-- P1: Add a downloadable company profile PDF and individual product detail pages.
-- P2: Add distributor enquiry form with enquiry routing and analytics.
+## Pages
+- Home: hero (preserved), brand strip, story preview, product preview, 4-Point Purity Checkpoint, promise section, Inside Kuppam gallery + lightbox, SMP 2027 future section, contact CTA
+- About Us: company profile, directors, metrics, 2012-2027 timeline, licences grid, vision banner
+- Products: banner hero, brand filter (All / Gomukhi / Amogh / Sri Lakshmi) via ?brand= param, 11-product catalog with tags, bulk enquiry CTA
+- Farmers: hero, direct procurement model, stats, 6 empowerment programs, collection network (3 chilling centres + Kuppam unit), farmer CTA
+- Contact Us: working enquiry form (POST /api/enquiries), contact cards (placeholders for phone/WhatsApp/email), locations grid
+
+## Key API endpoints
+- POST /api/enquiries — create enquiry (name, phone, email, interest, message)
+- GET /api/enquiries — list enquiries
+- GET /api/ , GET/POST /api/status — template health endpoints
+
+## Implemented (2026-08-13)
+- Restructured single-page app into 5 routed pages with shared Layout (topline, nav, footer), preserving template, colors and hero
+- Added 4-Point Purity Checkpoint section (from user's reference site) to Home
+- Full product catalog (11 SKUs across 3 brands) with brand filtering and URL params
+- Farmers page with procurement model, empowerment programs and collection network
+- Contact page with working enquiry form wired to MongoDB backend
+- About page with real company data (2012 incorporation, ₹100cr turnover, directors, licences, timeline)
+- Verified: POST/GET /api/enquiries via curl; navigation, filters, form submission via browser automation; mobile menu
+
+## Backlog
+- P0: Replace placeholder contact details (official phone, WhatsApp number, email) — pending user input
+- P0: Add remaining product/factory photos and videos — Google Drive links are bot-blocked (reCAPTCHA); user must upload images directly (batches of 5) or share direct raw image links (e.g. Imgur)
+- P1: "Purity, In Motion" video section once the user shares the short factory videos
+- P1: Admin view or email notification for incoming enquiries
+- P2: Year-wise financial performance table on About page
+- P2: SEO metadata per page
 
 ## Next tasks
-1. Provide official contact details and update the contact actions.
-2. Provide any additional factory or certification images for the infrastructure section.
-3. Confirm whether the product range needs pack sizes and retail/bulk availability labels.
+1. Collect official contact details and activate WhatsApp/call/email actions
+2. Collect remaining media via direct upload and populate gallery + product images
+3. Optional: enquiry email notifications

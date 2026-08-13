@@ -37,6 +37,24 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class EnquiryCreate(BaseModel):
+    name: str
+    phone: str
+    email: str = ""
+    interest: str = "General enquiry"
+    message: str
+
+class Enquiry(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    phone: str
+    email: str = ""
+    interest: str = "General enquiry"
+    message: str
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -65,6 +83,22 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.post("/enquiries", response_model=Enquiry)
+async def create_enquiry(input: EnquiryCreate):
+    enquiry = Enquiry(**input.model_dump())
+    doc = enquiry.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.enquiries.insert_one(doc)
+    return enquiry
+
+@api_router.get("/enquiries", response_model=List[Enquiry])
+async def get_enquiries():
+    enquiries = await db.enquiries.find({}, {"_id": 0}).to_list(1000)
+    for enquiry in enquiries:
+        if isinstance(enquiry['created_at'], str):
+            enquiry['created_at'] = datetime.fromisoformat(enquiry['created_at'])
+    return enquiries
 
 # Include the router in the main app
 app.include_router(api_router)

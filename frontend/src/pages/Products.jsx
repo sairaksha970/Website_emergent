@@ -1,0 +1,57 @@
+import { Link, useSearchParams } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import { assets, brands, products } from "@/data";
+
+export default function Products() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeBrand = searchParams.get("brand") || "All";
+  const visibleProducts = activeBrand === "All" ? products : products.filter((product) => product.brand === activeBrand);
+
+  const setBrand = (brand) => {
+    setSearchParams(brand === "All" ? {} : { brand });
+  };
+
+  return (
+    <>
+      <PageHero
+        testId="products-hero"
+        eyebrow="Our Products"
+        title={<>Three brands.<br /><em>One promise of purity.</em></>}
+        intro="Milk, curd, paneer, khova and more — pasteurised, homogenised and made for the way families eat, celebrate and care for one another."
+        image={assets.productsHero}
+      />
+
+      <section className="products section-pad" data-testid="products-page-section">
+        <div className="filter-row" data-testid="product-filters">
+          <span>Browse by brand</span>
+          <button className={activeBrand === "All" ? "active" : ""} onClick={() => setBrand("All")} data-testid="filter-all-button">All products</button>
+          {brands.map((brand) => (
+            <button className={activeBrand === brand.name ? "active" : ""} key={brand.name} onClick={() => setBrand(brand.name)} data-testid={`filter-${brand.name.toLowerCase().replace(" ", "-")}-button`}>{brand.name}</button>
+          ))}
+        </div>
+        <div className="product-grid large" data-testid="product-grid">
+          {visibleProducts.map((product) => (
+            <article className="product-card" key={`${product.brand}-${product.name}`} data-testid={`product-card-${product.brand.toLowerCase().replace(" ", "-")}-${product.name.toLowerCase().replaceAll(" ", "-")}`}>
+              <div className="product-image"><img src={product.image} alt={`${product.brand} ${product.name}`} /><span>{product.category}</span></div>
+              <div className="product-meta">
+                <div>
+                  <small>{product.brand}</small>
+                  <h3>{product.name}</h3>
+                  <p>{product.note}</p>
+                  <div className="product-tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="cta-band section-pad" data-testid="products-enquiry-cta">
+        <h2>Interested in bulk supply<br /><em>or distribution?</em></h2>
+        <p>We serve retail markets as well as bulk buyers — hotels, caterers and institutions. Tell us what you need.</p>
+        <Link className="button button-dark" to="/contact" data-testid="products-enquiry-button">Send an enquiry <ArrowUpRight size={16} /></Link>
+      </section>
+    </>
+  );
+}
