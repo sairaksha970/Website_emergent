@@ -52,10 +52,23 @@ export default function About() {
       <section className="values section-pad" data-testid="values-section">
         <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE VALUES BEHIND SAIRAKSHA</span></div>
         <h2 className="values-tagline">Inspired by faith.<br /><em>Built by family. Driven by purity.</em></h2>
+        <div className="flourish" aria-hidden="true"><span /></div>
         <div className="values-grid">
-          <figure className="values-photo reveal-on-scroll" data-testid="values-baba-photo"><img src={assets.valuesBaba} alt="Sai Baba shrine at the Sairaksha plant" /><figcaption>Guided by blessings</figcaption></figure>
-          <figure className="values-photo reveal-on-scroll" style={{ transitionDelay: "120ms" }} data-testid="values-founders-photo"><img src={assets.valuesFounders} alt="The founders of Sairaksha Dairy" /><figcaption>The vision of our founders</figcaption></figure>
+          <figure className="values-photo reveal-on-scroll" data-testid="values-baba-photo">
+            <img src={assets.valuesBaba} alt="Sai Baba shrine at the Sairaksha plant" />
+            <div className="flourish small" aria-hidden="true"><span /></div>
+            <figcaption>Guided by Blessings</figcaption>
+            <p>In the divine blessings of Shri Sai Baba, our journey is protected, our hearts are strengthened, and our purpose remains pure.</p>
+          </figure>
+          <figure className="values-photo reveal-on-scroll" style={{ transitionDelay: "120ms" }} data-testid="values-founders-photo">
+            <img src={assets.valuesFounders} alt="The founders of Sairaksha Dairy" />
+            <div className="flourish small" aria-hidden="true"><span /></div>
+            <figcaption>The Vision of Our Founders</figcaption>
+            <p>With the values they instilled and the dreams they nurtured, our founders laid the foundation of trust, quality and integrity that continues to guide every step we take.</p>
+          </figure>
         </div>
+        <p className="values-quote">“Their blessings are our strength. Their values are our foundation. Their dreams are our direction.”</p>
+        <div className="flourish" aria-hidden="true"><span /></div>
         <p className="values-story">Our journey began with a simple belief — that purity, honesty and service should be at the heart of everything we do. Guided by the blessings of Sai Baba and the vision of our founders, Sairaksha Dairy has grown from a local dairy into a trusted name serving families across South India.</p>
       </section>
 
