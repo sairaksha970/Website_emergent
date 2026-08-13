@@ -69,21 +69,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="brand-strip" data-testid="brands-section">
-        <div className="section-pad brand-strip-inner">
-          <p className="eyebrow">Three names, one promise</p>
-          <div className="brand-list">
-            {brands.map((brand, index) => (
-              <button className={`brand-chip ${brand.color}`} key={brand.name} onClick={() => navigate(`/products?brand=${encodeURIComponent(brand.name)}`)} data-testid={`brand-${brand.name.toLowerCase().replace(" ", "-")}-button`}>
-                <span>0{index + 1}</span><b>{brand.name}</b><small>{brand.sub}</small><ArrowUpRight size={16} />
-              </button>
-            ))}
-          </div>
+      <section className="quality section-pad" data-testid="quality-section">
+        <div className="quality-photo reveal-on-scroll"><img src={assets.exterior} alt="Sairaksha dairy Kuppam processing plant exterior" data-testid="quality-feature-image" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
+        <div className="quality-copy reveal-on-scroll delay-1">
+          <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>THE SAIRAKSHA PROMISE</span></div>
+          <h2>Closer to the source.<br /><em>Stricter about quality.</em></h2>
+          <p>Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
+          <ul>{["Pasteurised & homogenised processing", "A connected cold chain from village to home", "Licensed and equipped to food safety standards"].map((item) => <li key={item}><span><Check size={13} /></span>{item}</li>)}</ul>
+          <div className="facility-callout"><strong>70,000 L</strong><span>daily processing<br />capacity at our main plant</span></div>
         </div>
       </section>
 
       <section className="products section-pad" data-testid="products-section">
-        <div className="section-kicker reveal-on-scroll"><span>01</span><span className="kicker-rule" /><span>OUR PRODUCTS</span></div>
+        <div className="section-kicker reveal-on-scroll"><span>02</span><span className="kicker-rule" /><span>OUR PRODUCTS</span></div>
         <h2 className="reveal-on-scroll">Made for every home,<br /><em>every single day.</em></h2>
         <div className="product-grid product-grid-home" data-testid="product-grid">
           {previewProducts.map((product, index) => (
@@ -97,7 +95,7 @@ export default function Home() {
       </section>
 
       <section className="plant-films section-pad" data-testid="plant-films-section" ref={filmsRef}>
-        <div className="section-kicker reveal-on-scroll"><span>02</span><span className="kicker-rule" /><span>PURITY, IN MOTION</span></div>
+        <div className="section-kicker reveal-on-scroll"><span>03</span><span className="kicker-rule" /><span>PURITY, IN MOTION</span></div>
         <h2 className="reveal-on-scroll">Short films from<br /><em>inside the plant.</em></h2>
         <div className="video-grid" data-testid="video-grid">
           {plantVideos.map((film, index) => (
@@ -112,14 +110,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quality section-pad" data-testid="quality-section">
-        <div className="quality-photo reveal-on-scroll"><img src={assets.exterior} alt="Sairaksha dairy Kuppam processing plant exterior" data-testid="quality-feature-image" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
-        <div className="quality-copy reveal-on-scroll delay-1">
-          <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE SAIRAKSHA PROMISE</span></div>
-          <h2>Closer to the source.<br /><em>Stricter about quality.</em></h2>
-          <p>Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
-          <ul>{["Pasteurised & homogenised processing", "A connected cold chain from village to home", "Licensed and equipped to food safety standards"].map((item) => <li key={item}><span><Check size={13} /></span>{item}</li>)}</ul>
-          <div className="facility-callout"><strong>70,000 L</strong><span>daily processing<br />capacity at our main plant</span></div>
+      <section className="brand-strip" data-testid="brands-section">
+        <div className="section-pad brand-strip-inner">
+          <p className="eyebrow">Three names, one promise</p>
+          <div className="brand-list">
+            {brands.map((brand, index) => (
+              <button className={`brand-chip ${brand.color}`} key={brand.name} onClick={() => navigate(`/products?brand=${encodeURIComponent(brand.name)}`)} data-testid={`brand-${brand.name.toLowerCase().replace(" ", "-")}-button`}>
+                <span>0{index + 1}</span><b>{brand.name}</b><small>{brand.sub}</small><ArrowUpRight size={16} />
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
