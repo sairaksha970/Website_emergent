@@ -13,6 +13,7 @@ button { font:inherit; cursor:pointer; border:0; }
 .wordmark b,.footer-brand b { display:block; font-size:13px; letter-spacing:.12em; line-height:1.05; }
 .wordmark small,.footer-brand small { display:block; font-size:7px; letter-spacing:.12em; margin-top:5px; color:#718074; }
 .wordmark-logo { height:56px; width:auto; display:block; transition:transform .3s ease; }
+.footer-logo { height:64px; }
 .wordmark:hover .wordmark-logo { transform:scale(1.04); }
 .wordmark-mark { width:34px; height:34px; border:1px solid var(--forest); border-radius:50%; display:grid; place-items:center; font:700 20px Georgia,serif; transform:rotate(-8deg); }
 .nav-links { display:flex; gap:28px; margin-left:auto; }

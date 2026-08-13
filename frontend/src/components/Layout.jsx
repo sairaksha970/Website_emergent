@@ -54,7 +54,7 @@ export default function Layout() {
       <Outlet />
 
       <footer className="footer section-pad" data-testid="site-footer">
-        <div className="footer-brand"><span className="wordmark-mark">S</span><div><b>SAIRAKSHA</b><small>DAIRY PRODUCTS PVT LTD</small></div></div>
+        <div className="footer-brand"><img className="wordmark-logo footer-logo" src="/logo.png" alt="Sairaksha Dairy — Gomukhi logo" /></div>
         <p>Goodness, made responsibly.<br />Kuppam · Andhra Pradesh</p>
         <div className="footer-links">
           <Link to="/about" data-testid="footer-about-link">About Us</Link>
