@@ -19,7 +19,7 @@ Build a website for Sairaksha Dairy Products Pvt Ltd (brands: Gomukhi, Amogh, Sr
 - About Us: company profile, directors, metrics, 2012-2027 timeline, licences grid, vision banner
 - Products: banner hero, brand filter (All / Gomukhi / Amogh / Sri Lakshmi) via ?brand= param, 11-product catalog with tags, bulk enquiry CTA
 - Farmers: hero, direct procurement model, stats, 6 empowerment programs, collection network (3 chilling centres + Kuppam unit), farmer CTA
-- Contact Us: working enquiry form (POST /api/enquiries), contact cards (placeholders for phone/WhatsApp/email), locations grid
+- Contact Us: contact cards (placeholders for phone/WhatsApp/email), locations grid. NOTE (2026-08-13): user chose a fully static site — enquiry form removed per user request; frontend no longer calls the backend, so the site can deploy on Vercel alone
 
 ## Key API endpoints
 - POST /api/enquiries — create enquiry (name, phone, email, interest, message)

@@ -1,78 +1,28 @@
-import { useState } from "react";
-import { ArrowUpRight, Check, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Check, MapPin, MessageCircle, Phone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { assets, locations } from "@/data";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const emptyForm = { name: "", phone: "", email: "", interest: "Distribution", message: "" };
-
 export default function Contact() {
-  const [form, setForm] = useState(emptyForm);
-  const [status, setStatus] = useState("idle");
-  const [error, setError] = useState("");
-
-  const update = (field) => (event) => setForm((current) => ({ ...current, [field]: event.target.value }));
-
-  const submit = async (event) => {
-    event.preventDefault();
-    setStatus("sending");
-    setError("");
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/enquiries`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!response.ok) throw new Error("Request failed");
-      setStatus("sent");
-      setForm(emptyForm);
-    } catch {
-      setStatus("idle");
-      setError("Something went wrong while sending. Please try again.");
-    }
-  };
-
   return (
     <>
       <PageHero
         testId="contact-hero"
         eyebrow="Contact Us"
         title={<>Let’s bring good<br /><em>things to the table.</em></>}
-        intro="Distribution, bulk supply, farmer partnerships or a simple question — tell us what you have in mind and our team will get back to you."
+        intro="Distribution, bulk supply, farmer partnerships or a simple question — reach us on phone or WhatsApp and our team will get back to you."
         image={assets.fleet}
       />
 
       <section className="contact section-pad" data-testid="contact-section">
         <div className="contact-top">
-          <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>SEND AN ENQUIRY</span></div>
+          <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>GET IN TOUCH</span></div>
           <h2>Start a<br /><em>conversation.</em></h2>
-          {status === "sent" ? (
-            <div className="form-success" data-testid="enquiry-success-message">
-              <Check size={20} />
-              <div><b>Thank you — your enquiry has been received.</b><p>Our team will reach out to you shortly.</p></div>
-            </div>
-          ) : (
-            <form className="contact-form" onSubmit={submit} data-testid="enquiry-form">
-              <div className="form-row">
-                <input required placeholder="Your name" value={form.name} onChange={update("name")} data-testid="enquiry-name-input" aria-label="Your name" />
-                <input required placeholder="Phone number" value={form.phone} onChange={update("phone")} data-testid="enquiry-phone-input" aria-label="Phone number" />
-              </div>
-              <div className="form-row">
-                <input type="email" placeholder="Email (optional)" value={form.email} onChange={update("email")} data-testid="enquiry-email-input" aria-label="Email" />
-                <select value={form.interest} onChange={update("interest")} data-testid="enquiry-interest-select" aria-label="I am interested in">
-                  <option>Distribution</option>
-                  <option>Bulk supply</option>
-                  <option>Farmer partnership</option>
-                  <option>General enquiry</option>
-                </select>
-              </div>
-              <textarea required rows={5} placeholder="Tell us a little about your requirement" value={form.message} onChange={update("message")} data-testid="enquiry-message-input" aria-label="Message" />
-              {error && <p className="form-error" data-testid="enquiry-error-message">{error}</p>}
-              <button className="button button-dark form-submit" type="submit" disabled={status === "sending"} data-testid="enquiry-submit-button">
-                {status === "sending" ? "Sending…" : "Send enquiry"} <ArrowUpRight size={16} />
-              </button>
-            </form>
-          )}
+          <p>Call or message us directly — we respond fastest on WhatsApp during working hours.</p>
+          <ul className="contact-points" data-testid="contact-points-list">
+            {["Distribution and retail partnerships", "Bulk supply for hotels, caterers and institutions", "Farmer partnerships for milk collection"].map((point) => (
+              <li key={point}><span><Check size={13} /></span>{point}</li>
+            ))}
+          </ul>
         </div>
         <div className="contact-actions">
           <div className="contact-card whatsapp" data-testid="whatsapp-contact-card"><MessageCircle size={24} /><span><small>WhatsApp us</small><b>Official number coming soon</b></span></div>

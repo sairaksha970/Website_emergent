@@ -147,6 +147,10 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .farmers-stats div:first-child { padding-left:0; }
 .farmers-stats div:last-child { border:0; }
 
+.contact-points { list-style:none; padding:10px 0 0; margin:0; max-width:420px; }
+.contact-points li { display:flex; align-items:center; gap:11px; font-size:13px; color:var(--forest); padding:10px 0; border-bottom:1px solid var(--line); }
+.contact-points li span { display:grid; place-items:center; background:#dce9d6; width:21px; height:21px; border-radius:50%; flex:none; }
+
 .contact-form { display:flex; flex-direction:column; gap:14px; margin-top:34px; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 .contact-form input,.contact-form select,.contact-form textarea { width:100%; background:var(--paper); border:1px solid var(--line); padding:14px 15px; font:inherit; font-size:13px; color:var(--ink); border-radius:2px; transition:border-color .25s ease; }
