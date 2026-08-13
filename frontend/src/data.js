@@ -9,6 +9,11 @@ export const assets = {
   processing: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/wzmc1yfl_Factory_4.webp",
   production: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/xxiq5w81_Factory_5.webp",
   productsHero: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/wgw12a23_products_hero.webp",
+  amoghCurd: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/wvi9q01m_amogh_curd.webp",
+  amoghCurdBucket: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/myzktzcc_amogh_curd_bucket.webp",
+  amoghPaneer: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/dwz4f7ws_Amogh_paneer.webp",
+  gomukhiDtMilk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/2lcol9gq_Gomukhi_dt_milk.webp",
+  gomukhiStandardized: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/46gnc871_gomukhi_standardized_milk.webp",
   farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
 };
 
@@ -21,13 +26,13 @@ export const factoryGallery = [
 
 export const products = [
   { name: "Full Cream Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Rich, creamy and full of natural goodness.", tags: ["Rich & Creamy", "Pasteurised", "100% Vegetarian"] },
-  { name: "Standardized Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Consistent richness in every pouch.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
+  { name: "Standardized Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiStandardized, note: "Consistent richness in every pouch.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
   { name: "Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Multiple pouch sizes for every family.", tags: ["Balanced Fat", "Multiple Packs", "Daily Fresh"] },
-  { name: "Double Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.toned, note: "Light on fat, full on nutrition.", tags: ["Low Fat", "Pasteurised", "100% Vegetarian"] },
+  { name: "Double Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiDtMilk, note: "Light on fat, full on nutrition.", tags: ["Low Fat", "Pasteurised", "100% Vegetarian"] },
   { name: "Fresh Curd", brand: "Gomukhi", category: "Cultured", image: assets.curd, note: "Made with pure cow milk — thick and naturally set.", tags: ["Cow Milk", "Naturally Set", "Fresh & Healthy"] },
-  { name: "Curd", brand: "Amogh", category: "Cultured", image: assets.curd, note: "Convenient family pouches — farm fresh for a healthy family.", tags: ["Multiple Packs", "Protein Rich", "Farm Fresh"] },
-  { name: "Curd Bucket", brand: "Amogh", category: "Cultured", image: assets.curd, note: "Bulk buckets for households, hotels and caterers.", tags: ["Bulk Pack", "HoReCa Friendly", "Pasteurised"] },
-  { name: "Paneer", brand: "Amogh", category: "Dairy foods", image: assets.paneer, note: "Soft, power-packed protein — perfect for curries, tikka and salads.", tags: ["High Protein", "Soft Texture", "500g – 1Kg Packs"] },
+  { name: "Curd", brand: "Amogh", category: "Cultured", image: assets.amoghCurd, note: "Convenient family pouches — farm fresh for a healthy family.", tags: ["Multiple Packs", "Protein Rich", "Farm Fresh"] },
+  { name: "Curd Bucket", brand: "Amogh", category: "Cultured", image: assets.amoghCurdBucket, note: "Bulk buckets for households, hotels and caterers.", tags: ["Bulk Pack", "HoReCa Friendly", "Pasteurised"] },
+  { name: "Paneer", brand: "Amogh", category: "Dairy foods", image: assets.amoghPaneer, note: "Soft, power-packed protein — perfect for curries, tikka and salads.", tags: ["High Protein", "Soft Texture", "500g – 1Kg Packs"] },
   { name: "Lite Paneer", brand: "Amogh", category: "Dairy foods", image: assets.paneer, note: "Power packed protein, lighter on fat.", tags: ["High Protein", "Lite", "Everyday Use"] },
   { name: "Unsweetened Khova", brand: "Amogh", category: "Dairy foods", image: assets.khova, note: "For healthy sweets and festive cooking.", tags: ["Pure Milk", "No Added Sugar", "Festive Ready"] },
   { name: "Double Toned Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.toned, note: "Pasteurised & homogenised — care for your health.", tags: ["Low Fat", "Pasteurised", "Daily Fresh"] },

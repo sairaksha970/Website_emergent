@@ -37,7 +37,7 @@ Build a website for Sairaksha Dairy Products Pvt Ltd (brands: Gomukhi, Amogh, Sr
 
 ## Backlog
 - P0: Replace placeholder contact details (official phone, WhatsApp number, email) — pending user input
-- P0: Add remaining product/factory photos and videos — Google Drive links are bot-blocked (reCAPTCHA); user must upload images directly (batches of 5) or share direct raw image links (e.g. Imgur)
+- P0: Add remaining product/factory photos and videos — Google Drive links are bot-blocked (reCAPTCHA); user uploads images directly in batches of 5. DONE (2026-08-13): batch 1 added — Amogh Curd, Amogh Curd Bucket, Amogh Paneer, Gomukhi Double Toned Milk, Gomukhi Standardized Milk now show their real pack shots. Awaiting next batch.
 - P1: "Purity, In Motion" video section once the user shares the short factory videos
 - P1: Admin view or email notification for incoming enquiries
 - P2: Year-wise financial performance table on About page
