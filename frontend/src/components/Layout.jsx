@@ -55,7 +55,7 @@ export default function Layout() {
 
       <footer className="footer section-pad" data-testid="site-footer">
         <div className="footer-brand"><img className="wordmark-logo footer-logo" src="/logo.png" alt="Sairaksha Dairy — Gomukhi logo" /></div>
-        <p>Goodness, made responsibly.<br />Kuppam · Andhra Pradesh<br /><a href="tel:08027839900" data-testid="footer-phone-link">080 - 27839900</a> · <a href="mailto:sairakshadairy@yahoo.com" data-testid="footer-email-link">sairakshadairy@yahoo.com</a></p>
+        <p>Goodness, made responsibly.<br />Kuppam · Andhra Pradesh<br /><a href="tel:+918884448402" data-testid="footer-phone-link">88844 48402</a> · <a href="mailto:sairakshadairy@yahoo.com" data-testid="footer-email-link">sairakshadairy@yahoo.com</a></p>
         <div className="footer-links">
           <Link to="/about" data-testid="footer-about-link">About Us</Link>
           <Link to="/products" data-testid="footer-products-link">Products</Link>
