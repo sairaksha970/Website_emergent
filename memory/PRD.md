@@ -18,10 +18,12 @@ Build a marketing website for Sairaksha Dairy Products Pvt Ltd with three brands
 - Company story, operating metrics, quality promise, facilities, licenses context, and future SMP project section.
 - Contact section with WhatsApp, phone, and email placeholder states.
 - Responsive mobile navigation and layout with unique data-testid coverage for user-facing/interactive elements.
+- Added a featured Kuppam plant image to the Our Promise section plus a dedicated Inside Kuppam gallery using the four infrastructure uploads: plant exterior, fleet, processing equipment, and production floor.
+- Added gallery captions, responsive bento layout, Inside Kuppam navigation, and click-to-enlarge lightbox viewing with close control.
 
 ## Prioritized backlog
 - P0: Replace phone, email, and WhatsApp placeholders with official business details.
-- P1: Add the supplied factory/portfolio images when available and connect them to the infrastructure story.
+- P1: Add any future factory/portfolio images or certification close-ups if available.
 - P1: Add a downloadable company profile PDF and individual product detail pages.
 - P2: Add distributor enquiry form with enquiry routing and analytics.
 

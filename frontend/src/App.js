@@ -8,7 +8,18 @@ const assets = {
   paneer: "https://customer-assets-m6fa6gv7.emergentagent.net/job_1b2f1128-8127-4a39-abe5-0ef61eb21f82/artifacts/khwh59w3_amogh_lite_paneer.webp",
   khova: "https://customer-assets-m6fa6gv7.emergentagent.net/job_1b2f1128-8127-4a39-abe5-0ef61eb21f82/artifacts/7zxxvcxs_Amogh_khova.webp",
   toned: "https://customer-assets-m6fa6gv7.emergentagent.net/job_1b2f1128-8127-4a39-abe5-0ef61eb21f82/artifacts/fxaqznj4_srilakshmi_double_toned_milk.webp",
+  fleet: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/kald9oxj_Fleet_2.webp",
+  exterior: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/6rmwj6xn_Factory_0.webp",
+  processing: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/wzmc1yfl_Factory_4.webp",
+  production: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/xxiq5w81_Factory_5.webp",
 };
+
+const factoryGallery = [
+  { title: "The Kuppam plant", caption: "Our main processing unit in Kuppam, Andhra Pradesh", image: assets.exterior },
+  { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
+  { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
+  { title: "People behind every pack", caption: "Careful packing and quality checks on the floor", image: assets.production },
+];
 
 const products = [
   { name: "Full Cream Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Pasteurised & homogenised" },
@@ -28,6 +39,7 @@ function App() {
   const [activeBrand, setActiveBrand] = useState("All");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [notice, setNotice] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
   const visibleProducts = activeBrand === "All" ? products : products.filter((product) => product.brand === activeBrand);
 
   const scrollTo = (id) => {
@@ -52,6 +64,7 @@ function App() {
             <button onClick={() => scrollTo("about")} data-testid="nav-about-link">Our story</button>
             <button onClick={() => scrollTo("products")} data-testid="nav-products-link">Products</button>
             <button onClick={() => scrollTo("quality")} data-testid="nav-quality-link">Our promise</button>
+            <button onClick={() => scrollTo("factory-gallery")} data-testid="nav-gallery-link">Inside Kuppam</button>
             <button onClick={() => scrollTo("contact")} data-testid="nav-contact-link">Contact</button>
           </div>
           <button className="nav-cta" onClick={() => scrollTo("contact")} data-testid="nav-enquiry-button">Enquire with us <ArrowUpRight size={15} /></button>
@@ -111,8 +124,13 @@ function App() {
       </section>
 
       <section className="quality section-pad" id="quality" data-testid="quality-section">
-        <div className="quality-photo"><img src="https://images.unsplash.com/photo-1663841365334-06805f34af15?q=85&w=1000&auto=format&fit=crop" alt="Sairaksha dairy processing facility" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
+        <div className="quality-photo"><img src={assets.exterior} alt="Sairaksha dairy Kuppam processing plant exterior" data-testid="quality-feature-image" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
         <div className="quality-copy"><div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE SAIRAKSHA PROMISE</span></div><h2>Closer to the source.<br /><em>Stricter about quality.</em></h2><p>Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p><ul>{["Pasteurised & homogenised processing", "A connected cold chain from village to home", "Licensed and equipped to food safety standards"].map((item) => <li key={item}><span><Check size={13} /></span>{item}</li>)}</ul><div className="facility-callout"><strong>70,000 L</strong><span>daily processing<br />capacity at our main plant</span></div></div>
+      </section>
+
+      <section className="factory-gallery section-pad" id="factory-gallery" data-testid="factory-gallery-section">
+        <div className="gallery-heading"><div><div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>INSIDE KUPPAM</span></div><h2>Where the work<br /><em>comes together.</em></h2></div><p>From the first chilled collection to the finished pack, every part of our dairy journey is close, visible and built to care for quality.</p></div>
+        <div className="gallery-grid" data-testid="factory-gallery-grid">{factoryGallery.map((item, index) => <button className={`gallery-tile gallery-tile-${index + 1}`} key={item.title} onClick={() => setSelectedImage(item)} data-testid={`factory-gallery-image-${index + 1}`} aria-label={`Open ${item.title} image`}><img src={item.image} alt={item.caption} /><span className="gallery-overlay"><b>{item.title}</b><small>{item.caption}</small><ArrowUpRight size={17} /></span></button>)}</div>
       </section>
 
       <section className="future section-pad" data-testid="future-project-section"><div className="future-label">LOOKING AHEAD <span>✦</span></div><div><h2>A bigger future,<br /><em>still close to home.</em></h2><p>Our planned SMP manufacturing unit in Kuppam will create around 300 local opportunities and serve a region rich in milk production.</p><button className="button button-light" onClick={() => showPlaceholder("Project enquiries will be connected when official contact details are provided.")} data-testid="future-project-enquiry-button">Talk about the future <ArrowUpRight size={16} /></button></div><div className="future-year"><span>Target</span><strong>2027</strong><small>25 MT / day powder plant</small></div></section>
@@ -121,6 +139,7 @@ function App() {
 
       <footer className="footer section-pad" data-testid="site-footer"><div className="footer-brand"><span className="wordmark-mark">S</span><div><b>SAIRAKSHA</b><small>DAIRY PRODUCTS PVT LTD</small></div></div><p>Goodness, made responsibly.<br />Kuppam · Andhra Pradesh</p><div className="footer-links"><button onClick={() => scrollTo("about")} data-testid="footer-about-link">Our story</button><button onClick={() => scrollTo("products")} data-testid="footer-products-link">Products</button><button onClick={() => scrollTo("contact")} data-testid="footer-contact-link">Contact</button></div><span className="copyright">© 2024 Sairaksha Dairy</span></footer>
       {notice && <div className="toast-note" role="status" data-testid="placeholder-notice"><Check size={15} />{notice}</div>}
+      {selectedImage && <div className="lightbox" role="dialog" aria-modal="true" aria-label={selectedImage.title} data-testid="factory-lightbox"><button className="lightbox-close" onClick={() => setSelectedImage(null)} data-testid="factory-lightbox-close" aria-label="Close image viewer"><X size={21} /></button><div className="lightbox-content"><img src={selectedImage.image} alt={selectedImage.caption} data-testid="factory-lightbox-image" /><p><b>{selectedImage.title}</b><span>{selectedImage.caption}</span></p></div></div>}
     </main>
   );
 }
