@@ -95,7 +95,7 @@ export default function Home() {
 
       <section className="plant-films section-pad" data-testid="plant-films-section" ref={filmsRef}>
         <div className="section-kicker reveal-on-scroll"><span>03</span><span className="kicker-rule" /><span>PURITY, IN MOTION</span></div>
-        <h2 className="reveal-on-scroll">Short films from<br /><em>inside the plant.</em></h2>
+        <h2 className="reveal-on-scroll">A glimpse inside<br /><em>our plant.</em></h2>
         <div className="video-grid" data-testid="video-grid">
           {plantVideos.map((film, index) => (
             <button className="video-card reveal-on-scroll" style={{ transitionDelay: `${index * 90}ms` }} key={film.title} onClick={() => setSelectedImage(film)} data-testid={`video-card-${index + 1}`} aria-label={`Play ${film.title} video with sound`}>
