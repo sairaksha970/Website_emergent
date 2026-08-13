@@ -33,7 +33,8 @@ export const assets = {
   videoPacking: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/05vbm1x9_Workers_organizing_dairy_products_202608131107.mp4",
   videoControl: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1iuy72kh_Worker_operating_factory_control%E2%80%A6_202608131107.mp4",
   videoInspection: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/x08bohmn_Workers_inspecting_dairy_products_202608131252.mp4",
-  farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
+  farmer: "/images/farmers-hero.webp",
+  farmerProcurement: "/images/farmers-procurement.webp",
 };
 
 export const factoryGallery = [
