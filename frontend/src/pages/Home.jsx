@@ -64,7 +64,6 @@ export default function Home() {
               <img key={item.image} src={item.image} alt={item.alt} className={index === heroIndex ? "is-active" : ""} data-testid={index === heroIndex ? "hero-product-image" : undefined} />
             ))}
           </div>
-          <div className="hero-note"><span className="note-dot" /><span><b>Fresh from Kuppam</b><small>Made for everyday nourishment</small></span></div>
           <div className="hero-stamp">PURE<br /><span>by nature</span></div>
         </div>
       </section>
