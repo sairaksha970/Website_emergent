@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, Check, FlaskConical, PackageCheck, ShieldCheck, Thermometer, X } from "lucide-react";
-import { assets, brands, factoryGallery, plantVideos, products, purityChecks } from "@/data";
+import { assets, factoryGallery, plantVideos, products, purityChecks } from "@/data";
 
 const purityIcons = { ShieldCheck, Thermometer, FlaskConical, PackageCheck };
 const heroShowcase = [
@@ -12,7 +12,6 @@ const heroShowcase = [
 ];
 
 export default function Home() {
-  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [heroIndex, setHeroIndex] = useState(0);
   const filmsRef = useRef(null);
@@ -109,19 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="brand-strip" data-testid="brands-section">
-        <div className="section-pad brand-strip-inner">
-          <p className="eyebrow">Three names, one promise</p>
-          <div className="brand-list">
-            {brands.map((brand, index) => (
-              <button className={`brand-chip ${brand.color}`} key={brand.name} onClick={() => navigate(`/products?brand=${encodeURIComponent(brand.name)}`)} data-testid={`brand-${brand.name.toLowerCase().replace(" ", "-")}-button`}>
-                <span>0{index + 1}</span><b>{brand.name}</b><small>{brand.sub}</small><ArrowUpRight size={16} />
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="purity section-pad" data-testid="purity-section">
         <div className="section-kicker reveal-on-scroll"><span>04</span><span className="kicker-rule" /><span>4-POINT PURITY CHECKPOINT</span></div>
         <h2 className="reveal-on-scroll">Every drop,<br /><em>checked with care.</em></h2>
@@ -152,13 +138,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="future section-pad" data-testid="future-project-section">
-        <div>
-          <h2>A bigger future,<br /><em>still close to home.</em></h2>
-          <p>Our planned SMP manufacturing unit in Kuppam will create around 300 local opportunities and serve a region rich in milk production.</p>
-          <Link className="button button-light" to="/contact" data-testid="future-project-enquiry-button">Talk about the future <ArrowUpRight size={16} /></Link>
+      <section className="future-banner" data-testid="future-project-section">
+        <img className="future-bg" src={assets.aerial} alt="Aerial view of the Sairaksha Dairy plant" />
+        <div className="section-pad future-inner">
+          <div>
+            <h2>A bigger future,<br /><em>still close to home.</em></h2>
+            <p>Our planned SMP manufacturing unit in Kuppam will create around <b>300 local opportunities</b> and serve a region rich in milk production.</p>
+            <Link className="button button-gold" to="/contact" data-testid="future-project-enquiry-button">Discover our future <ArrowUpRight size={16} /></Link>
+          </div>
+          <div className="future-year"><span>Target</span><strong>2027</strong><small>SMP & beyond for all.</small></div>
         </div>
-        <div className="future-year"><span>Target</span><strong>2027</strong><small>25 MT / day powder plant</small></div>
       </section>
 
       <section className="cta-band section-pad" data-testid="home-contact-cta">
