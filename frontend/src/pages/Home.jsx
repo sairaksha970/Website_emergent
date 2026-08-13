@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, FlaskConical, Milk, PackageCheck, ShieldCheck, Thermometer, Truck, Users, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, FlaskConical, Milk, PackageCheck, ShieldCheck, Thermometer, X } from "lucide-react";
 import { assets, factoryGallery, plantVideos, products, purityChecks } from "@/data";
 
 const purityIcons = { ShieldCheck, Thermometer, FlaskConical, PackageCheck };
 
-const heroStats = [
-  { icon: Milk, value: "70k", suffix: "+", label: "litres sold daily" },
-  { icon: Truck, value: "23", suffix: "", label: "insulated vehicles" },
-  { icon: Users, value: "200", suffix: "", label: "people at work" },
+const heroShowcase = [
+  { image: assets.curd, alt: "Gomukhi curd served fresh" },
+  { image: assets.milk, alt: "Gomukhi full cream milk" },
+  { image: assets.amoghPaneer, alt: "Amogh paneer" },
+  { image: assets.khova, alt: "Amogh unsweetened khova" },
 ];
 
 const pick = (name, brand) => products.find((p) => p.name === name && p.brand === brand);
@@ -22,7 +23,13 @@ const showcase = [
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [heroIndex, setHeroIndex] = useState(0);
   const filmsRef = useRef(null);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setHeroIndex((index) => (index + 1) % heroShowcase.length), 3000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const videos = filmsRef.current ? Array.from(filmsRef.current.querySelectorAll("video")) : [];
@@ -39,29 +46,28 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero3" id="home" data-testid="hero-section">
-        <img className="hero3-bg" src={assets.curd} alt="Gomukhi curd pouches with a fresh bowl of curd" data-testid="hero-product-image" />
-        <div className="section-pad hero3-inner">
-          <div className="hero-copy">
-            <p className="eyebrow reveal-up"><span className="eyebrow-line" /> Rooted in trust · Made in Kuppam</p>
-            <h1 className="reveal-up delay-1">Goodness that<br /><em>comes full circle.</em></h1>
-            <p className="hero-intro reveal-up delay-2">From the first collection at the village<br />to the last pour at home,<br />we protect what makes milk good.</p>
-            <div className="hero-actions reveal-up delay-3">
-              <Link className="button button-dark" to="/products" data-testid="hero-explore-products-button">Explore our products <ArrowUpRight size={16} /></Link>
-              <Link className="text-button" to="/about" data-testid="hero-our-story-button">Discover our story <ArrowUpRight size={16} /></Link>
-            </div>
-            <div className="hero3-proof reveal-up delay-4" data-testid="hero-proof-stats">
-              {heroStats.map((stat) => {
-                const Icon = stat.icon;
-                return (
-                  <div className="hero3-stat" key={stat.label}>
-                    <span className="hero3-stat-icon"><Icon size={17} /></span>
-                    <div><strong>{stat.value}<span>{stat.suffix}</span></strong><small>{stat.label}</small></div>
-                  </div>
-                );
-              })}
-            </div>
+      <section className="hero section-pad" id="home" data-testid="hero-section">
+        <div className="hero-copy reveal-up">
+          <p className="eyebrow"><span className="eyebrow-line" /> Rooted in trust · Made in Kuppam</p>
+          <h1>Goodness that<br /><em>comes full circle.</em></h1>
+          <p className="hero-intro">From the first collection at the village to the last pour at home, we protect what makes milk good.</p>
+          <div className="hero-actions">
+            <Link className="button button-dark" to="/products" data-testid="hero-explore-products-button">Explore our products <ArrowDown size={16} /></Link>
+            <Link className="text-button" to="/about" data-testid="hero-our-story-button">Discover our story <ArrowUpRight size={16} /></Link>
           </div>
+          <div className="hero-proof" data-testid="hero-proof-stats">
+            <div><strong>70k<span>+</span></strong><small>litres sold daily</small></div>
+            <div><strong>23</strong><small>insulated vehicles</small></div>
+            <div><strong>200</strong><small>people at work</small></div>
+          </div>
+        </div>
+        <div className="hero-visual reveal-up delay-1">
+          <div className="hero-image-frame float-slow" data-testid="hero-showcase">
+            {heroShowcase.map((item, index) => (
+              <img key={item.image} src={item.image} alt={item.alt} className={index === heroIndex ? "is-active" : ""} data-testid={index === heroIndex ? "hero-product-image" : undefined} />
+            ))}
+          </div>
+          <div className="hero-stamp">PURE<br /><span>by nature</span></div>
         </div>
       </section>
 
