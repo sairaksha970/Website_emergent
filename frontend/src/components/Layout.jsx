@@ -39,7 +39,7 @@ export default function Layout() {
       <header className="nav-wrap">
         <nav className="nav-bar" data-testid="main-navigation">
           <Link className="wordmark" to="/" data-testid="brand-home-button" aria-label="Go to home">
-            <span className="wordmark-mark">S</span><span><b>SAIRAKSHA</b><small>DAIRY PRODUCTS PVT LTD</small></span>
+            <img className="wordmark-logo" src="/logo.png" alt="Sairaksha Dairy — Gomukhi logo" />
           </Link>
           <div className={`nav-links ${mobileOpen ? "is-open" : ""}`} data-testid="navigation-links">
             {navItems.map((item) => (
