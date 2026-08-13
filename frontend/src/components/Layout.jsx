@@ -19,6 +19,20 @@ export default function Layout() {
     setMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const items = document.querySelectorAll(".reveal-on-scroll:not(.in-view)");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [pathname]);
+
   return (
     <main className="site-shell">
       <div className="topline" data-testid="topline-notice">From our farmers to families across South India <span>✦</span> Since 2012</div>

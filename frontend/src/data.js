@@ -54,10 +54,10 @@ export const factoryGallery = [
 ];
 
 export const plantVideos = [
-  { title: "Inside the Plant", caption: "A walkthrough of our processing facility.", video: assets.videoPlant, poster: "/posters/film1.jpg" },
-  { title: "Packing & Dispatch", caption: "Products organised for same-day delivery.", video: assets.videoPacking, poster: "/posters/film2.jpg" },
-  { title: "Process Control", caption: "Every parameter monitored in real time.", video: assets.videoControl, poster: "/posters/film3.jpg" },
-  { title: "Quality Check", caption: "Every batch inspected before it leaves the floor.", video: assets.videoInspection, poster: "/posters/film4.jpg" },
+  { title: "Inside the Plant", caption: "A walkthrough of our processing facility.", video: assets.videoPlant, webm: "/videos/film1.webm", poster: "/posters/film1.jpg" },
+  { title: "Packing & Dispatch", caption: "Products organised for same-day delivery.", video: assets.videoPacking, webm: "/videos/film2.webm", poster: "/posters/film2.jpg" },
+  { title: "Process Control", caption: "Every parameter monitored in real time.", video: assets.videoControl, webm: "/videos/film3.webm", poster: "/posters/film3.jpg" },
+  { title: "Quality Check", caption: "Every batch inspected before it leaves the floor.", video: assets.videoInspection, webm: "/videos/film4.webm", poster: "/posters/film4.jpg" },
 ];
 
 export const products = [

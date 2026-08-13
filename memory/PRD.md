@@ -34,6 +34,7 @@ Build a website for Sairaksha Dairy Products Pvt Ltd (brands: Gomukhi, Amogh, Sr
 - Contact page with working enquiry form wired to MongoDB backend
 - About page with real company data (2012 incorporation, ₹100cr turnover, directors, licences, timeline)
 - Verified: POST/GET /api/enquiries via curl; navigation, filters, form submission via browser automation; mobile menu
+- Home page redesign per user feedback (2026-08-13): hero now cycles 4 product shots with float/spin animations; Our Story section removed (lives on About); THE COLLECTION renamed OUR PRODUCTS with clean caption-free cards; all side paragraphs removed; section spacing tightened (~72px); gallery rebuilt as caption-free masonry; Purity In Motion moved next to products, videos autoplay muted on scroll (IntersectionObserver) with no play buttons, click opens lightbox with sound; scroll-reveal animations site-wide via Layout observer; videos transcoded to WebM/VP9 (public/videos) with MP4+H.264 as first source for Safari/Chrome compatibility
 
 ## Backlog
 - P0: Replace placeholder contact details (official phone, WhatsApp number, email) — pending user input
