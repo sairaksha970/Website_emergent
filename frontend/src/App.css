@@ -156,5 +156,23 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .cta-band p { color:var(--muted); font-size:14px; line-height:1.75; max-width:340px; }
 .cta-band .button { justify-self:end; }
 
+.plant-films { background:var(--forest-deep); max-width:none; width:100%; padding-left:max(32px, calc((100% - 1180px)/2)); padding-right:max(32px, calc((100% - 1180px)/2)); padding-top:100px; padding-bottom:105px; }
+.plant-films .section-kicker { color:#b8c5b4; }
+.plant-films .section-heading h2 { color:#f5f0e5; }
+.plant-films .section-heading>p { color:#b8c5b4; }
+.video-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:46px; }
+.video-card { position:relative; overflow:hidden; padding:0; background:#0a2417; text-align:left; aspect-ratio:.78; }
+.video-card video { width:100%; height:100%; object-fit:cover; display:block; transition:transform .55s ease, filter .45s ease; }
+.video-card:hover video { transform:scale(1.04); filter:brightness(.6); }
+.video-overlay { position:absolute; inset:auto 0 0; padding:60px 18px 17px; color:white; display:flex; flex-direction:column; gap:5px; background:linear-gradient(transparent,rgba(8,28,18,.88)); }
+.video-overlay b { font:500 20px "Playfair Display",Georgia,serif; }
+.video-overlay small { font-size:10px; color:#d8e0d4; }
+.video-play { position:absolute; top:16px; left:16px; width:44px; height:44px; border-radius:50%; background:rgba(246,240,230,.94); color:var(--forest); display:grid; place-items:center; transition:transform .3s ease, background-color .3s ease; }
+.video-card:hover .video-play { transform:scale(1.1); background:var(--sun); }
+.lightbox-content video { display:block; max-width:100%; max-height:78vh; }
+
+@media (max-width:900px) { .video-grid { grid-template-columns:1fr 1fr; }.video-card { aspect-ratio:1; }.plant-films { padding-left:20px; padding-right:20px; } }
+@media (max-width:640px) { .video-grid { grid-template-columns:1fr; }.plant-films { padding-top:72px; padding-bottom:72px; } }
+
 @media (max-width:900px) { .purity-grid,.empower-grid { grid-template-columns:1fr 1fr; }.licence-grid,.location-grid { grid-template-columns:1fr 1fr; }.director-grid { grid-template-columns:1fr; }.product-grid.large { grid-template-columns:repeat(2,1fr); }.farmers-stats { grid-template-columns:1fr 1fr; gap:20px 0; }.farmers-stats div { border:0; padding-left:0; }.cta-band { grid-template-columns:1fr; gap:20px; }.cta-band .button { justify-self:start; } }
 @media (max-width:640px) { .about,.quality,.contact,.factory-gallery,.purity,.licences,.story-timeline,.directors { padding-top:72px; padding-bottom:72px; }.products,.factory-gallery,.purity,.licences { padding-left:20px; padding-right:20px; }.purity-grid,.empower-grid,.licence-grid,.location-grid { grid-template-columns:1fr; }.form-row { grid-template-columns:1fr; }.page-hero { min-height:300px; }.page-hero-inner { padding-top:70px; padding-bottom:44px; }.timeline:before { left:8px; }.timeline-item { grid-template-columns:1fr; gap:8px; padding:22px 0 22px 34px; }.timeline-item:before { left:3px; top:30px; }.timeline-year { text-align:left; font-size:22px; } }

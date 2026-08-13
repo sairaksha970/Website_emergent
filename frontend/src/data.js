@@ -29,6 +29,10 @@ export const assets = {
   tanker: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/kw7g4obz_Fleet_3.webp",
   aerial: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1plxtpg9_Factory_ariel.webp",
   fleetGarland: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/bx513jer_Fleet_1.webp",
+  videoPlant: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/m6l5yfqt_Creating_factory_hero_shot_film_202608131108.mp4",
+  videoPacking: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/05vbm1x9_Workers_organizing_dairy_products_202608131107.mp4",
+  videoControl: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1iuy72kh_Worker_operating_factory_control%E2%80%A6_202608131107.mp4",
+  videoInspection: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/x08bohmn_Workers_inspecting_dairy_products_202608131252.mp4",
   farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
 };
 
@@ -47,6 +51,13 @@ export const factoryGallery = [
   { title: "Evenings at the plant", caption: "Stone pathways leading to the processing halls", image: assets.dusk },
   { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
   { title: "Kuppam from above", caption: "Silos, chillers and processing halls under one blue roof", image: assets.aerial },
+];
+
+export const plantVideos = [
+  { title: "Inside the Plant", caption: "A walkthrough of our processing facility.", video: assets.videoPlant, poster: "/posters/film1.jpg" },
+  { title: "Packing & Dispatch", caption: "Products organised for same-day delivery.", video: assets.videoPacking, poster: "/posters/film2.jpg" },
+  { title: "Process Control", caption: "Every parameter monitored in real time.", video: assets.videoControl, poster: "/posters/film3.jpg" },
+  { title: "Quality Check", caption: "Every batch inspected before it leaves the floor.", video: assets.videoInspection, poster: "/posters/film4.jpg" },
 ];
 
 export const products = [

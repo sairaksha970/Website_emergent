@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowDown, ArrowUpRight, Check, FlaskConical, PackageCheck, ShieldCheck, Thermometer, X } from "lucide-react";
-import { assets, brands, factoryGallery, products, purityChecks } from "@/data";
+import { ArrowDown, ArrowUpRight, Check, FlaskConical, PackageCheck, Play, ShieldCheck, Thermometer, X } from "lucide-react";
+import { assets, brands, factoryGallery, plantVideos, products, purityChecks } from "@/data";
 
 const purityIcons = { ShieldCheck, Thermometer, FlaskConical, PackageCheck };
 
@@ -130,6 +130,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="plant-films section-pad" data-testid="plant-films-section">
+        <div className="section-heading">
+          <div><div className="section-kicker"><span>06</span><span className="kicker-rule" /><span>PURITY, IN MOTION</span></div><h2>Short films from<br /><em>inside the plant.</em></h2></div>
+          <p>Where every litre is handled with care — watch the work that goes into every pack.</p>
+        </div>
+        <div className="video-grid" data-testid="video-grid">
+          {plantVideos.map((film, index) => (
+            <button className="video-card" key={film.title} onClick={() => setSelectedImage(film)} data-testid={`video-card-${index + 1}`} aria-label={`Play ${film.title} video`}>
+              <video src={film.video} poster={film.poster} muted loop playsInline preload="metadata" />
+              <span className="video-overlay"><span className="video-play"><Play size={20} fill="currentColor" /></span><b>{film.title}</b><small>{film.caption}</small></span>
+            </button>
+          ))}
+        </div>
+      </section>
+
       <section className="future section-pad" data-testid="future-project-section">
         <div className="future-label">LOOKING AHEAD <span>✦</span></div>
         <div>
@@ -148,8 +163,15 @@ export default function Home() {
 
       {selectedImage && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={selectedImage.title} data-testid="factory-lightbox">
-          <button className="lightbox-close" onClick={() => setSelectedImage(null)} data-testid="factory-lightbox-close" aria-label="Close image viewer"><X size={21} /></button>
-          <div className="lightbox-content"><img src={selectedImage.image} alt={selectedImage.caption} data-testid="factory-lightbox-image" /><p><b>{selectedImage.title}</b><span>{selectedImage.caption}</span></p></div>
+          <button className="lightbox-close" onClick={() => setSelectedImage(null)} data-testid="factory-lightbox-close" aria-label="Close viewer"><X size={21} /></button>
+          <div className="lightbox-content">
+            {selectedImage.video ? (
+              <video src={selectedImage.video} poster={selectedImage.poster} controls playsInline data-testid="lightbox-video" ref={(node) => { if (node) node.play().catch(() => {}); }} />
+            ) : (
+              <img src={selectedImage.image} alt={selectedImage.caption} data-testid="factory-lightbox-image" />
+            )}
+            <p><b>{selectedImage.title}</b><span>{selectedImage.caption}</span></p>
+          </div>
         </div>
       )}
     </>
