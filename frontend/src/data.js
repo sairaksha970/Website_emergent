@@ -19,14 +19,24 @@ export const assets = {
   slStandardised: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/5pi0zjr5_srilakshmi_standardized_milk.webp",
   slButterMilk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/avwzv8vh_srilakshmi_buttermilk.webp",
   slCurd: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/q4g421og_srilakshmi_curd.webp",
+  gate: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1y6qg20m_Factory_Entrance.webp",
+  lawns: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/d326ne0f_Factory_1.webp",
+  shrine: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/qm3rlhlz_Temple.webp",
+  dusk: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/2k51sprr_Factory_2.webp",
+  packing: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/7tdwqg3x_Factory_6.webp",
   farmer: "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=1600&auto=format&fit=crop",
 };
 
 export const factoryGallery = [
+  { title: "The gates of Sairaksha", caption: "Our name on the wall — Santhipuram 7th Mile, Kuppam", image: assets.gate },
   { title: "The Kuppam plant", caption: "Our main processing unit in Kuppam, Andhra Pradesh", image: assets.exterior },
   { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
+  { title: "Green by design", caption: "Lawns and open sky around the main processing block", image: assets.lawns },
   { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
+  { title: "Where every day begins", caption: "The campus shrine at the heart of our plant", image: assets.shrine },
   { title: "People behind every pack", caption: "Careful packing and quality checks on the floor", image: assets.production },
+  { title: "Evenings at the plant", caption: "Stone pathways leading to the processing halls", image: assets.dusk },
+  { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
 ];
 
 export const products = [
