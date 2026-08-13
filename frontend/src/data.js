@@ -35,6 +35,8 @@ export const assets = {
   videoInspection: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/x08bohmn_Workers_inspecting_dairy_products_202608131252.mp4",
   farmer: "/images/farmers-hero.webp",
   farmerProcurement: "/images/farmers-procurement.webp",
+  valuesBaba: "/images/values-baba.webp",
+  valuesFounders: "/images/values-founders.webp",
 };
 
 export const factoryGallery = [

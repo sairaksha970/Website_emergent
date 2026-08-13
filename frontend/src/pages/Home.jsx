@@ -75,7 +75,7 @@ export default function Home() {
           <h2>Closer to the source.<br /><em>Stricter about quality.</em></h2>
           <p>Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
           <ul>{["Pasteurised & homogenised processing", "A connected cold chain from village to home", "Licensed and equipped to food safety standards"].map((item) => <li key={item}><span><Check size={13} /></span>{item}</li>)}</ul>
-          <div className="facility-callout"><strong>70,000 L</strong><span>daily processing<br />capacity at our main plant</span></div>
+          <div className="facility-callout"><strong>70,000</strong><span>litres processed daily<br />at our main plant</span></div>
         </div>
       </section>
 

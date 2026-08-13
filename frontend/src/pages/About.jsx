@@ -49,8 +49,18 @@ export default function About() {
         </div>
       </section>
 
+      <section className="values section-pad" data-testid="values-section">
+        <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE VALUES BEHIND SAIRAKSHA</span></div>
+        <h2 className="values-tagline">Inspired by faith.<br /><em>Built by family. Driven by purity.</em></h2>
+        <div className="values-grid">
+          <figure className="values-photo reveal-on-scroll" data-testid="values-baba-photo"><img src={assets.valuesBaba} alt="Sai Baba shrine at the Sairaksha plant" /><figcaption>Guided by blessings</figcaption></figure>
+          <figure className="values-photo reveal-on-scroll" style={{ transitionDelay: "120ms" }} data-testid="values-founders-photo"><img src={assets.valuesFounders} alt="The founders of Sairaksha Dairy" /><figcaption>The vision of our founders</figcaption></figure>
+        </div>
+        <p className="values-story">Our journey began with a simple belief — that purity, honesty and service should be at the heart of everything we do. Guided by the blessings of Sai Baba and the vision of our founders, Sairaksha Dairy has grown from a local dairy into a trusted name serving families across South India.</p>
+      </section>
+
       <section className="story-timeline section-pad" data-testid="timeline-section">
-        <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>FROM LOCAL DAIRY TO TRUSTED BRAND</span></div>
+        <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>FROM LOCAL DAIRY TO TRUSTED BRAND</span></div>
         <h2 className="timeline-heading">Every year,<br /><em>a step further.</em></h2>
         <div className="timeline" data-testid="timeline-list">
           {timeline.map((item) => (
@@ -64,7 +74,7 @@ export default function About() {
 
       <section className="licences section-pad" data-testid="licences-section">
         <div className="section-heading">
-          <div><div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>LICENSED & CERTIFIED</span></div><h2>Compliant,<br /><em>at every step.</em></h2></div>
+          <div><div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>LICENSED & CERTIFIED</span></div><h2>Compliant,<br /><em>at every step.</em></h2></div>
           <p>We are well equipped with all food safety standard norms and hold every licence our work demands.</p>
         </div>
         <div className="licence-grid" data-testid="licence-grid">
