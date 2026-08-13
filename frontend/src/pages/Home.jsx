@@ -1,46 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Check, FlaskConical, PackageCheck, ShieldCheck, Thermometer, X } from "lucide-react";
+import { ArrowUpRight, Check, FlaskConical, Milk, PackageCheck, ShieldCheck, Thermometer, Truck, Users, X } from "lucide-react";
 import { assets, factoryGallery, plantVideos, products, purityChecks } from "@/data";
 
 const purityIcons = { ShieldCheck, Thermometer, FlaskConical, PackageCheck };
 
-const heroLayers = [
-  { key: "back", image: assets.paneer, alt: "Amogh paneer pack", depth: 8 },
-  { key: "mid", image: assets.curd, alt: "Gomukhi curd with a fresh bowl", depth: 15 },
-  { key: "front", image: assets.milk, alt: "Gomukhi full cream milk pouches", depth: 24 },
+const heroStats = [
+  { icon: Milk, value: "70k", suffix: "+", label: "litres sold daily" },
+  { icon: Truck, value: "23", suffix: "", label: "insulated vehicles" },
+  { icon: Users, value: "200", suffix: "", label: "people at work" },
 ];
 
 const pick = (name, brand) => products.find((p) => p.name === name && p.brand === brand);
 
+const showcase = [
+  { product: pick("Fresh Curd", "Gomukhi"), blurb: "Thick, creamy and fresh. Made with pure cow milk for every meal." },
+  { product: pick("Butter Milk", "Sri Lakshmi"), blurb: "Refreshing and light. A perfect blend of taste and tradition." },
+  { product: pick("Paneer", "Amogh"), blurb: "Soft, wholesome and protein rich. Perfect for everyday cooking." },
+  { product: pick("Full Cream Milk", "Gomukhi"), blurb: "Made from pure cow milk. Rich aroma and natural goodness." },
+].filter((item) => item.product);
+
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const heroRef = useRef(null);
   const filmsRef = useRef(null);
-
-  const featured = pick("Full Cream Milk", "Gomukhi");
-  const stacked = [pick("Fresh Curd", "Gomukhi"), pick("Paneer", "Amogh")].filter(Boolean);
-  const rowItems = [pick("Unsweetened Khova", "Amogh"), pick("Full Cream Milk", "Sri Lakshmi"), pick("Butter Milk", "Sri Lakshmi")].filter(Boolean);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const layers = hero.querySelectorAll(".stage-layer");
-    const onMove = (event) => {
-      const rect = hero.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      layers.forEach((layer) => {
-        const depth = Number(layer.dataset.depth || 10);
-        layer.style.setProperty("--px", `${(-x * depth).toFixed(1)}px`);
-        layer.style.setProperty("--py", `${(-y * depth).toFixed(1)}px`);
-      });
-    };
-    const onLeave = () => layers.forEach((layer) => { layer.style.setProperty("--px", "0px"); layer.style.setProperty("--py", "0px"); });
-    hero.addEventListener("mousemove", onMove);
-    hero.addEventListener("mouseleave", onLeave);
-    return () => { hero.removeEventListener("mousemove", onMove); hero.removeEventListener("mouseleave", onLeave); };
-  }, []);
 
   useEffect(() => {
     const videos = filmsRef.current ? Array.from(filmsRef.current.querySelectorAll("video")) : [];
@@ -57,69 +39,54 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero2 section-pad" id="home" data-testid="hero-section" ref={heroRef}>
-        <div className="hero-copy">
-          <p className="eyebrow reveal-up"><span className="eyebrow-line" /> Rooted in trust · Made in Kuppam</p>
-          <h1 className="reveal-up delay-1">From where it begins.<br /><em>To where it belongs.</em></h1>
-          <p className="hero-intro reveal-up delay-2">From farmers we know to families we serve — quality dairy, made with care in Kuppam.</p>
-          <div className="hero-actions reveal-up delay-3">
-            <Link className="button button-dark" to="/products" data-testid="hero-explore-products-button">Explore our products <ArrowUpRight size={16} /></Link>
-            <Link className="text-button" to="/about" data-testid="hero-our-story-button">Our story <ArrowUpRight size={16} /></Link>
-          </div>
-          <div className="hero-proof reveal-up delay-4" data-testid="hero-proof-stats">
-            <div><strong>70K<span>+</span></strong><small>litres sold daily</small></div>
-            <div><strong>23</strong><small>insulated vehicles</small></div>
-            <div><strong>200<span>+</span></strong><small>people at work</small></div>
-          </div>
-        </div>
-        <div className="hero-stage" data-testid="hero-showcase">
-          {heroLayers.map((layer, index) => (
-            <div className={`stage-layer layer-${layer.key}`} data-depth={layer.depth} key={layer.key} style={{ animationDelay: `${0.35 + index * 0.18}s` }}>
-              <img src={layer.image} alt={layer.alt} className="stage-float" style={{ animationDuration: `${6 + index * 1.4}s` }} data-testid={layer.key === "front" ? "hero-product-image" : undefined} />
+      <section className="hero3" id="home" data-testid="hero-section">
+        <img className="hero3-bg" src={assets.curd} alt="Gomukhi curd pouches with a fresh bowl of curd" data-testid="hero-product-image" />
+        <div className="section-pad hero3-inner">
+          <div className="hero-copy">
+            <p className="eyebrow reveal-up"><span className="eyebrow-line" /> Rooted in trust · Made in Kuppam</p>
+            <h1 className="reveal-up delay-1">Goodness that<br /><em>comes full circle.</em></h1>
+            <p className="hero-intro reveal-up delay-2">From the first collection at the village<br />to the last pour at home,<br />we protect what makes milk good.</p>
+            <div className="hero-actions reveal-up delay-3">
+              <Link className="button button-dark" to="/products" data-testid="hero-explore-products-button">Explore our products <ArrowUpRight size={16} /></Link>
+              <Link className="text-button" to="/about" data-testid="hero-our-story-button">Discover our story <ArrowUpRight size={16} /></Link>
             </div>
-          ))}
-          <span className="stage-shadow" aria-hidden="true" />
+            <div className="hero3-proof reveal-up delay-4" data-testid="hero-proof-stats">
+              {heroStats.map((stat) => {
+                const Icon = stat.icon;
+                return (
+                  <div className="hero3-stat" key={stat.label}>
+                    <span className="hero3-stat-icon"><Icon size={17} /></span>
+                    <div><strong>{stat.value}<span>{stat.suffix}</span></strong><small>{stat.label}</small></div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
-      </section>
-
-      <section className="table-intro" data-testid="transition-section">
-        <p className="eyebrow reveal-on-scroll"><span className="eyebrow-line" /> From our dairy to your table</p>
-        <h2 className="reveal-on-scroll">Made for <em>everyday goodness.</em></h2>
-        <p className="reveal-on-scroll">Fresh dairy essentials, made with care and delivered with consistency.</p>
       </section>
 
       <section className="edit-products section-pad" data-testid="products-section">
-        <div className="edit-heading">
-          <div><div className="section-kicker reveal-on-scroll"><span>01</span><span className="kicker-rule" /><span>OUR PRODUCTS</span></div>
-          <h2 className="reveal-on-scroll">Everyday dairy.<br /><em>Done beautifully.</em></h2></div>
-          <p className="reveal-on-scroll">From fresh curd to everyday essentials, discover the products families trust.</p>
+        <div className="sp-head" data-testid="transition-section">
+          <p className="eyebrow reveal-on-scroll">Our Products</p>
+          <h2 className="reveal-on-scroll">Made for <em>everyday goodness.</em></h2>
+          <p className="reveal-on-scroll">Pure ingredients. Honest processes. Trusted by families.</p>
         </div>
-        <div className="edit-grid" data-testid="product-grid">
-          {featured && (
-            <Link to="/products?brand=Gomukhi" className="edit-card featured reveal-on-scroll" data-testid="product-card-featured">
-              <div className="edit-img"><img src={featured.image} alt={`${featured.brand} ${featured.name}`} /></div>
-              <div className="edit-meta"><small>{featured.category}</small><div><h3>{featured.brand} {featured.name}</h3><p>{featured.note}</p></div><span className="edit-arrow">View product <ArrowUpRight size={15} /></span></div>
-            </Link>
-          )}
-          <div className="edit-stack">
-            {stacked.map((product, index) => (
-              <Link to={`/products?brand=${encodeURIComponent(product.brand)}`} className="edit-card reveal-on-scroll" style={{ transitionDelay: `${(index + 1) * 100}ms` }} key={`${product.brand}-${product.name}`} data-testid={`product-card-${product.brand.toLowerCase().replace(" ", "-")}-${product.name.toLowerCase().replaceAll(" ", "-")}`}>
-                <div className="edit-img"><img src={product.image} alt={`${product.brand} ${product.name}`} /></div>
-                <div className="edit-meta"><small>{product.category}</small><div><h3>{product.brand} {product.name}</h3><p>{product.note}</p></div><span className="edit-arrow">View product <ArrowUpRight size={15} /></span></div>
-              </Link>
-            ))}
-          </div>
-        </div>
-        <div className="edit-row" data-testid="product-row">
-          {rowItems.map((product, index) => (
-            <Link to={`/products?brand=${encodeURIComponent(product.brand)}`} className="edit-card small reveal-on-scroll" style={{ transitionDelay: `${index * 90}ms` }} key={`${product.brand}-${product.name}`} data-testid={`product-card-${product.brand.toLowerCase().replace(" ", "-")}-${product.name.toLowerCase().replaceAll(" ", "-")}`}>
-              <div className="edit-img"><img src={product.image} alt={`${product.brand} ${product.name}`} /></div>
-              <div className="edit-meta"><small>{product.category}</small><div><h3>{product.brand} {product.name}</h3><p>{product.note}</p></div><span className="edit-arrow">View product <ArrowUpRight size={15} /></span></div>
+        <div className="sp-grid" data-testid="product-grid">
+          {showcase.map(({ product, blurb }, index) => (
+            <Link to={`/products?brand=${encodeURIComponent(product.brand)}`} className="sp-card reveal-on-scroll" style={{ transitionDelay: `${index * 90}ms` }} key={`${product.brand}-${product.name}`} data-testid={`product-card-${product.brand.toLowerCase().replace(" ", "-")}-${product.name.toLowerCase().replaceAll(" ", "-")}`}>
+              <div className="sp-img"><img src={product.image} alt={`${product.brand} ${product.name}`} /></div>
+              <div className="sp-meta">
+                <h3>{product.brand} {product.name === "Fresh Curd" ? "Curd" : product.name}</h3>
+                <p>{blurb}</p>
+                <span className="sp-more">Learn more <ArrowUpRight size={13} /></span>
+              </div>
             </Link>
           ))}
-          <Link to="/products" className="edit-card small all-card reveal-on-scroll" data-testid="view-all-products-button">
-            <div className="all-card-inner"><b>View the<br /><em>full range</em></b><span className="edit-arrow">All products <ArrowUpRight size={15} /></span></div>
-          </Link>
+        </div>
+        <div className="sp-strip reveal-on-scroll" data-testid="products-strip">
+          <span className="sp-strip-icon"><Milk size={30} /></span>
+          <p>From our farms to your home,<br /><em>quality you can trust, every day.</em></p>
+          <Link className="button button-dark" to="/products" data-testid="view-all-products-button">Explore all products <ArrowUpRight size={16} /></Link>
         </div>
       </section>
 
