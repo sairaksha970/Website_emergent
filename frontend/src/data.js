@@ -95,29 +95,21 @@ export const purityChecks = [
 ];
 
 export const timeline = [
-  { year: "2012", title: "Foundation", text: "Sairaksha Dairy Products Pvt Ltd is incorporated on 7 June 2012, beginning operations with 5,000 litres of liquid milk a day.", tag: "5,000 L / day" },
-  { year: "2015", title: "A connected network", text: "Three chilling centres at Rayakotai, Indure and Thirupathur link village collection to the Kuppam packing unit.", tag: "3 chilling centres" },
-  { year: "2019", title: "Multi-state reach", text: "Distribution expands across Andhra Pradesh, Karnataka and Tamil Nadu with our own insulated fleet.", tag: "3 states" },
-  { year: "2022", title: "Scale with care", text: "Sales cross the ₹100 crore run-rate as daily volumes reach 50,000 litres of milk and curd, plus 2,000 kgs of paneer.", tag: "50,000 L / day" },
-  { year: "2024", title: "₹100 crore turnover", text: "Turnover stands at ₹100 crores as on 31.03.2024, with 2,00,000 litres of storage capacity at Kuppam.", tag: "₹100 cr turnover" },
-  { year: "2027", title: "The SMP vision", text: "A planned skimmed milk powder plant at Kuppam — 25 MT/day — creating around 300 local opportunities.", tag: "25 MT / day" },
+  { year: "2012", title: "Foundation", text: "Sairaksha Dairy Products Private Limited was incorporated on 7 June 2012, beginning its journey with liquid milk operations of approximately 5,000 litres per day.", tag: "5,000 Litres / Day" },
+  { year: "2015", title: "A Connected Network", text: "Our collection network expanded with chilling centres at Rayakotai, Indure and Thirupathur, connecting village-level milk procurement with our Kuppam processing and packing operations.", tag: "3 Chilling Centres" },
+  { year: "2019", title: "Multi-State Reach", text: "Distribution expanded across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana, supported by our own fleet of insulated vehicles.", tag: "4 States" },
+  { year: "2022", title: "Scale with Care", text: "Daily sales volumes grew to approximately 50,000 litres of milk and curd, together with approximately 2,000 kg of paneer every day, marking a significant milestone in our growth journey.", tag: "50,000 Litres / Day" },
+  { year: "2024", title: "₹100 Crore Turnover", text: "As on 31 March 2024, the company achieved a turnover of approximately ₹100 crore, supported by expanded operations and 2,00,000 litres of storage capacity at Kuppam.", tag: "₹100 Crore" },
+  { year: "2027", title: "The SMP Vision", text: "Sairaksha Dairy is planning a Skimmed Milk Powder (SMP) plant at Kuppam with a proposed capacity of 25 MT per day — expanding our product portfolio, strengthening the local dairy ecosystem and creating approximately 300 employment and livelihood opportunities.", tag: "25 MT / Day" },
 ];
 
-export const licences = [
-  { name: "MSME Registration", value: "KR02B0005215" },
-  { name: "FSSAI Licence", value: "10018043002284" },
-  { name: "PCB Registration", value: "CTR-441/APPCB/ZO-KNL/CFO/2024" },
-  { name: "Boiler License", value: "B2/270/2023" },
-  { name: "Labour License", value: "26/55/CE/00519/2013" },
-  { name: "ESI Registration", value: "50000442430000002" },
-  { name: "PF Registration", value: "PY/BOM/1007772" },
-];
+export const fssaiNumber = "10118010000287";
 
 export const locations = [
   { name: "Rayakotai CC", capacity: "50,000 L / day", role: "Chilling centre" },
   { name: "Indure CC", capacity: "10,000 L / day", role: "Chilling centre" },
-  { name: "Thirupathur CC", capacity: "10,000 L / day", role: "Chilling centre" },
-  { name: "Kuppam Packing Unit", capacity: "2,00,000 L / day", role: "Main plant · Santhipuram 7th mile" },
+  { name: "Thirupathur CC", capacity: "50,000 L / day", role: "Chilling centre" },
+  { name: "Kuppam Packing Unit", capacity: "70,000 L / day production", role: "Main plant · Chittoor Dist" },
 ];
 
 export const empowerment = [

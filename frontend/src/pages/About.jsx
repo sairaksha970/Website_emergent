@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import { assets, licences, timeline } from "@/data";
+import { assets, fssaiNumber, timeline } from "@/data";
+
+const scaleMetrics = [
+  { value: "₹100 Crore", label: "Turnover as on 31 March 2024" },
+  { value: "50,000 L / day", label: "Milk & curd sales" },
+  { value: "2,000 kg / day", label: "Paneer sales" },
+  { value: "70,000 L / day", label: "Kuppam plant handling capacity" },
+  { value: "2,00,000 L", label: "Storage capacity" },
+  { value: "200+", label: "People at work" },
+  { value: "23", label: "Insulated vehicles" },
+  { value: "₹3.5 Crore", label: "Approx. stocks maintained at any time" },
+];
 
 export default function About() {
   return (
@@ -9,8 +18,8 @@ export default function About() {
       <PageHero
         testId="about-hero"
         eyebrow="About Us"
-        title={<>A legacy of purity,<br /><em>built on trust.</em></>}
-        intro="From a small milk collection network to one of the region's most trusted dairy enterprises — the Sairaksha journey is one of unwavering commitment to quality."
+        title={<>Built slowly.<br /><em>Grown with purpose.</em></>}
+        intro="A dependable dairy business rooted in quality, discipline and long-term relationships."
         image={assets.exterior}
       />
 
@@ -19,38 +28,48 @@ export default function About() {
         <div className="about-grid">
           <h2>Built slowly.<br /><em>Grown with purpose.</em></h2>
           <div className="about-copy">
-            <p>SAIRAKSHA DAIRY PRODUCTS PRIVATE LIMITED is a closely held company incorporated on 07/06/2012. We began operations with 5,000 litres of liquid milk a day — today we sell about 50,000 litres of milk and curd, and about 2,000 kgs of paneer, every single day.</p>
-            <p>Our main plant at Kuppam, Andhra Pradesh handles 70,000 litres daily with a storage capacity of 2,00,000 litres, supported by three chilling centres within an 80 km radius and our own fleet of 23 insulated vehicles.</p>
+            <p>SAIRAKSHA DAIRY PRODUCTS PRIVATE LIMITED is a closely held company incorporated on 7 June 2012, with a clear purpose: to build a dependable dairy business rooted in quality, discipline and long-term relationships.</p>
+            <p>What began with just 5,000 litres of liquid milk per day has grown into a well-established dairy operation handling approximately 50,000 litres of milk and curd and 2,000 kg of paneer every day.</p>
+            <p>Our main processing facility at Kuppam, Andhra Pradesh, has a production capacity of approximately 70,000 litres per day and storage capacity of 2,00,000 litres. Our operations are supported by three strategically located chilling centres within an 80-kilometre radius and an owned fleet of 23 insulated vehicles, enabling efficient collection, processing and distribution.</p>
+            <p>Today, Sairaksha Dairy serves customers across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana, with a growing reputation for consistency, quality and reliability.</p>
           </div>
         </div>
-        <div className="metric-row" data-testid="about-metrics">
-          <div><strong>₹100<span>cr</span></strong><small>turnover as on 31.03.2024</small></div>
-          <div><strong>200</strong><small>people at work</small></div>
-          <div><strong>23</strong><small>insulated vehicles</small></div>
-          <div><strong>₹3.5<span>cr</span></strong><small>stocks on hand at any time</small></div>
+      </section>
+
+      <section className="scale section-pad" data-testid="scale-section">
+        <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>OUR SCALE</span></div>
+        <h2 className="values-tagline">The numbers behind<br /><em>the nourishment.</em></h2>
+        <div className="scale-grid" data-testid="scale-grid">
+          {scaleMetrics.map((metric) => (
+            <div className="scale-card" key={metric.label} data-testid={`scale-${metric.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+              <b>{metric.value}</b><small>{metric.label}</small>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="directors section-pad" data-testid="directors-section">
         <div className="section-heading">
-          <div><div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>LEADERSHIP</span></div><h2>The people<br /><em>behind the promise.</em></h2></div>
+          <div><div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>OUR LEADERSHIP</span></div><h2>The people<br /><em>behind the promise.</em></h2></div>
         </div>
         <div className="director-grid">
           <article className="director-card" data-testid="director-card-anuradha">
             <small>Director</small>
-            <h3>Mrs. V Anuradha Vinod</h3>
-            <p>An ex-banker with 14 years of banking experience who brought her discipline to the dairy industry. She holds an MBA in Human Resources.</p>
+            <h3>Mrs. V. Anuradha Vinod</h3>
+            <p>An accomplished professional with 14 years of banking experience, Mrs. V. Anuradha Vinod brings strong financial discipline, organisational expertise and a structured approach to the dairy business.</p>
+            <p>An MBA in Human Resources, she has played an important role in shaping the company's administration, financial management and organisational growth, while helping build Sairaksha Dairy with a long-term vision.</p>
           </article>
           <article className="director-card" data-testid="director-card-krishna">
             <small>Director</small>
-            <h3>Mr. N Lovely Krishna</h3>
-            <p>Brings 16 years of rich experience in the dairy industry, with a Bachelor's degree in Mathematics.</p>
+            <h3>Mr. N. Lovely Krishna</h3>
+            <p>With 16 years of experience in the dairy industry, Mr. N. Lovely Krishna brings extensive practical knowledge of dairy operations, milk procurement, processing and industry dynamics.</p>
+            <p>A Bachelor's degree in Mathematics, his experience and operational understanding have contributed significantly to the company's growth and its ability to build strong relationships across the dairy value chain.</p>
           </article>
         </div>
       </section>
 
       <section className="values section-pad" data-testid="values-section">
-        <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE VALUES BEHIND SAIRAKSHA</span></div>
+        <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>THE VALUES BEHIND SAIRAKSHA</span></div>
         <h2 className="values-tagline">Inspired by faith.<br /><em>Built by family. Driven by purity.</em></h2>
         <div className="flourish" aria-hidden="true"><span /></div>
         <div className="values-grid">
@@ -73,40 +92,40 @@ export default function About() {
       </section>
 
       <section className="story-timeline section-pad" data-testid="timeline-section">
-        <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>FROM LOCAL DAIRY TO TRUSTED BRAND</span></div>
+        <div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>FROM LOCAL DAIRY TO TRUSTED BRAND</span></div>
         <h2 className="timeline-heading">Every year,<br /><em>a step further.</em></h2>
         <div className="timeline" data-testid="timeline-list">
           {timeline.map((item) => (
             <div className="timeline-item" key={item.year} data-testid={`timeline-item-${item.year}`}>
               <span className="timeline-year">{item.year}</span>
-              <div><h3>{item.title}</h3><p>{item.text}</p><span className="timeline-tag">{item.tag}</span></div>
+              <div><h3>{item.title}</h3><span className="timeline-tag">{item.tag}</span><p>{item.text}</p></div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="licences section-pad" data-testid="licences-section">
-        <div className="section-heading">
-          <div><div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>LICENSED & CERTIFIED</span></div><h2>Compliant,<br /><em>at every step.</em></h2></div>
-          <p>We are well equipped with all food safety standard norms and hold every licence our work demands.</p>
-        </div>
-        <div className="licence-grid" data-testid="licence-grid">
-          {licences.map((licence) => (
-            <div className="licence-card" key={licence.name} data-testid={`licence-${licence.name.toLowerCase().replaceAll(" ", "-")}`}>
-              <small>{licence.name}</small><b>{licence.value}</b>
-            </div>
-          ))}
+      <section className="licences section-pad" data-testid="quality-standards-section">
+        <div className="section-kicker"><span>06</span><span className="kicker-rule" /><span>QUALITY & FOOD SAFETY</span></div>
+        <h2 className="values-tagline">Quality is not an option.<br /><em>It is our standard.</em></h2>
+        <div className="quality-standards-copy">
+          <p>At Sairaksha Dairy, quality begins at the point of milk procurement and continues through chilling, processing, packing, storage and distribution.</p>
+          <p>We follow established food safety, hygiene and quality-control practices across our operations and maintain the licences, registrations and approvals required for our business activities.</p>
+          <p className="quality-objective">Our objective is simple: <b>Safe products. Consistent quality. Responsible operations.</b></p>
+          <p>We continuously work towards strengthening our systems, infrastructure and compliance standards as the business grows.</p>
+          <div className="fssai-chip" data-testid="fssai-chip"><small>FSSAI License No.</small><b>{fssaiNumber}</b></div>
         </div>
       </section>
 
-      <section className="future section-pad" data-testid="vision-section">
-        <div className="future-label">OUR VISION <span>✦</span></div>
+      <section className="future section-pad" data-testid="promise-section">
+        <div className="future-label">OUR PROMISE <span>✦</span></div>
         <div>
-          <h2>India's most trusted<br /><em>dairy brand.</em></h2>
-          <p>To set the gold standard for purity, farmer welfare and sustainable dairy farming — one glass of milk at a time. Our next chapter is the SMP powder plant at Kuppam.</p>
-          <Link className="button button-light" to="/products" data-testid="vision-products-button">See what we make <ArrowUpRight size={16} /></Link>
+          <h2>From farmers<br /><em>to families.</em></h2>
+          <p>Dairy is more than a business. It is a relationship that connects farmers, employees, partners and consumers.</p>
+          <p>Our journey from 5,000 litres a day to a multi-state dairy operation has been built step by step — with the trust of our milk suppliers, the commitment of our people and the confidence of our customers.</p>
+          <p>As we move into our next phase of growth, our focus remains unchanged:</p>
+          <p className="promise-focus" data-testid="promise-focus">Quality in every drop.<br />Integrity in every relationship.<br />Purpose in every step forward.</p>
         </div>
-        <div className="future-year"><span>Since</span><strong>2012</strong><small>and still growing</small></div>
+        <div className="future-year"><span>Sairaksha Dairy</span><strong>2012</strong><small>Built slowly · Grown with purpose<br />Driven by quality · Ready for tomorrow</small></div>
       </section>
     </>
   );

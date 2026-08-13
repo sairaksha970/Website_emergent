@@ -134,6 +134,7 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .director-card small { color:var(--copper); font-size:10px; text-transform:uppercase; letter-spacing:.12em; }
 .director-card h3 { font:500 26px "Playfair Display",Georgia,serif; color:var(--forest); margin:10px 0 12px; }
 .director-card p { color:var(--muted); font-size:13px; line-height:1.75; }
+.director-card p + p { margin-top:12px; }
 
 .licences { padding-top:72px; padding-bottom:78px; }
 .licence-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:46px; }
@@ -198,6 +199,22 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .masonry-item:hover img { transform:scale(1.05); filter:brightness(.82); }
 @media (max-width:900px) { .masonry { columns:2; } }
 @media (max-width:640px) { .masonry { columns:1; } }
+
+.scale { padding-top:0; padding-bottom:78px; }
+.scale-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:44px; }
+.scale-card { border:1px solid var(--line); background:var(--paper); padding:22px 20px; transition:transform .25s ease, border-color .25s ease; }
+.scale-card:hover { transform:translateY(-3px); border-color:var(--copper); }
+.scale-card b { font:500 24px "Playfair Display",Georgia,serif; color:var(--forest); display:block; }
+.scale-card small { color:var(--muted); font-size:11px; display:block; margin-top:8px; line-height:1.5; }
+@media (max-width:900px) { .scale-grid { grid-template-columns:1fr 1fr; } }
+
+.quality-standards-copy { max-width:640px; margin-top:34px; }
+.quality-standards-copy p { color:var(--muted); font-size:15px; line-height:1.8; margin-bottom:16px; }
+.quality-objective b { color:var(--forest); font-weight:600; }
+.fssai-chip { display:inline-flex; align-items:center; gap:12px; border:1px solid var(--forest); background:#eaf0e6; padding:13px 20px; margin-top:14px; }
+.fssai-chip small { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+.fssai-chip b { color:var(--forest); font-size:14px; letter-spacing:.04em; }
+.promise-focus { color:#f5f0e5 !important; font:500 19px "Playfair Display",Georgia,serif !important; line-height:1.9 !important; margin-top:6px !important; }
 
 .values { padding-top:0; padding-bottom:78px; }
 .values-tagline { font-size:clamp(36px, 4vw, 56px); line-height:1.05; color:var(--forest); }

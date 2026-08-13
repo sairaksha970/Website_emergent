@@ -28,7 +28,7 @@ export default function Contact() {
           <a className="contact-card whatsapp" href="https://wa.me/919902581903" target="_blank" rel="noopener noreferrer" data-testid="whatsapp-contact-card"><MessageCircle size={24} /><span><small>WhatsApp us</small><b>99025 81903</b></span></a>
           <a className="contact-card" href="tel:+918884448402" data-testid="phone-contact-card"><Phone size={24} /><span><small>Call the dairy</small><b>88844 48402</b></span></a>
           <div className="contact-card" data-testid="address-contact-card"><MapPin size={24} /><span><small>Registered office</small><b>Plot No. 323, 1st Floor, Jigani–Bommasandra Link Road, Near Honda Showroom, APC Circle, Jigani, Anekal Tq, Bangalore - 560 105</b></span></div>
-          <div className="contact-card" data-testid="plant-contact-card"><MapPin size={24} /><span><small>Main plant</small><b>Santhipuram 7th Mile, Kuppam, Andhra Pradesh</b></span></div>
+          <div className="contact-card" data-testid="plant-contact-card"><MapPin size={24} /><span><small>Main plant</small><b>Plot No. 18/3A, Kanamala Doddi Village, Morasana Palli Panchayath, Santhipuram Mandal, Chittoor Dist, Andhra Pradesh - 517423</b></span></div>
           <a className="contact-card" href="mailto:sairakshadairy@yahoo.com" data-testid="email-contact-card"><Mail size={24} /><span><small>Email enquiries</small><b>sairakshadairy@yahoo.com</b></span></a>
         </div>
       </section>

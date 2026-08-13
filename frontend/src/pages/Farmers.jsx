@@ -12,7 +12,7 @@ export default function Farmers() {
         testId="farmers-hero"
         eyebrow="Our Farmer Partners"
         title={<>Empowering farming<br /><em>families, every day.</em></>}
-        intro="Our milk begins in the villages around Kuppam — collected fresh, twice daily, from farming families across Andhra Pradesh, Karnataka and Tamil Nadu."
+        intro="Our milk begins in the villages around Kuppam — collected fresh, twice daily, from farming families across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana."
         image={assets.farmer}
       />
 
@@ -20,10 +20,10 @@ export default function Farmers() {
         <div className="quality-copy">
           <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>DIRECT FARMER PROCUREMENT</span></div>
           <h2>Mutual growth,<br /><em>from the ground up.</em></h2>
-          <p>Our procurement model is built on the principle of mutual growth. We work with small and marginal dairy farmers across three states, eliminating middlemen and ensuring fair prices.</p>
+          <p>Our procurement model is built on the principle of mutual growth. We work with small and marginal dairy farmers across four states, eliminating middlemen and ensuring fair prices.</p>
           <p>Through our village-level collection centres, we pick up fresh milk twice daily, so farmers never face wastage. Our transparent pricing, based on fat and SNF content, guarantees every farmer fair value for their produce.</p>
           <div className="metric-row farmers-stats" data-testid="farmer-stats">
-            <div><strong>3</strong><small>states of collection</small></div>
+            <div><strong>4</strong><small>states of collection</small></div>
             <div><strong>3</strong><small>chilling centres</small></div>
             <div><strong>2x</strong><small>milk collected daily</small></div>
             <div><strong>100<span>%</span></strong><small>fair trade</small></div>
