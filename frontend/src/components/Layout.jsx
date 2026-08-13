@@ -62,7 +62,7 @@ export default function Layout() {
           <Link to="/farmers" data-testid="footer-farmers-link">Farmers</Link>
           <Link to="/contact" data-testid="footer-contact-link">Contact</Link>
         </div>
-        <span className="copyright">© 2024 Sairaksha Dairy</span>
+        <span className="copyright">© 2012 Sairaksha Dairy</span>
       </footer>
     </main>
   );

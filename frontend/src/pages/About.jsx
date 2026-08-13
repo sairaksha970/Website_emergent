@@ -17,8 +17,8 @@ export default function About() {
       <PageHero
         testId="about-hero"
         eyebrow="About Us"
-        title={<>Built slowly.<br /><em>Grown with purpose.</em></>}
         intro="A dependable dairy business rooted in quality, discipline and long-term relationships."
+        title={<>Rooted in Kuppam.<br /><em>Raised with care.</em></>}
         image={assets.exterior}
       />
 
@@ -109,14 +109,18 @@ export default function About() {
       </section>
 
       <section className="licences section-pad" data-testid="quality-standards-section">
-        <div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>QUALITY & FOOD SAFETY</span></div>
-        <h2 className="values-tagline">Quality is not an option.<br /><em>It is our standard.</em></h2>
-        <div className="quality-standards-copy">
-          <p>At Sairaksha Dairy, quality begins at the point of milk procurement and continues through chilling, processing, packing, storage and distribution.</p>
-          <p>We follow established food safety, hygiene and quality-control practices across our operations and maintain the licences, registrations and approvals required for our business activities.</p>
-          <p className="quality-objective">Our objective is simple: <b>Safe products. Consistent quality. Responsible operations.</b></p>
-          <p>We continuously work towards strengthening our systems, infrastructure and compliance standards as the business grows.</p>
-          <div className="fssai-chip" data-testid="fssai-chip"><small>FSSAI License No.</small><b>{fssaiNumber}</b></div>
+        <div className="qs-grid">
+          <div>
+            <div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>QUALITY & FOOD SAFETY</span></div>
+            <h2 className="values-tagline">Quality is not an option.<br /><em>It is our standard.</em></h2>
+            <div className="fssai-chip" data-testid="fssai-chip"><small>FSSAI License No.</small><b>{fssaiNumber}</b></div>
+          </div>
+          <div className="quality-standards-copy">
+            <p>At Sairaksha Dairy, quality begins at the point of milk procurement and continues through chilling, processing, packing, storage and distribution.</p>
+            <p>We follow established food safety, hygiene and quality-control practices across our operations and maintain the licences, registrations and approvals required for our business activities.</p>
+            <p className="quality-objective">Our objective is simple: <b>Safe products. Consistent quality. Responsible operations.</b></p>
+            <p>We continuously work towards strengthening our systems, infrastructure and compliance standards as the business grows.</p>
+          </div>
         </div>
       </section>
 
@@ -134,7 +138,7 @@ export default function About() {
             </div>
           </div>
           <div className="promise-visual">
-            <img src={assets.aerial} alt="Aerial view of the Sairaksha Dairy plant at Kuppam" />
+            <img src={assets.farmer} alt="Sairaksha farmer partners with their cattle" />
             <div className="promise-stamp">
               <small>Sairaksha Dairy</small>
               <strong>2012</strong>

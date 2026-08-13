@@ -216,7 +216,7 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .purity-verified { margin-top:auto; display:flex; align-items:center; gap:6px; font-size:10px; color:var(--forest); text-transform:uppercase; letter-spacing:.09em; }
 .purity-verified b { color:var(--copper); font-size:13px; }
 
-.story-timeline { padding-top:52px; padding-bottom:56px; }
+.story-timeline { padding-top:36px; padding-bottom:52px; }
 .timeline-heading { font-size:clamp(39px, 4.3vw, 61px); line-height:1.02; }
 .timeline { position:relative; margin-top:56px; }
 .timeline:before { content:""; position:absolute; left:118px; top:0; bottom:0; width:1px; background:var(--line); }
@@ -360,15 +360,18 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .scale-card small { color:var(--muted); font-size:11px; display:block; margin-top:8px; line-height:1.5; }
 @media (max-width:900px) { .scale-grid { grid-template-columns:1fr 1fr; } }
 
-.quality-standards-copy { max-width:640px; margin-top:34px; }
-.quality-standards-copy p { color:var(--muted); font-size:15px; line-height:1.8; margin-bottom:16px; }
+.qs-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+.qs-grid .fssai-chip { margin-top:34px; }
+.quality-standards-copy { max-width:640px; margin-top:0; }
+.quality-standards-copy p { color:var(--muted); font-size:13.5px; line-height:1.8; margin-bottom:14px; }
+@media (max-width:900px) { .qs-grid { grid-template-columns:1fr; gap:26px; } }
 .quality-objective b { color:var(--forest); font-weight:600; }
 .fssai-chip { display:inline-flex; align-items:center; gap:12px; border:1px solid var(--forest); background:#eaf0e6; padding:13px 20px; margin-top:14px; }
 .fssai-chip small { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
 .fssai-chip b { color:var(--forest); font-size:14px; letter-spacing:.04em; }
 .promise-focus { color:#f5f0e5 !important; font:500 19px "Playfair Display",Georgia,serif !important; line-height:1.9 !important; margin-top:6px !important; }
 
-.values { padding-top:0; padding-bottom:78px; }
+.values { padding-top:0; padding-bottom:36px; }
 .values-tagline { font-size:clamp(36px, 4vw, 56px); line-height:1.05; color:var(--forest); }
 .flourish { display:flex; align-items:center; gap:12px; max-width:280px; margin:26px 0; }
 .flourish:before,.flourish:after { content:""; height:1px; flex:1; background:var(--line); }
