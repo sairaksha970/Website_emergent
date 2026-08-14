@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
-  Check,
   CheckCircle2,
   Cpu,
   Droplets,
@@ -10,13 +9,16 @@ import {
   Leaf,
   Recycle,
   ShieldCheck,
-  Sparkles,
   Sprout,
   Stethoscope,
   TrendingUp,
   Users,
   Waves,
-  Camera
+  Zap,
+  Clock,
+  FlaskConical,
+  Sparkles,
+  ArrowRight
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import { assets, empowerment, locations } from "@/data";
@@ -24,18 +26,18 @@ import { assets, empowerment, locations } from "@/data";
 const empowerIcons = { IndianRupee, GraduationCap, Stethoscope, TrendingUp, Users, ShieldCheck };
 
 const cipCycles = [
-  { step: "01", name: "Pre-Rinsing", desc: "Flushes residual milk from lines and circuits" },
-  { step: "02", name: "Caustic Cleaning", desc: "Removes fats, proteins and organic residues" },
-  { step: "03", name: "Intermediate Rinse", desc: "Clears detergents before acid wash" },
-  { step: "04", name: "Acid Cleaning", desc: "Dissolves scale and inorganic mineral deposits" },
-  { step: "05", name: "Final Pure Rinse", desc: "Complete sanitized finish for next processing run" },
+  { step: "01", name: "Pre-Rinsing", time: "Water flush", desc: "Flushes residual milk from lines & processing circuits" },
+  { step: "02", name: "Caustic Wash", time: "Alkaline cycle", desc: "Removes fats, proteins and organic milk residues" },
+  { step: "03", name: "Intermediate", time: "Neutral rinse", desc: "Clears chemical detergents before the acid wash" },
+  { step: "04", name: "Acid Cleaning", time: "Scale removal", desc: "Dissolves milk stones and mineral scale deposits" },
+  { step: "05", name: "Final Sanitization", time: "Pure water", desc: "Leaves pipelines spotless for the next production run" },
 ];
 
 const etpHighlights = [
-  { icon: Sprout, title: "Banana & Vegetable Cultivation", text: "Treated ETP water irrigates local vegetable crops and banana plantations on nearby agricultural land." },
-  { icon: Recycle, title: "Circular Resource Management", text: "Converts treated wastewater into a productive agricultural resource rather than discharging as waste." },
-  { icon: Droplets, title: "Freshwater Conservation", text: "Significantly reduces reliance on groundwater and freshwater sources for non-processing needs." },
-  { icon: Leaf, title: "Greener Environment", text: "Promotes zero-waste principles and active ecological stewardship in the Kuppam farming belt." },
+  { icon: Sprout, title: "Banana & Vegetable Crops", desc: "Directly irrigates farm crops on surrounding agricultural land." },
+  { icon: Recycle, title: "Circular Resource Re-use", desc: "Converts dairy wastewater into a productive farming resource." },
+  { icon: Droplets, title: "Freshwater Conservation", desc: "Eliminates groundwater extraction for irrigation needs." },
+  { icon: Leaf, title: "Zero Environmental Waste", desc: "Zero untreated discharge with green ecological practices." },
 ];
 
 export default function Sustainability() {
@@ -49,144 +51,150 @@ export default function Sustainability() {
         image={assets.farmer}
       />
 
-      {/* SECTION 01: CIP AUTOMATION */}
-      <section className="quality section-pad facility-section" id="cip" data-testid="cip-section">
-        <div className="quality-copy">
-          <div className="section-kicker">
-            <span>01</span>
-            <span className="kicker-rule" />
-            <span>FACILITY EXCELLENCE · HYGIENE AUTOMATION</span>
+      {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SIDE-BY-SIDE CARDS) */}
+      <section className="sustainability-facilities section-pad" id="facilities" data-testid="facilities-overview-section">
+        <div className="section-heading" style={{ marginBottom: "40px" }}>
+          <div>
+            <div className="section-kicker">
+              <span>01</span>
+              <span className="kicker-rule" />
+              <span>PLANT EXCELLENCE & SUSTAINABILITY</span>
+            </div>
+            <h2>Equipped for hygiene,<br /><em>engineered for the planet.</em></h2>
           </div>
-          <h2>Automated CIP System –<br /><em>Ensuring Hygiene & Quality.</em></h2>
           <p>
-            Sairaksha Dairy Products Pvt. Ltd. is equipped with an automated <strong>CIP (Clean-in-Place) system</strong>, which enables efficient and hygienic cleaning of milk processing equipment, pipelines, tanks, silos and other processing circuits without dismantling the equipment.
+            Our Kuppam facility combines world-class Clean-in-Place automation for uncompromised product hygiene with circular water recycling to enrich local agriculture.
           </p>
-          <p>
-            The CIP system ensures systematic cleaning through controlled cycles of pre-rinsing, caustic cleaning, intermediate rinsing, acid cleaning and final rinsing, as required for different processing lines. This helps maintain high standards of food safety, hygiene and product quality, while minimising manual intervention.
-          </p>
-          <p>
-            The system also supports efficient utilisation of water, cleaning chemicals, time and energy, contributing to consistent sanitation and responsible resource management.
-          </p>
-
-          <div className="cip-cycle-strip" data-testid="cip-cycles">
-            <span className="cip-strip-title">5-Stage Controlled Cleaning Cycle</span>
-            <div className="cip-steps">
-              {cipCycles.map((cycle) => (
-                <div key={cycle.step} className="cip-step-item">
-                  <span className="cip-num">{cycle.step}</span>
-                  <b>{cycle.name}</b>
-                  <small>{cycle.desc}</small>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="facility-benefits">
-            <div className="benefit-item">
-              <CheckCircle2 size={16} className="benefit-icon" />
-              <span>Zero equipment dismantling</span>
-            </div>
-            <div className="benefit-item">
-              <CheckCircle2 size={16} className="benefit-icon" />
-              <span>Reduced chemical & energy load</span>
-            </div>
-            <div className="benefit-item">
-              <CheckCircle2 size={16} className="benefit-icon" />
-              <span>Consistent food-safety sanitation</span>
-            </div>
-          </div>
         </div>
 
-        {/* Visual / Photo Placeholder for CIP */}
-        <div className="facility-visual-wrap" data-testid="cip-visual-container">
-          <div className="photo-placeholder-box">
-            <div className="placeholder-inner">
-              <div className="placeholder-icon-wrap">
-                <Cpu size={32} />
+        {/* COMPACT TWO-COLUMN FACILITY SHOWCASE */}
+        <div className="facility-duo-grid">
+          
+          {/* CARD 1: CIP AUTOMATION */}
+          <article className="facility-compact-card" id="cip" data-testid="cip-section">
+            <div className="facility-card-header">
+              <div className="facility-badge-row">
+                <span className="facility-pill cip-pill"><Cpu size={13} /> Automated Hygiene</span>
+                <span className="facility-sub-badge">Clean-In-Place</span>
               </div>
-              <span className="placeholder-badge">Facility Photo</span>
               <h3>Automated CIP System</h3>
-              <p>Clean-in-Place closed-circuit piping, wash stations, and automated sanitation controls at our Kuppam plant.</p>
-              <div className="placeholder-specs">
-                <span><span>✦</span> 5-Phase Automation</span>
-                <span><span>✦</span> Silos & Processing Lines</span>
-              </div>
+              <span className="facility-tagline">Ensuring food safety & pristine equipment hygiene without dismantling</span>
             </div>
-            <span className="photo-caption">Kuppam Processing Plant · CIP System</span>
-          </div>
-        </div>
-      </section>
 
-      {/* SECTION 02: ETP WATER RECYCLING */}
-      <section className="quality section-pad facility-section etp-section" id="etp" data-testid="etp-section">
-        {/* Visual / Photo Placeholder for ETP */}
-        <div className="facility-visual-wrap etp-visual" data-testid="etp-visual-container">
-          <div className="photo-placeholder-box etp-box">
-            <div className="placeholder-inner">
-              <div className="placeholder-icon-wrap etp-icon">
-                <Waves size={32} />
-              </div>
-              <span className="placeholder-badge">Environmental Facility</span>
-              <h3>Effluent Treatment Plant (ETP)</h3>
-              <p>Treated water reuse for banana plantations, horticulture, and campus green cover irrigation.</p>
-              <div className="placeholder-specs">
-                <span><span>✦</span> 100% Water Reused</span>
-                <span><span>✦</span> Zero Effluent Discharge</span>
-              </div>
-            </div>
-            <span className="photo-caption">Treated ETP Water · Agricultural Reuse</span>
-          </div>
-        </div>
+            <p className="facility-lead-text">
+              Sairaksha Dairy is equipped with an automated <strong>CIP (Clean-in-Place) system</strong> for closed-circuit cleaning of processing equipment, pipelines, storage tanks, and silos.
+            </p>
 
-        <div className="quality-copy">
-          <div className="section-kicker">
-            <span>02</span>
-            <span className="kicker-rule" />
-            <span>WATER CONSERVATION & CIRCULAR REUSE</span>
-          </div>
-          <h2>Sustainable Utilisation of<br /><em>Treated ETP Water.</em></h2>
-          <p>
-            At Sairaksha Dairy Products Pvt. Ltd., we are committed to responsible water management and sustainable dairy operations. The treated water generated through our <strong>Effluent Treatment Plant (ETP)</strong> is being effectively reused for irrigation and agricultural purposes instead of being discharged as waste.
-          </p>
-          <p>
-            After undergoing the required treatment process in the ETP, the treated water is utilised for the cultivation of vegetables and banana plantations on agricultural land. This initiative helps conserve fresh water resources, supports agricultural activities, and promotes the principles of water recycling and circular resource utilisation.
-          </p>
-          <p>
-            Through this practice, Sairaksha Dairy is not only reducing its dependence on fresh water for irrigation but also converting treated wastewater into a useful resource, thereby contributing towards a greener, cleaner and more sustainable environment.
-          </p>
-
-          {/* Featured Quote */}
-          <div className="etp-quote-card" data-testid="etp-quote-card">
-            <div className="quote-accent-leaf">
-              <Leaf size={20} />
-            </div>
-            <blockquote>
-              “Every drop treated is a drop responsibly reused — nurturing both agriculture and the environment.”
-            </blockquote>
-          </div>
-
-          <div className="etp-points-grid">
-            {etpHighlights.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.title} className="etp-point-card">
-                  <div className="etp-point-header">
-                    <Icon size={16} />
-                    <b>{item.title}</b>
+            <div className="facility-photo-slot" data-testid="cip-visual-container">
+              <div className="compact-placeholder">
+                <div className="placeholder-content">
+                  <div className="mini-icon-circle"><Cpu size={22} /></div>
+                  <div>
+                    <strong>CIP System Photo Placeholder</strong>
+                    <span>Closed-circuit piping & automated CIP wash stations</span>
                   </div>
-                  <p>{item.text}</p>
                 </div>
-              );
-            })}
-          </div>
+                <span className="photo-corner-tag">Kuppam Plant</span>
+              </div>
+            </div>
+
+            {/* HIGH-IMPACT 5-STAGE PROCESS PIPELINE */}
+            <div className="cip-pipeline-box" data-testid="cip-cycles">
+              <div className="pipeline-header">
+                <span className="pipeline-title"><FlaskConical size={14} /> 5-Stage Controlled Cleaning Sequence</span>
+                <span className="pipeline-meta">Automated Cycles</span>
+              </div>
+              <div className="pipeline-track">
+                {cipCycles.map((item, idx) => (
+                  <div key={item.step} className="pipeline-node">
+                    <div className="node-marker">
+                      <span className="node-num">{item.step}</span>
+                      {idx < cipCycles.length - 1 && <span className="node-connector" />}
+                    </div>
+                    <div className="node-info">
+                      <b>{item.name}</b>
+                      <span className="node-time">{item.time}</span>
+                      <p>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="facility-meta-chips">
+              <span><CheckCircle2 size={14} /> Zero equipment dismantling</span>
+              <span><CheckCircle2 size={14} /> Efficient chemical & water use</span>
+              <span><CheckCircle2 size={14} /> Minimal manual contact</span>
+            </div>
+          </article>
+
+          {/* CARD 2: ETP WATER RECYCLING */}
+          <article className="facility-compact-card etp-theme" id="etp" data-testid="etp-section">
+            <div className="facility-card-header">
+              <div className="facility-badge-row">
+                <span className="facility-pill etp-pill"><Waves size={13} /> Circular Ecology</span>
+                <span className="facility-sub-badge">Effluent Treatment Plant</span>
+              </div>
+              <h3>Sustainable ETP Water Reuse</h3>
+              <span className="facility-tagline">100% treated wastewater recycled for agriculture & plantation irrigation</span>
+            </div>
+
+            <p className="facility-lead-text">
+              Committed to responsible water management, treated water from our <strong>Effluent Treatment Plant (ETP)</strong> is repurposed for cultivating vegetables and banana plantations.
+            </p>
+
+            <div className="facility-photo-slot" data-testid="etp-visual-container">
+              <div className="compact-placeholder etp-placeholder">
+                <div className="placeholder-content">
+                  <div className="mini-icon-circle etp-circle"><Waves size={22} /></div>
+                  <div>
+                    <strong>ETP Facility Photo Placeholder</strong>
+                    <span>Treated water storage, irrigation channels & green campus</span>
+                  </div>
+                </div>
+                <span className="photo-corner-tag">Water Reuse</span>
+              </div>
+            </div>
+
+            {/* FEATURED QUOTE CALLOUT */}
+            <div className="etp-featured-quote" data-testid="etp-quote-card">
+              <Leaf size={22} className="quote-leaf" />
+              <blockquote>
+                “Every drop treated is a drop responsibly reused — nurturing both agriculture and the environment.”
+              </blockquote>
+            </div>
+
+            {/* 4 RECYCLE HIGHLIGHT CARDS */}
+            <div className="etp-grid-compact">
+              {etpHighlights.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="etp-mini-card">
+                    <div className="mini-card-head">
+                      <Icon size={16} />
+                      <b>{item.title}</b>
+                    </div>
+                    <p>{item.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="facility-meta-chips etp-chips">
+              <span><CheckCircle2 size={14} /> Banana & Vegetable irrigation</span>
+              <span><CheckCircle2 size={14} /> Circular zero-waste utility</span>
+              <span><CheckCircle2 size={14} /> Active ground conservation</span>
+            </div>
+          </article>
+
         </div>
       </section>
 
-      {/* SECTION 03: DIRECT FARMER PROCUREMENT */}
+      {/* SECTION 02: DIRECT FARMER PROCUREMENT */}
       <section className="quality section-pad" id="farmers" data-testid="procurement-section">
         <div className="quality-copy">
           <div className="section-kicker">
-            <span>03</span>
+            <span>02</span>
             <span className="kicker-rule" />
             <span>DIRECT FARMER PROCUREMENT</span>
           </div>
@@ -210,11 +218,11 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 04: HOW WE EMPOWER FARMERS */}
+      {/* SECTION 03: HOW WE EMPOWER FARMERS */}
       <section className="purity section-pad" data-testid="empowerment-section">
         <div className="section-heading">
           <div>
-            <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>HOW WE EMPOWER FARMERS</span></div>
+            <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>HOW WE EMPOWER FARMERS</span></div>
             <h2>Partners, not just<br /><em>suppliers.</em></h2>
           </div>
         </div>
@@ -232,11 +240,11 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 05: THE REGIONAL COLLECTION NETWORK */}
+      {/* SECTION 04: THE REGIONAL COLLECTION NETWORK */}
       <section className="licences section-pad" data-testid="collection-network-section">
         <div className="section-heading">
           <div>
-            <div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>THE COLLECTION NETWORK</span></div>
+            <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>THE COLLECTION NETWORK</span></div>
             <h2>Chilled at the source,<br /><em>close to the farm.</em></h2>
           </div>
         </div>
@@ -251,7 +259,7 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 06: CTA BAND */}
+      {/* SECTION 05: CTA BAND */}
       <section className="cta-band section-pad" data-testid="farmers-cta">
         <h2>Looking to partner<br /><em>with our dairy network?</em></h2>
         <p>Whether you are a dairy farming family, bulk partner, or distributor — connect with our procurement and plant operations team.</p>

@@ -391,56 +391,79 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .reveal-on-scroll { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1); }
 .reveal-on-scroll.in-view { opacity:1; transform:none; }
 
-/* Sustainability & Operations: CIP & ETP Styling */
-.facility-section { border-bottom:1px solid var(--line); }
-.facility-section:last-of-type { border-bottom:0; }
+/* Sustainability & Operations: Compact Duo Facility Grid */
+.sustainability-facilities { background:var(--paper-light, #fbf7ee); border-bottom:1px solid var(--line); }
+.facility-duo-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:stretch; }
 
-.cip-cycle-strip { margin:28px 0 20px; background:var(--paper); border:1px solid var(--line); padding:20px; border-radius:4px; }
-.cip-strip-title { display:block; font-size:10px; text-transform:uppercase; letter-spacing:.12em; color:var(--copper); font-weight:600; margin-bottom:14px; }
-.cip-steps { display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; }
-.cip-step-item { display:flex; flex-direction:column; gap:4px; border-right:1px solid var(--line); padding-right:8px; }
-.cip-step-item:last-child { border-right:0; padding-right:0; }
-.cip-num { font:500 13px 'Inter',sans-serif; color:var(--copper); }
-.cip-step-item b { font-size:12px; color:var(--forest); line-height:1.25; }
-.cip-step-item small { font-size:10px; color:var(--muted); line-height:1.4; }
+.facility-compact-card { background:#ffffff; border:1px solid var(--line); border-radius:6px; padding:32px 28px; display:flex; flex-direction:column; gap:20px; box-shadow:0 8px 24px rgba(36,47,31,.04); position:relative; transition:box-shadow .3s ease, border-color .3s ease; }
+.facility-compact-card:hover { box-shadow:0 14px 36px rgba(36,47,31,.08); border-color:var(--copper); }
+.facility-compact-card.etp-theme:hover { border-color:var(--forest); }
 
-.facility-benefits { display:flex; flex-direction:column; gap:10px; margin-top:20px; }
-.benefit-item { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--forest); font-weight:500; }
-.benefit-icon { color:var(--copper); flex:none; }
+.facility-card-header { display:flex; flex-direction:column; gap:8px; }
+.facility-badge-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.facility-pill { display:inline-flex; align-items:center; gap:6px; font-size:10px; text-transform:uppercase; letter-spacing:.12em; font-weight:700; padding:4px 10px; border-radius:20px; }
+.facility-pill.cip-pill { background:rgba(184,115,51,.12); color:var(--copper); border:1px solid rgba(184,115,51,.25); }
+.facility-pill.etp-pill { background:rgba(33,55,43,.1); color:var(--forest); border:1px solid rgba(33,55,43,.22); }
+.facility-sub-badge { font-size:10.5px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.08em; }
 
-.facility-visual-wrap { position:relative; width:100%; display:flex; flex-direction:column; }
-.photo-placeholder-box { position:relative; background:radial-gradient(ellipse at 50% 30%, #f4ede0 0%, #ebe2d0 100%); border:1.5px dashed rgba(33,55,43,.3); border-radius:6px; padding:36px 32px 48px; min-height:440px; display:flex; align-items:center; justify-content:center; text-align:center; box-shadow:0 18px 42px rgba(36,47,31,.08); transition:transform .3s ease, border-color .3s ease; }
-.photo-placeholder-box:hover { transform:translateY(-3px); border-color:var(--copper); }
-.placeholder-inner { display:flex; flex-direction:column; align-items:center; max-width:380px; gap:12px; }
-.placeholder-icon-wrap { width:64px; height:64px; border-radius:50%; background:var(--forest); color:#f5f0e5; display:grid; place-items:center; margin-bottom:4px; box-shadow:0 8px 20px rgba(23,63,42,.25); }
-.placeholder-icon-wrap.etp-icon { background:#1b4d3e; color:#e0f2e9; }
-.placeholder-badge { font-size:9.5px; text-transform:uppercase; letter-spacing:.14em; color:var(--copper); background:rgba(255,255,255,.8); border:1px solid var(--line); padding:4px 10px; border-radius:20px; font-weight:600; }
-.photo-placeholder-box h3 { font:500 24px "Playfair Display",Georgia,serif; color:var(--forest); margin:2px 0; }
-.photo-placeholder-box p { color:var(--muted); font-size:12.5px; line-height:1.65; margin:0; }
-.placeholder-specs { display:flex; gap:16px; margin-top:8px; font-size:11px; color:var(--forest); font-weight:500; flex-wrap:wrap; justify-content:center; }
-.placeholder-specs span span { color:var(--copper); margin-right:4px; }
+.facility-compact-card h3 { font:500 24px "Playfair Display",Georgia,serif; color:var(--forest); margin:0; line-height:1.25; }
+.facility-tagline { font-size:12px; color:var(--muted); line-height:1.45; font-style:italic; }
+.facility-lead-text { font-size:13.5px; color:var(--forest-deep, #1a2a1f); line-height:1.65; margin:0; }
 
-.etp-quote-card { margin:28px 0 24px; background:linear-gradient(135deg, #eaf2e7 0%, #dbe8d6 100%); border-left:3px solid var(--forest); padding:22px 24px; border-radius:0 6px 6px 0; position:relative; }
-.quote-accent-leaf { color:var(--forest); margin-bottom:8px; opacity:.85; }
-.etp-quote-card blockquote { margin:0; font:italic 500 17px "Playfair Display",Georgia,serif; color:var(--forest-deep); line-height:1.55; }
+/* Compact Photo Placeholders */
+.facility-photo-slot { width:100%; }
+.compact-placeholder { background:radial-gradient(ellipse at 50% 30%, #f7f2e8 0%, #ede3d1 100%); border:1.5px dashed rgba(184,115,51,.4); border-radius:6px; padding:18px 20px; position:relative; transition:all .3s ease; }
+.compact-placeholder.etp-placeholder { background:radial-gradient(ellipse at 50% 30%, #eff5ed 0%, #dfeade 100%); border-color:rgba(33,55,43,.35); }
+.placeholder-content { display:flex; align-items:center; gap:14px; }
+.mini-icon-circle { width:42px; height:42px; border-radius:50%; background:var(--copper); color:#fff; display:grid; place-items:center; flex:none; box-shadow:0 4px 12px rgba(184,115,51,.3); }
+.mini-icon-circle.etp-circle { background:var(--forest); box-shadow:0 4px 12px rgba(33,55,43,.25); }
+.placeholder-content strong { display:block; font-size:12.5px; color:var(--forest); font-weight:600; margin-bottom:2px; }
+.placeholder-content span { display:block; font-size:11px; color:var(--muted); line-height:1.35; }
+.photo-corner-tag { position:absolute; top:8px; right:10px; font-size:9px; text-transform:uppercase; letter-spacing:.1em; color:var(--copper); font-weight:700; opacity:.85; }
 
-.etp-points-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; }
-.etp-point-card { background:var(--paper); border:1px solid var(--line); padding:16px 16px; border-radius:4px; }
-.etp-point-header { display:flex; align-items:center; gap:8px; color:var(--forest); margin-bottom:6px; }
-.etp-point-header svg { color:var(--copper); flex:none; }
-.etp-point-header b { font-size:12.5px; line-height:1.3; }
-.etp-point-card p { font-size:11.5px; color:var(--muted); line-height:1.6; margin:0; }
+/* 5-Stage CIP Horizontal / Connected Pipeline Layout */
+.cip-pipeline-box { background:var(--paper, #f5f0e5); border:1px solid var(--line); border-radius:6px; padding:16px 18px; display:flex; flex-direction:column; gap:12px; }
+.pipeline-header { display:flex; align-items:center; justify-content:space-between; }
+.pipeline-title { display:inline-flex; align-items:center; gap:6px; font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; font-weight:700; color:var(--copper); }
+.pipeline-meta { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:600; }
 
-@media (max-width:900px) {
-  .cip-steps { grid-template-columns:1fr 1fr; gap:16px; }
-  .cip-step-item { border-right:0; padding-right:0; border-bottom:1px solid var(--line); padding-bottom:12px; }
-  .cip-step-item:last-child { border-bottom:0; }
-  .etp-points-grid { grid-template-columns:1fr; }
+.pipeline-track { display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; position:relative; }
+.pipeline-node { display:flex; flex-direction:column; gap:6px; position:relative; }
+.node-marker { display:flex; align-items:center; width:100%; position:relative; }
+.node-num { width:22px; height:22px; border-radius:50%; background:var(--forest); color:#fff; font-size:10px; font-weight:700; display:grid; place-items:center; flex:none; z-index:2; }
+.node-connector { flex:1; height:2px; background:var(--copper); opacity:.4; margin-left:4px; }
+.node-info b { font-size:11px; color:var(--forest); display:block; line-height:1.2; font-weight:600; margin-bottom:2px; }
+.node-time { font-size:9.5px; color:var(--copper); display:block; font-weight:500; margin-bottom:3px; }
+.node-info p { font-size:10px; color:var(--muted); line-height:1.35; margin:0; }
+
+/* ETP Quote & 4-card Grid */
+.etp-featured-quote { background:linear-gradient(135deg, #edf5eb 0%, #e2eee0 100%); border-left:3px solid var(--forest); padding:14px 18px; border-radius:0 6px 6px 0; display:flex; align-items:flex-start; gap:12px; }
+.quote-leaf { color:var(--forest); flex:none; margin-top:2px; }
+.etp-featured-quote blockquote { margin:0; font:italic 500 13.5px "Playfair Display",Georgia,serif; color:var(--forest-deep, #14281c); line-height:1.5; }
+
+.etp-grid-compact { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.etp-mini-card { background:var(--paper, #f5f0e5); border:1px solid var(--line); border-radius:4px; padding:12px 14px; }
+.mini-card-head { display:flex; align-items:center; gap:6px; color:var(--forest); margin-bottom:4px; }
+.mini-card-head svg { color:var(--copper); flex:none; }
+.mini-card-head b { font-size:11.5px; line-height:1.25; font-weight:600; }
+.etp-mini-card p { font-size:10.5px; color:var(--muted); line-height:1.45; margin:0; }
+
+/* Meta chips */
+.facility-meta-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:8px; border-top:1px dashed var(--line); }
+.facility-meta-chips span { display:inline-flex; align-items:center; gap:5px; font-size:11.5px; color:var(--forest); font-weight:500; }
+.facility-meta-chips span svg { color:var(--copper); }
+.facility-meta-chips.etp-chips span svg { color:var(--forest); }
+
+@media (max-width:1024px) {
+  .facility-duo-grid { grid-template-columns:1fr; gap:32px; }
+  .pipeline-track { grid-template-columns:repeat(5, 1fr); }
 }
 
 @media (max-width:640px) {
-  .cip-steps { grid-template-columns:1fr; }
-  .photo-placeholder-box { min-height:360px; padding:28px 20px 40px; }
+  .facility-compact-card { padding:24px 18px; }
+  .pipeline-track { grid-template-columns:1fr; gap:12px; }
+  .node-connector { display:none; }
+  .etp-grid-compact { grid-template-columns:1fr; }
 }
 
 @media (max-width:900px) { .purity-grid,.empower-grid { grid-template-columns:1fr 1fr; }.licence-grid,.location-grid { grid-template-columns:1fr 1fr; }.director-grid { grid-template-columns:1fr; }.product-grid.large { grid-template-columns:repeat(2,1fr); }.farmers-stats { grid-template-columns:1fr 1fr; gap:20px 0; }.farmers-stats div { border:0; padding-left:0; }.cta-band { grid-template-columns:1fr; gap:20px; }.cta-band .button { justify-self:start; } }
