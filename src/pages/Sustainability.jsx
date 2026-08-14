@@ -1,46 +1,65 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  ArrowRight,
   ArrowUpRight,
   CheckCircle2,
+  ChevronDown,
   Cpu,
+  Droplet,
   Droplets,
+  Factory,
+  FlaskConical,
+  Gauge,
   GraduationCap,
   IndianRupee,
   Leaf,
   Recycle,
+  RefreshCw,
+  RotateCw,
+  Shield,
   ShieldCheck,
+  Sparkles,
   Sprout,
   Stethoscope,
+  Sun,
   TrendingUp,
   Users,
-  Waves,
-  Zap,
-  Clock,
-  FlaskConical,
-  Sparkles,
-  ArrowRight
+  Waves
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import FacilityCarousel from "@/components/FacilityCarousel";
 import { assets, empowerment, locations } from "@/data";
 
 const empowerIcons = { IndianRupee, GraduationCap, Stethoscope, TrendingUp, Users, ShieldCheck };
 
-const cipCycles = [
-  { step: "01", name: "Pre-Rinsing", time: "Water flush", desc: "Flushes residual milk from lines & processing circuits" },
-  { step: "02", name: "Caustic Wash", time: "Alkaline cycle", desc: "Removes fats, proteins and organic milk residues" },
-  { step: "03", name: "Intermediate", time: "Neutral rinse", desc: "Clears chemical detergents before the acid wash" },
-  { step: "04", name: "Acid Cleaning", time: "Scale removal", desc: "Dissolves milk stones and mineral scale deposits" },
-  { step: "05", name: "Final Sanitization", time: "Pure water", desc: "Leaves pipelines spotless for the next production run" },
+// Curated image sets with descriptive captions ready for easy replacement
+const cipGalleryImages = [
+  { src: assets.plantInterior, caption: "CIP Stainless Steel Processing Lines & Silos" },
+  { src: assets.processing, caption: "Automated Fluid Circuits & Pasteurisation Tanks" },
+  { src: assets.image1, caption: "Plant Floor & Continuous Quality Monitoring" },
+  { src: assets.image5, caption: "Central Milk Processing Hall · Kuppam Facility" },
+  { src: assets.packing, caption: "Hygienic Packaging & Controlled Sanitation Environment" },
 ];
 
-const etpHighlights = [
-  { icon: Sprout, title: "Banana & Vegetable Crops", desc: "Directly irrigates farm crops on surrounding agricultural land." },
-  { icon: Recycle, title: "Circular Resource Re-use", desc: "Converts dairy wastewater into a productive farming resource." },
-  { icon: Droplets, title: "Freshwater Conservation", desc: "Eliminates groundwater extraction for irrigation needs." },
-  { icon: Leaf, title: "Zero Environmental Waste", desc: "Zero untreated discharge with green ecological practices." },
+const etpGalleryImages = [
+  { src: assets.lawns, caption: "Campus Green Cover & Irrigation Lawns" },
+  { src: assets.farm, caption: "Agricultural Banana & Vegetable Farmlands" },
+  { src: assets.aerial, caption: "Zero-Discharge Processing Campus at Kuppam" },
+  { src: assets.exterior, caption: "Eco-Friendly Operations & Treated Water Channels" },
+];
+
+const cipCycles = [
+  { step: "01", name: "Pre-Rinsing", desc: "Flushes residual milk from lines & processing circuits" },
+  { step: "02", name: "Caustic Wash", desc: "Alkaline solution removes fats, proteins and organic residues" },
+  { step: "03", name: "Intermediate Rinse", desc: "Neutral water flush clears all chemical detergents" },
+  { step: "04", name: "Acid Cleaning", desc: "Acidic wash dissolves scale, milk stones & mineral deposits" },
+  { step: "05", name: "Final Sanitization", desc: "Pure water rinse leaves circuits 100% spotless and ready" },
 ];
 
 export default function Sustainability() {
+  const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
+
   return (
     <>
       <PageHero
@@ -51,146 +70,205 @@ export default function Sustainability() {
         image={assets.farmer}
       />
 
-      {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SIDE-BY-SIDE CARDS) */}
-      <section className="sustainability-facilities section-pad" id="facilities" data-testid="facilities-overview-section">
-        <div className="section-heading" style={{ marginBottom: "40px" }}>
-          <div>
-            <div className="section-kicker">
-              <span>01</span>
-              <span className="kicker-rule" />
-              <span>PLANT EXCELLENCE & SUSTAINABILITY</span>
+      {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SHOWCASE) */}
+      <section className="sustainability-showcase section-pad" id="operations" data-testid="sustainability-showcase-section">
+        
+        {/* TWO PRIMARY FACILITY CARDS */}
+        <div className="sustainability-duo-cards">
+          
+          {/* CARD 1: AUTOMATED CIP */}
+          <article className="sustainability-feature-card" data-testid="cip-section">
+            <FacilityCarousel
+              images={cipGalleryImages}
+              badgeText="CIP SYSTEM"
+              badgeIcon={Droplet}
+              testId="cip-carousel"
+            />
+            
+            <div className="feature-card-body">
+              <div className="feature-card-header">
+                <div className="feature-avatar-icon cip-avatar">
+                  <Droplets size={22} />
+                </div>
+                <div className="feature-heading-group">
+                  <h3>Automated CIP</h3>
+                  <p className="feature-italic-sub">Clean-in-place, without compromise.</p>
+                </div>
+              </div>
+
+              <p className="feature-body-text">
+                Our automated Clean-in-Place system enables hygienic cleaning of processing equipment, pipelines and storage tanks without dismantling — supporting consistent food safety and operational efficiency.
+              </p>
+
+              <div className="feature-pills-row">
+                <div className="feature-pill-item">
+                  <Shield size={17} className="pill-ico" />
+                  <span>Hygiene<br />by design</span>
+                </div>
+                <div className="feature-pill-item">
+                  <Sun size={17} className="pill-ico" />
+                  <span>Consistency<br />in every cycle</span>
+                </div>
+                <div className="feature-pill-item">
+                  <Gauge size={17} className="pill-ico" />
+                  <span>Efficiency<br />and control</span>
+                </div>
+              </div>
             </div>
-            <h2>Equipped for hygiene,<br /><em>engineered for the planet.</em></h2>
-          </div>
-          <p>
-            Our Kuppam facility combines world-class Clean-in-Place automation for uncompromised product hygiene with circular water recycling to enrich local agriculture.
-          </p>
+          </article>
+
+          {/* CARD 2: EFFLUENT TREATMENT PLANT */}
+          <article className="sustainability-feature-card" data-testid="etp-section">
+            <FacilityCarousel
+              images={etpGalleryImages}
+              badgeText="ETP / WATER REUSE"
+              badgeIcon={Sprout}
+              testId="etp-carousel"
+            />
+
+            <div className="feature-card-body">
+              <div className="feature-card-header">
+                <div className="feature-avatar-icon etp-avatar">
+                  <Sprout size={22} />
+                </div>
+                <div className="feature-heading-group">
+                  <h3>Effluent Treatment Plant</h3>
+                  <p className="feature-italic-sub">Water that works twice.</p>
+                </div>
+              </div>
+
+              <p className="feature-body-text">
+                Our Effluent Treatment Plant treats and recycles wastewater to support agriculture and plantation irrigation — reducing freshwater dependency and closing the loop responsibly.
+              </p>
+
+              <div className="feature-pills-row">
+                <div className="feature-pill-item">
+                  <Droplets size={17} className="pill-ico" />
+                  <span>Treat<br />responsibly</span>
+                </div>
+                <div className="feature-pill-item">
+                  <Recycle size={17} className="pill-ico" />
+                  <span>Reuse for<br />agriculture</span>
+                </div>
+                <div className="feature-pill-item">
+                  <Leaf size={17} className="pill-ico" />
+                  <span>Restore for<br />tomorrow</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
 
-        {/* COMPACT TWO-COLUMN FACILITY SHOWCASE */}
-        <div className="facility-duo-grid">
+        {/* 3-COLUMN HORIZONTAL SUMMARY STRIP */}
+        <div className="sustainability-summary-strip" data-testid="operations-summary-strip">
           
-          {/* CARD 1: CIP AUTOMATION */}
-          <article className="facility-compact-card" id="cip" data-testid="cip-section">
-            <div className="facility-card-header">
-              <div className="facility-badge-row">
-                <span className="facility-pill cip-pill"><Cpu size={13} /> Automated Hygiene</span>
-                <span className="facility-sub-badge">Clean-In-Place</span>
+          <div className="summary-col">
+            <span className="summary-step-badge">01</span>
+            <div className="summary-content">
+              <div className="summary-head">
+                <Factory size={22} className="summary-icon" />
+                <h4>Hygiene by design</h4>
               </div>
-              <h3>Automated CIP System</h3>
-              <span className="facility-tagline">Ensuring food safety & pristine equipment hygiene without dismantling</span>
+              <p>Automated systems and strict protocols ensure consistently clean, safe and reliable operations.</p>
             </div>
+          </div>
 
-            <p className="facility-lead-text">
-              Sairaksha Dairy is equipped with an automated <strong>CIP (Clean-in-Place) system</strong> for closed-circuit cleaning of processing equipment, pipelines, storage tanks, and silos.
-            </p>
+          <div className="summary-col-divider" />
 
-            <div className="facility-photo-slot" data-testid="cip-visual-container">
-              <div className="compact-placeholder">
-                <div className="placeholder-content">
-                  <div className="mini-icon-circle"><Cpu size={22} /></div>
-                  <div>
-                    <strong>CIP System Photo Placeholder</strong>
-                    <span>Closed-circuit piping & automated CIP wash stations</span>
-                  </div>
-                </div>
-                <span className="photo-corner-tag">Kuppam Plant</span>
+          <div className="summary-col">
+            <span className="summary-step-badge">02</span>
+            <div className="summary-content">
+              <div className="summary-head">
+                <Droplets size={22} className="summary-icon" />
+                <h4>Water, responsibly managed</h4>
               </div>
+              <p>Treated water is reused for agriculture and plantation irrigation, supporting a more circular future.</p>
             </div>
+          </div>
 
-            {/* HIGH-IMPACT 5-STAGE PROCESS PIPELINE */}
-            <div className="cip-pipeline-box" data-testid="cip-cycles">
-              <div className="pipeline-header">
-                <span className="pipeline-title"><FlaskConical size={14} /> 5-Stage Controlled Cleaning Sequence</span>
-                <span className="pipeline-meta">Automated Cycles</span>
+          <div className="summary-col-divider" />
+
+          <div className="summary-col">
+            <span className="summary-step-badge">03</span>
+            <div className="summary-content">
+              <div className="summary-head">
+                <ShieldCheck size={22} className="summary-icon" />
+                <h4>Built for control</h4>
               </div>
-              <div className="pipeline-track">
-                {cipCycles.map((item, idx) => (
-                  <div key={item.step} className="pipeline-node">
-                    <div className="node-marker">
-                      <span className="node-num">{item.step}</span>
-                      {idx < cipCycles.length - 1 && <span className="node-connector" />}
-                    </div>
-                    <div className="node-info">
-                      <b>{item.name}</b>
-                      <span className="node-time">{item.time}</span>
-                      <p>{item.desc}</p>
+              <p>Advanced infrastructure gives us greater control over quality, safety and every step of our process.</p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* BOTTOM PHILOSOPHY TAGLINE & CTA */}
+        <div className="sustainability-tagline-bar" data-testid="operations-cta-bar">
+          <div className="tagline-motif">
+            <Sprout size={16} />
+          </div>
+          
+          <div className="tagline-wrap">
+            <div className="tagline-text">
+              <h3>Good for nature. Good for communities.</h3>
+              <p><em>Good for generations to come.</em></p>
+            </div>
+            
+            <Link to="/contact" className="operations-cta-btn" data-testid="know-more-operations-btn">
+              <span>Know more about our operations</span>
+              <ArrowRight size={17} />
+            </Link>
+          </div>
+        </div>
+
+        {/* OPTIONAL EXPANDABLE TECHNICAL ARCHITECTURE ACCORDION */}
+        <div className="technical-breakdown-toggle-wrap">
+          <button 
+            type="button" 
+            className="technical-toggle-btn"
+            onClick={() => setShowTechnicalDetails(!showTechnicalDetails)}
+            aria-expanded={showTechnicalDetails}
+            data-testid="toggle-technical-specs"
+          >
+            <span>{showTechnicalDetails ? "Hide Technical Specifications" : "View 5-Stage CIP Cleaning Cycle & ETP Specifications"}</span>
+            <ChevronDown size={16} style={{ transform: showTechnicalDetails ? "rotate(180deg)" : "none", transition: "transform .25s ease" }} />
+          </button>
+        </div>
+
+        {showTechnicalDetails && (
+          <div className="technical-specs-expanded" data-testid="technical-specs-expanded">
+            <div className="specs-card">
+              <h4><FlaskConical size={16} /> 5-Stage Controlled CIP Sequence</h4>
+              <div className="cip-detailed-steps">
+                {cipCycles.map((c) => (
+                  <div key={c.step} className="detailed-step">
+                    <span className="detailed-step-num">{c.step}</span>
+                    <div>
+                      <b>{c.name}</b>
+                      <p>{c.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="facility-meta-chips">
-              <span><CheckCircle2 size={14} /> Zero equipment dismantling</span>
-              <span><CheckCircle2 size={14} /> Efficient chemical & water use</span>
-              <span><CheckCircle2 size={14} /> Minimal manual contact</span>
-            </div>
-          </article>
-
-          {/* CARD 2: ETP WATER RECYCLING */}
-          <article className="facility-compact-card etp-theme" id="etp" data-testid="etp-section">
-            <div className="facility-card-header">
-              <div className="facility-badge-row">
-                <span className="facility-pill etp-pill"><Waves size={13} /> Circular Ecology</span>
-                <span className="facility-sub-badge">Effluent Treatment Plant</span>
-              </div>
-              <h3>Sustainable ETP Water Reuse</h3>
-              <span className="facility-tagline">100% treated wastewater recycled for agriculture & plantation irrigation</span>
-            </div>
-
-            <p className="facility-lead-text">
-              Committed to responsible water management, treated water from our <strong>Effluent Treatment Plant (ETP)</strong> is repurposed for cultivating vegetables and banana plantations.
-            </p>
-
-            <div className="facility-photo-slot" data-testid="etp-visual-container">
-              <div className="compact-placeholder etp-placeholder">
-                <div className="placeholder-content">
-                  <div className="mini-icon-circle etp-circle"><Waves size={22} /></div>
-                  <div>
-                    <strong>ETP Facility Photo Placeholder</strong>
-                    <span>Treated water storage, irrigation channels & green campus</span>
-                  </div>
-                </div>
-                <span className="photo-corner-tag">Water Reuse</span>
-              </div>
-            </div>
-
-            {/* FEATURED QUOTE CALLOUT */}
-            <div className="etp-featured-quote" data-testid="etp-quote-card">
-              <Leaf size={22} className="quote-leaf" />
-              <blockquote>
+            <div className="specs-card">
+              <h4><Leaf size={16} /> ETP Environmental Quote & Utilization</h4>
+              <blockquote className="expanded-quote">
                 “Every drop treated is a drop responsibly reused — nurturing both agriculture and the environment.”
               </blockquote>
+              <ul className="expanded-etp-list">
+                <li><CheckCircle2 size={15} /> <strong>Horticulture & Crops:</strong> Banana plantations and vegetable cultivation on surrounding farmlands.</li>
+                <li><CheckCircle2 size={15} /> <strong>Groundwater Conservation:</strong> 100% replacement of fresh water for non-processing irrigation.</li>
+                <li><CheckCircle2 size={15} /> <strong>Zero Waste Principle:</strong> Converting wastewater into a circular agricultural asset.</li>
+              </ul>
             </div>
+          </div>
+        )}
 
-            {/* 4 RECYCLE HIGHLIGHT CARDS */}
-            <div className="etp-grid-compact">
-              {etpHighlights.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="etp-mini-card">
-                    <div className="mini-card-head">
-                      <Icon size={16} />
-                      <b>{item.title}</b>
-                    </div>
-                    <p>{item.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="facility-meta-chips etp-chips">
-              <span><CheckCircle2 size={14} /> Banana & Vegetable irrigation</span>
-              <span><CheckCircle2 size={14} /> Circular zero-waste utility</span>
-              <span><CheckCircle2 size={14} /> Active ground conservation</span>
-            </div>
-          </article>
-
-        </div>
       </section>
 
-      {/* SECTION 02: DIRECT FARMER PROCUREMENT */}
+      {/* SECTION: DIRECT FARMER PROCUREMENT */}
       <section className="quality section-pad" id="farmers" data-testid="procurement-section">
         <div className="quality-copy">
           <div className="section-kicker">
@@ -218,7 +296,7 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 03: HOW WE EMPOWER FARMERS */}
+      {/* SECTION: HOW WE EMPOWER FARMERS */}
       <section className="purity section-pad" data-testid="empowerment-section">
         <div className="section-heading">
           <div>
@@ -240,7 +318,7 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 04: THE REGIONAL COLLECTION NETWORK */}
+      {/* SECTION: THE REGIONAL COLLECTION NETWORK */}
       <section className="licences section-pad" data-testid="collection-network-section">
         <div className="section-heading">
           <div>
@@ -259,7 +337,7 @@ export default function Sustainability() {
         </div>
       </section>
 
-      {/* SECTION 05: CTA BAND */}
+      {/* SECTION: CTA BAND */}
       <section className="cta-band section-pad" data-testid="farmers-cta">
         <h2>Looking to partner<br /><em>with our dairy network?</em></h2>
         <p>Whether you are a dairy farming family, bulk partner, or distributor — connect with our procurement and plant operations team.</p>
