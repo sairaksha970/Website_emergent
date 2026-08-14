@@ -73,6 +73,21 @@ export default function Sustainability() {
       {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SHOWCASE) */}
       <section className="sustainability-showcase section-pad" id="operations" data-testid="sustainability-showcase-section">
         
+        {/* SECTION HEADER */}
+        <div className="section-heading operations-header">
+          <div>
+            <div className="section-kicker">
+              <span>01</span>
+              <span className="kicker-rule" />
+              <span>PLANT &amp; PROCESSING EXCELLENCE</span>
+            </div>
+            <h2>Equipped for hygiene,<br /><em>designed for sustainability.</em></h2>
+          </div>
+          <p>
+            Our automated Clean-in-Place (CIP) systems and on-site Effluent Treatment Plant (ETP) ensure uncompromised sanitation and circular water recycling across our processing infrastructure.
+          </p>
+        </div>
+
         {/* TWO PRIMARY FACILITY CARDS */}
         <div className="sustainability-duo-cards">
           
