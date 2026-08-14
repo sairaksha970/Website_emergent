@@ -3,7 +3,7 @@ export default function SustainabilityHero() {
     <section className="sustainability-banner-hero" data-testid="sustainability-hero">
       <div className="sustainability-banner-wrap">
         <img 
-          src="/images/sustainability.webp" 
+          src="/images/sustainability.webp?v=1" 
           alt="Sustainability & Operations - Responsible Dairy, from Source to Plant" 
           className="sustainability-hero-img"
           loading="eager"
