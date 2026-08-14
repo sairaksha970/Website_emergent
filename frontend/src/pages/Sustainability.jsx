@@ -71,7 +71,7 @@ export default function Sustainability() {
       />
 
       {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SHOWCASE) */}
-      <section className="sustainability-showcase section-pad" id="operations" data-testid="sustainability-showcase-section">
+      <section className="sustainability-showcase" id="operations" data-testid="sustainability-showcase-section">
         
         {/* SECTION HEADER */}
         <div className="section-heading operations-header">

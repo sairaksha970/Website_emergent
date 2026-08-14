@@ -392,8 +392,8 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
 .reveal-on-scroll.in-view { opacity:1; transform:none; }
 
 /* Sustainability & Operations: Interactive Carousel & Reference-Matched Design */
-.sustainability-showcase { background:var(--paper-light, #fbf7ee); border-bottom:1px solid var(--line); padding-top:64px; padding-bottom:64px; }
-.operations-header { margin-bottom:38px; }
+.sustainability-showcase { background:var(--paper-light, #fbf7ee); border-bottom:1px solid var(--line); max-width:none; width:100%; padding-left:max(32px, calc((100% - 1180px)/2)); padding-right:max(32px, calc((100% - 1180px)/2)); padding-top:72px; padding-bottom:78px; }
+.operations-header { margin-bottom:44px; display:flex; justify-content:space-between; align-items:end; gap:50px; }
 .sustainability-duo-cards { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:stretch; }
 
 .sustainability-feature-card { background:#ffffff; border:1px solid var(--line); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 12px 36px rgba(36,47,31,.05); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
@@ -492,5 +492,5 @@ h1 em,h2 em { color:var(--copper); font-style:italic; font-weight:400; }
   .slider-nav-btn { opacity:0.9; }
 }
 
-@media (max-width:900px) { .purity-grid,.empower-grid { grid-template-columns:1fr 1fr; }.licence-grid,.location-grid { grid-template-columns:1fr 1fr; }.director-grid { grid-template-columns:1fr; }.product-grid.large { grid-template-columns:repeat(2,1fr); }.farmers-stats { grid-template-columns:1fr 1fr; gap:20px 0; }.farmers-stats div { border:0; padding-left:0; }.cta-band { grid-template-columns:1fr; gap:20px; }.cta-band .button { justify-self:start; } }
+@media (max-width:900px) { .products,.factory-gallery,.sustainability-showcase { padding-left:20px; padding-right:20px; }.operations-header { display:block; }.operations-header>p { margin-top:20px; }.purity-grid,.empower-grid { grid-template-columns:1fr 1fr; }.licence-grid,.location-grid { grid-template-columns:1fr 1fr; }.director-grid { grid-template-columns:1fr; }.product-grid.large { grid-template-columns:repeat(2,1fr); }.farmers-stats { grid-template-columns:1fr 1fr; gap:20px 0; }.farmers-stats div { border:0; padding-left:0; }.cta-band { grid-template-columns:1fr; gap:20px; }.cta-band .button { justify-self:start; } }
 @media (max-width:640px) { .about,.quality,.contact,.factory-gallery,.purity,.licences,.story-timeline,.directors { padding-top:72px; padding-bottom:72px; }.products,.factory-gallery,.purity,.licences { padding-left:20px; padding-right:20px; }.purity-grid,.empower-grid,.licence-grid,.location-grid { grid-template-columns:1fr; }.form-row { grid-template-columns:1fr; }.page-hero { min-height:300px; }.page-hero-inner { padding-top:70px; padding-bottom:44px; }.timeline:before { left:8px; }.timeline-item { grid-template-columns:1fr; gap:8px; padding:22px 0 22px 34px; }.timeline-item:before { left:3px; top:30px; }.timeline-year { text-align:left; font-size:22px; } }
