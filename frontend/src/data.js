@@ -29,6 +29,8 @@ export const assets = {
   tanker: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/kw7g4obz_Fleet_3.webp",
   aerial: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1plxtpg9_Factory_ariel.webp",
   fleetGarland: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/bx513jer_Fleet_1.webp",
+  image1: "/images/1.jpeg",
+  image5: "/images/5.jpeg",
   videoPlant: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/m6l5yfqt_Creating_factory_hero_shot_film_202608131108.mp4",
   videoPacking: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/05vbm1x9_Workers_organizing_dairy_products_202608131107.mp4",
   videoControl: "https://customer-assets-39nsmqrw.emergentagent.net/job_gomukhi-amogh/artifacts/1iuy72kh_Worker_operating_factory_control%E2%80%A6_202608131107.mp4",
@@ -54,6 +56,8 @@ export const factoryGallery = [
   { title: "Evenings at the plant", caption: "Stone pathways leading to the processing halls", image: assets.dusk },
   { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
   { title: "Kuppam from above", caption: "Silos, chillers and processing halls under one blue roof", image: assets.aerial },
+  { title: "Plant operations", caption: "Continuous quality supervision and operational excellence", image: assets.image1 },
+  { title: "Dairy processing facility", caption: "Advanced machinery and processing halls at Sairaksha Dairy", image: assets.image5 },
 ];
 
 export const plantVideos = [
