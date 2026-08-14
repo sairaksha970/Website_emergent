@@ -1,18 +1,13 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "@/App.css";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Products from "@/pages/Products";
-import Sustainability from "@/pages/Sustainability";
+import Farmers from "@/pages/Farmers";
 import Contact from "@/pages/Contact";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -20,11 +15,12 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/sustainability" element={<Sustainability />} />
-          <Route path="/farmers" element={<Sustainability />} />
+          <Route path="/farmers" element={<Farmers />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;

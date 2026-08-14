@@ -6,7 +6,7 @@ const navItems = [
   { to: "/", label: "Home", testId: "nav-home-link" },
   { to: "/about", label: "About Us", testId: "nav-about-link" },
   { to: "/products", label: "Products", testId: "nav-products-link" },
-  { to: "/farmers", label: "Farmers", testId: "nav-farmers-link" },
+  { to: "/sustainability", label: "Sustainability", testId: "nav-farmers-link" },
   { to: "/contact", label: "Contact Us", testId: "nav-contact-link" },
 ];
 
@@ -59,7 +59,7 @@ export default function Layout() {
         <div className="footer-links">
           <Link to="/about" data-testid="footer-about-link">About Us</Link>
           <Link to="/products" data-testid="footer-products-link">Products</Link>
-          <Link to="/farmers" data-testid="footer-farmers-link">Farmers</Link>
+          <Link to="/sustainability" data-testid="footer-farmers-link">Sustainability</Link>
           <Link to="/contact" data-testid="footer-contact-link">Contact</Link>
         </div>
         <span className="copyright">© 2012 Sairaksha Dairy</span>
