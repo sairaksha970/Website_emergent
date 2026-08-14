@@ -37,6 +37,7 @@ export const assets = {
   videoInspection: "/videos/film4.mp4",
   farmer: "/images/farmers-hero.webp",
   farmerProcurement: "/images/farmers-procurement.webp",
+  sustainabilityHero: "/images/sustainability.webp",
   valuesBaba: "/images/values-baba.webp",
   valuesFounders: "/images/values-founders.webp",
 };
