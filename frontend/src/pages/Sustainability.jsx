@@ -77,9 +77,6 @@ export default function Sustainability() {
             </div>
             <h2>Equipped for hygiene,<br /><em>designed for sustainability.</em></h2>
           </div>
-          <p>
-            Our automated Clean-in-Place (CIP) systems and on-site Effluent Treatment Plant (ETP) ensure uncompromised sanitation and circular water recycling across our processing infrastructure.
-          </p>
         </div>
 
         {/* TWO PRIMARY FACILITY CARDS */}
