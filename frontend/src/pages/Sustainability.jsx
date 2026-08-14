@@ -27,7 +27,7 @@ import {
   Users,
   Waves
 } from "lucide-react";
-import PageHero from "@/components/PageHero";
+import SustainabilityHero from "@/components/SustainabilityHero";
 import FacilityCarousel from "@/components/FacilityCarousel";
 import { assets, empowerment, locations } from "@/data";
 
@@ -62,13 +62,7 @@ export default function Sustainability() {
 
   return (
     <>
-      <PageHero
-        testId="sustainability-hero"
-        eyebrow="Sustainability & Operations"
-        title={<>Responsible Dairy,<br /><em>from Source to Plant.</em></>}
-        intro="From automated plant sanitation and zero-waste water recycling to direct village farmer procurement across South India — sustainability is built into every litre we produce."
-        image={assets.farmer}
-      />
+      <SustainabilityHero />
 
       {/* SECTION: OPERATIONAL EXCELLENCE (CIP & ETP SHOWCASE) */}
       <section className="sustainability-showcase" id="operations" data-testid="sustainability-showcase-section">
