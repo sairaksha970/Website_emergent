@@ -19,6 +19,7 @@ import {
   RotateCw,
   Shield,
   ShieldCheck,
+  Snowflake,
   Sparkles,
   Sprout,
   Stethoscope,
@@ -33,20 +34,15 @@ import { assets, empowerment, locations } from "@/data";
 
 const empowerIcons = { IndianRupee, GraduationCap, Stethoscope, TrendingUp, Users, ShieldCheck };
 
-// Curated image sets with descriptive captions ready for easy replacement
+// Curated image sets with 2 relevant photos each
 const cipGalleryImages = [
   { src: assets.plantInterior, caption: "CIP Stainless Steel Processing Lines & Silos" },
   { src: assets.processing, caption: "Automated Fluid Circuits & Pasteurisation Tanks" },
-  { src: assets.image1, caption: "Plant Floor & Continuous Quality Monitoring" },
-  { src: assets.image5, caption: "Central Milk Processing Hall · Kuppam Facility" },
-  { src: assets.packing, caption: "Hygienic Packaging & Controlled Sanitation Environment" },
 ];
 
 const etpGalleryImages = [
   { src: assets.lawns, caption: "Campus Green Cover & Irrigation Lawns" },
-  { src: assets.farm, caption: "Agricultural Banana & Vegetable Farmlands" },
-  { src: assets.aerial, caption: "Zero-Discharge Processing Campus at Kuppam" },
-  { src: assets.exterior, caption: "Eco-Friendly Operations & Treated Water Channels" },
+  { src: assets.farm, caption: "Agricultural Farmlands & Water Reuse" },
 ];
 
 const cipCycles = [
@@ -75,7 +71,7 @@ export default function Sustainability() {
               <span className="kicker-rule" />
               <span>PLANT &amp; PROCESSING EXCELLENCE</span>
             </div>
-            <h2>Equipped for hygiene,<br /><em>designed for sustainability.</em></h2>
+            <h2>Modern dairy circuits,<br /><em>closed-loop hygiene.</em></h2>
           </div>
         </div>
 
@@ -332,12 +328,25 @@ export default function Sustainability() {
             <h2>Chilled at the source,<br /><em>close to the farm.</em></h2>
           </div>
         </div>
-        <div className="licence-grid location-grid" data-testid="location-grid">
+        <div className="location-grid" data-testid="location-grid">
           {locations.map((location) => (
-            <div className="licence-card location-card" key={location.name} data-testid={`location-${location.name.toLowerCase().replaceAll(" ", "-")}`}>
-              <small>{location.role}</small>
-              <b>{location.name}</b>
-              <span>{location.capacity}</span>
+            <div 
+              className={`location-card ${location.isMain ? "main-hub" : ""}`} 
+              key={location.name} 
+              data-testid={`location-${location.name.toLowerCase().replaceAll(" ", "-")}`}
+            >
+              <div className="location-card-top">
+                <span className="location-icon-badge">
+                  {location.isMain ? <Factory size={20} /> : <Snowflake size={20} />}
+                </span>
+                <span className="location-role-tag">{location.role}</span>
+              </div>
+              <h3 className="location-title">{location.name}</h3>
+              <p className="location-region">{location.region}</p>
+              <div className="location-capacity-pill">
+                <small>DAILY CAPACITY</small>
+                <b>{location.capacity}</b>
+              </div>
             </div>
           ))}
         </div>
@@ -345,8 +354,10 @@ export default function Sustainability() {
 
       {/* SECTION: CTA BAND */}
       <section className="cta-band section-pad" data-testid="farmers-cta">
-        <h2>Looking to partner<br /><em>with our dairy network?</em></h2>
-        <p>Whether you are a dairy farming family, bulk partner, or distributor — connect with our procurement and plant operations team.</p>
+        <div className="cta-copy">
+          <h2>Looking to partner<br /><em>with our dairy network?</em></h2>
+          <p>Whether you are a dairy farming family, bulk partner, or distributor — connect with our procurement and plant operations team.</p>
+        </div>
         <Link className="button button-dark" to="/contact" data-testid="farmers-cta-button">
           Reach our team <ArrowUpRight size={16} />
         </Link>

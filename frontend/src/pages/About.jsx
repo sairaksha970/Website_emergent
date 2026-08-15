@@ -1,5 +1,5 @@
 import { Award, Droplets, Factory, Flag, Handshake, MapPin, Milk, Package, Snowflake, Sprout, TrendingUp, Truck } from "lucide-react";
-import PageHero from "@/components/PageHero";
+import AboutHero from "@/components/AboutHero";
 import { assets, fssaiNumber, timeline } from "@/data";
 
 const railStats = [
@@ -14,55 +14,52 @@ const journeyIcons = { Flag, Snowflake, MapPin, TrendingUp, Award, Factory };
 export default function About() {
   return (
     <>
-      <PageHero
-        testId="about-hero"
-        eyebrow="About Us"
-        intro="A dependable dairy business rooted in quality, discipline and long-term relationships."
-        title={<>Rooted in Kuppam.<br /><em>Raised with care.</em></>}
-        image={assets.exterior}
-      />
+      <AboutHero />
 
       <section className="about section-pad" data-testid="about-profile-section">
-        <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>WHO WE ARE</span></div>
-        <div className="about-grid-3">
-          <h2>Built slowly.<br /><em>Grown with purpose.</em></h2>
-          <div className="about-copy">
-            <p>SAIRAKSHA DAIRY PRODUCTS PRIVATE LIMITED is a closely held company incorporated on 7 June 2012, with a clear purpose: to build a dependable dairy business rooted in quality, discipline and long-term relationships.</p>
-            <p>What began with just 5,000 litres of liquid milk per day has grown into a well-established dairy operation selling approximately 70,000 litres of milk and curd and 2,000 kg of paneer every day.</p>
-            <p>Our main processing facility at Kuppam, Andhra Pradesh, has a processing capacity of approximately 2,00,000 litres per day and storage capacity of 2,00,000 litres. Our operations are supported by three strategically located chilling centres within an 80-kilometre radius and an owned fleet of 23 insulated vehicles, enabling efficient collection, processing and distribution.</p>
-            <p>Today, Sairaksha Dairy serves customers across Andhra Pradesh, Karnataka, Tamil Nadu and Telangana, with a growing reputation for consistency, quality and reliability.</p>
+        <div className="about-metrics-container">
+          <div className="about-metrics-header">
+            <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>OUR DAILY SCALE</span></div>
+            <h2>Operational scale,<br /><em>every single day.</em></h2>
           </div>
-          <aside className="about-rail" data-testid="about-rail">
+          <div className="about-metrics-grid" data-testid="about-rail">
             {railStats.map((stat) => {
               const Icon = stat.icon;
               return (
-                <div className="rail-stat" key={stat.label} data-testid={`rail-${stat.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-                  <span className="rail-icon"><Icon size={17} /></span>
-                  <div><b>{stat.value}</b><small>{stat.label}</small></div>
+                <div className="about-metric-card" key={stat.label} data-testid={`rail-${stat.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <span className="rail-icon"><Icon size={22} /></span>
+                  <div className="metric-info">
+                    <b>{stat.value}</b>
+                    <small>{stat.label}</small>
+                  </div>
                 </div>
               );
             })}
-          </aside>
+          </div>
         </div>
       </section>
 
       <section className="directors section-pad" data-testid="directors-section">
-        <div className="section-heading">
-          <div><div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>OUR LEADERSHIP</span></div><h2>The people<br /><em>behind the promise.</em></h2></div>
-        </div>
-        <div className="director-grid">
-          <article className="director-card" data-testid="director-card-anuradha">
-            <small>Director</small>
-            <h3>Mrs. V. Anuradha Vinod</h3>
-            <p>An accomplished professional with 14 years of banking experience, Mrs. V. Anuradha Vinod brings strong financial discipline, organisational expertise and a structured approach to the dairy business.</p>
-            <p>An MBA in Human Resources, she has played an important role in shaping the company's administration, financial management and organisational growth, while helping build Sairaksha Dairy with a long-term vision.</p>
-          </article>
-          <article className="director-card" data-testid="director-card-krishna">
-            <small>Director</small>
-            <h3>Mr. N. Lovely Krishna</h3>
-            <p>With 16 years of experience in the dairy industry, Mr. N. Lovely Krishna brings extensive practical knowledge of dairy operations, milk procurement, processing and industry dynamics.</p>
-            <p>A Bachelor's degree in Mathematics, his experience and operational understanding have contributed significantly to the company's growth and its ability to build strong relationships across the dairy value chain.</p>
-          </article>
+        <div className="directors-layout">
+          <div className="directors-head">
+            <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>OUR LEADERSHIP</span></div>
+            <h2>The people<br /><em>behind the promise.</em></h2>
+            <p className="directors-sub">Guiding Sairaksha Dairy with industry experience, financial discipline and long-term vision.</p>
+          </div>
+          <div className="director-grid">
+            <article className="director-card" data-testid="director-card-anuradha">
+              <small>Director</small>
+              <h3>Mrs. V. Anuradha Vinod</h3>
+              <p>An accomplished professional with 14 years of banking experience, Mrs. V. Anuradha Vinod brings strong financial discipline, organisational expertise and a structured approach to the dairy business.</p>
+              <p>An MBA in Human Resources, she has played an important role in shaping the company's administration, financial management and organisational growth, while helping build Sairaksha Dairy with a long-term vision.</p>
+            </article>
+            <article className="director-card" data-testid="director-card-krishna">
+              <small>Director</small>
+              <h3>Mr. N. Lovely Krishna</h3>
+              <p>With 16 years of experience in the dairy industry, Mr. N. Lovely Krishna brings extensive practical knowledge of dairy operations, milk procurement, processing and industry dynamics.</p>
+              <p>A Bachelor's degree in Mathematics, his experience and operational understanding have contributed significantly to the company's growth and its ability to build strong relationships across the dairy value chain.</p>
+            </article>
+          </div>
         </div>
       </section>
 

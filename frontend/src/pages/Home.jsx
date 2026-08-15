@@ -67,7 +67,26 @@ export default function Home() {
               <img key={item.image} src={item.image} alt={item.alt} className={index === heroIndex ? "is-active" : ""} data-testid={index === heroIndex ? "hero-product-image" : undefined} />
             ))}
           </div>
-          <div className="hero-stamp">PURE<br /><span>by nature</span></div>
+          <div className="hero-stamp" data-testid="hero-stamp" aria-label="100% Pure by Nature">
+            <svg viewBox="0 0 120 120" className="hero-stamp-svg">
+              <defs>
+                <path
+                  id="heroCirclePath"
+                  d="M 60, 60 m -44, 0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"
+                />
+              </defs>
+              <g className="hero-stamp-rotating-ring">
+                <text className="hero-stamp-curved-text">
+                  <textPath href="#heroCirclePath" startOffset="0%">
+                    PURE BY NATURE • PURE BY NATURE •
+                  </textPath>
+                </text>
+              </g>
+              <text x="60" y="60" dominantBaseline="central" textAnchor="middle" className="hero-stamp-center-text">
+                100%
+              </text>
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -104,9 +123,8 @@ export default function Home() {
             <button className="video-card reveal-on-scroll" style={{ transitionDelay: `${index * 90}ms` }} key={film.title} onClick={() => setSelectedImage(film)} data-testid={`video-card-${index + 1}`} aria-label={`Play ${film.title} video with sound`}>
               <video poster={film.poster} muted loop playsInline preload="metadata">
                 <source src={film.video} type="video/mp4" />
-                <source src={film.webm} type="video/webm" />
+                {film.webm && <source src={film.webm} type="video/webm" />}
               </video>
-              <span className="video-tag">{film.title}</span>
             </button>
           ))}
         </div>
@@ -165,12 +183,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta-band section-pad" data-testid="home-contact-cta">
-        <h2>Let’s bring good<br /><em>things to the table.</em></h2>
-        <p>Looking for a dairy partner, bulk supply or distribution conversation? We would love to hear from you.</p>
-        <Link className="button button-dark" to="/contact" data-testid="home-contact-cta-button">Start a conversation <ArrowUpRight size={16} /></Link>
-      </section>
-
       {selectedImage && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={selectedImage.title} data-testid="factory-lightbox">
           <button className="lightbox-close" onClick={() => setSelectedImage(null)} data-testid="factory-lightbox-close" aria-label="Close viewer"><X size={21} /></button>
@@ -178,7 +190,7 @@ export default function Home() {
             {selectedImage.video ? (
               <video poster={selectedImage.poster} controls playsInline data-testid="lightbox-video" ref={(node) => { if (node) node.play().catch(() => {}); }}>
                 <source src={selectedImage.video} type="video/mp4" />
-                <source src={selectedImage.webm} type="video/webm" />
+                {selectedImage.webm && <source src={selectedImage.webm} type="video/webm" />}
               </video>
             ) : (
               <img src={selectedImage.image} alt={selectedImage.caption} data-testid="factory-lightbox-image" />

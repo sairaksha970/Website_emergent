@@ -1,17 +1,11 @@
-import { Check, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import PageHero from "@/components/PageHero";
-import { assets, locations } from "@/data";
+import { Check, Factory, Mail, MapPin, MessageCircle, Phone, Snowflake } from "lucide-react";
+import ContactHero from "@/components/ContactHero";
+import { locations } from "@/data";
 
 export default function Contact() {
   return (
     <>
-      <PageHero
-        testId="contact-hero"
-        eyebrow="Contact Us"
-        title={<>Let’s bring good<br /><em>things to the table.</em></>}
-        intro="Distribution, bulk supply, farmer partnerships or a simple question — reach us on phone or WhatsApp and our team will get back to you."
-        image={assets.fleet}
-      />
+      <ContactHero />
 
       <section className="contact section-pad" data-testid="contact-section">
         <div className="contact-top">
@@ -33,15 +27,33 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="licences section-pad" data-testid="contact-locations-section">
+      <section className="contact-locations-section section-pad" data-testid="contact-locations-section">
         <div className="section-heading">
-          <div><div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>FIND US</span></div><h2>One plant,<br /><em>three chilling centres.</em></h2></div>
+          <div>
+            <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>FIND US</span></div>
+            <h2>One plant,<br /><em>three chilling centres.</em></h2>
+          </div>
           <p>All within an 80 km radius of our main packing station at Kuppam.</p>
         </div>
-        <div className="licence-grid location-grid" data-testid="contact-location-grid">
+        <div className="location-grid" data-testid="contact-location-grid">
           {locations.map((location) => (
-            <div className="licence-card location-card" key={location.name} data-testid={`contact-location-${location.name.toLowerCase().replaceAll(" ", "-")}`}>
-              <small>{location.role}</small><b>{location.name}</b><span>{location.capacity}</span>
+            <div 
+              className={`location-card ${location.isMain ? "main-hub" : ""}`} 
+              key={location.name} 
+              data-testid={`contact-location-${location.name.toLowerCase().replaceAll(" ", "-")}`}
+            >
+              <div className="location-card-top">
+                <span className="location-icon-badge">
+                  {location.isMain ? <Factory size={20} /> : <Snowflake size={20} />}
+                </span>
+                <span className="location-role-tag">{location.role}</span>
+              </div>
+              <h3 className="location-title">{location.name}</h3>
+              <p className="location-region">{location.region}</p>
+              <div className="location-capacity-pill">
+                <small>DAILY CAPACITY</small>
+                <b>{location.capacity}</b>
+              </div>
             </div>
           ))}
         </div>

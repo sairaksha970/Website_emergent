@@ -1,45 +1,47 @@
 export const assets = {
-  curd: "/images/gomukhi-curd.webp",
-  milk: "/images/gomukhi-milk.webp",
-  paneer: "/images/amogh-lite-paneer.webp",
-  khova: "/images/amogh-khova.webp",
-  toned: "/images/sl-toned.webp",
-  fleet: "/images/fleet-van.webp",
-  exterior: "/images/factory-exterior.webp",
-  processing: "/images/factory-processing.webp",
-  production: "/images/factory-production.webp",
-  productsHero: "/images/products-hero.webp",
-  amoghCurd: "/images/amogh-curd.webp",
-  amoghCurdBucket: "/images/amogh-curd-bucket.webp",
-  amoghPaneer: "/images/amogh-paneer.webp",
-  gomukhiDtMilk: "/images/gomukhi-dt-milk.webp",
-  gomukhiStandardized: "/images/gomukhi-standardized.webp",
-  gomukhiToned: "/images/gomukhi-toned.webp",
-  slFullCream: "/images/sl-fullcream.webp",
-  slStandardised: "/images/sl-standardised.webp",
-  slButterMilk: "/images/sl-buttermilk.webp",
-  slCurd: "/images/sl-curd.webp",
-  gate: "/images/factory-gate.webp",
-  lawns: "/images/factory-lawns.webp",
-  shrine: "/images/factory-shrine.webp",
-  dusk: "/images/factory-dusk.webp",
-  packing: "/images/factory-packing.webp",
-  farm: "/images/factory-farm.webp",
-  plantInterior: "/images/factory-interior.webp",
-  tanker: "/images/fleet-tanker.webp",
-  aerial: "/images/factory-aerial.webp",
-  fleetGarland: "/images/fleet-garland.webp",
-  image1: "/images/1.jpeg",
-  image5: "/images/5.jpeg",
+  curd: "/images/Gomukhi_curd.webp",
+  milk: "/images/gomukhi_full_cream_milk.webp",
+  paneer: "/images/amogh_lite_paneer.webp",
+  khova: "/images/Amogh_khova.webp",
+  toned: "/images/srilakshmi_toned_milk.webp",
+  fleet: "/images/Fleet-van.webp",
+  exterior: "/images/Factory_0.webp",
+  processing: "/images/Factory_2.webp",
+  production: "/images/Factory_4.webp",
+  productsHero: "/images/Product_hero.webp",
+  amoghCurd: "/images/amogh_curd.webp",
+  amoghCurdBucket: "/images/amogh_curd_bucket.webp",
+  amoghPaneer: "/images/Amogh_paneer.webp",
+  gomukhiDtMilk: "/images/Gomukhi_dt_milk.webp",
+  gomukhiStandardized: "/images/gomukhi_standardized_milk.webp",
+  gomukhiToned: "/images/gomukhi_toned_milk_pouches.webp",
+  slFullCream: "/images/srilakshmi_fullcream_milk.webp",
+  slStandardised: "/images/srilakshmi_standardized_milk.webp",
+  slButterMilk: "/images/srilakshmi_buttermilk.webp",
+  slCurd: "/images/srilakshmi_curd.webp",
+  gate: "/images/Factory-gate.webp",
+  lawns: "/images/Factory_6.webp",
+  shrine: "/images/Temple.webp",
+  dusk: "/images/Factory_1.webp",
+  packing: "/images/Factory_5.webp",
+  farm: "/images/Farm.webp",
+  plantInterior: "/images/Factory_3.webp",
+  tanker: "/images/Fleet-tanker.webp",
+  aerial: "/images/Factory_ariel.webp",
+  fleetGarland: "/images/Fleet-garland.webp",
+  image1: "/images/Factory_2.webp",
+  image5: "/images/Factory_4.webp",
   videoPlant: "/videos/film1.mp4",
   videoPacking: "/videos/film2.mp4",
   videoControl: "/videos/film3.mp4",
   videoInspection: "/videos/film4.mp4",
-  farmer: "/images/farmers-hero.webp",
-  farmerProcurement: "/images/farmers-procurement.webp",
+  farmer: "/images/Farm.webp",
+  farmerProcurement: "/images/Farm.webp",
   sustainabilityHero: "/images/sustainability.webp",
-  valuesBaba: "/images/values-baba.webp",
-  valuesFounders: "/images/values-founders.webp",
+  aboutUsHero: "/images/about_us.webp",
+  contactHero: "/images/contactus_hero.webp",
+  valuesBaba: "/images/Temple.webp",
+  valuesFounders: "/images/Founders.webp",
 };
 
 export const factoryGallery = [
@@ -62,10 +64,10 @@ export const factoryGallery = [
 ];
 
 export const plantVideos = [
-  { title: "Inside the Plant", caption: "A walkthrough of our processing facility.", video: assets.videoPlant, webm: "/videos/film1.webm", poster: "/posters/film1.jpg" },
-  { title: "Packing & Dispatch", caption: "Products organised for same-day delivery.", video: assets.videoPacking, webm: "/videos/film2.webm", poster: "/posters/film2.jpg" },
-  { title: "Process Control", caption: "Every parameter monitored in real time.", video: assets.videoControl, webm: "/videos/film3.webm", poster: "/posters/film3.jpg" },
-  { title: "Quality Check", caption: "Every batch inspected before it leaves the floor.", video: assets.videoInspection, webm: "/videos/film4.webm", poster: "/posters/film4.jpg" },
+  { title: "Inside the Plant", caption: "A walkthrough of our processing facility.", video: assets.videoPlant, poster: "/posters/film1.jpg" },
+  { title: "Packing & Dispatch", caption: "Products organised for same-day delivery.", video: assets.videoPacking, poster: "/posters/film2.jpg" },
+  { title: "Process Control", caption: "Every parameter monitored in real time.", video: assets.videoControl, poster: "/posters/film3.jpg" },
+  { title: "Quality Check", caption: "Every batch inspected before it leaves the floor.", video: assets.videoInspection, poster: "/posters/film4.jpg" },
 ];
 
 export const products = [
@@ -111,10 +113,34 @@ export const timeline = [
 export const fssaiNumber = "10118010000287";
 
 export const locations = [
-  { name: "Kuppam Packing Unit", capacity: "2,00,000 litres / day", role: "Main plant · Chittoor Dist" },
-  { name: "Rayakotai CC", capacity: "50,000 litres / day", role: "Chilling centre" },
-  { name: "Thirupathur CC", capacity: "50,000 litres / day", role: "Chilling centre" },
-  { name: "Indure CC", capacity: "10,000 litres / day", role: "Chilling centre" },
+  { 
+    name: "Kuppam Packing Unit", 
+    capacity: "2,00,000 litres / day", 
+    role: "Main Plant", 
+    region: "Santhipuram Mandal, Chittoor Dist",
+    isMain: true 
+  },
+  { 
+    name: "Rayakotai CC", 
+    capacity: "50,000 litres / day", 
+    role: "Chilling Centre", 
+    region: "Krishnagiri Region",
+    isMain: false 
+  },
+  { 
+    name: "Thirupathur CC", 
+    capacity: "50,000 litres / day", 
+    role: "Chilling Centre", 
+    region: "Tirupattur Region",
+    isMain: false 
+  },
+  { 
+    name: "Indure CC", 
+    capacity: "10,000 litres / day", 
+    role: "Chilling Centre", 
+    region: "Kuppam Outer Radius",
+    isMain: false 
+  },
 ];
 
 export const empowerment = [

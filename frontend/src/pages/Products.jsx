@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import PageHero from "@/components/PageHero";
-import { assets, brands, products } from "@/data";
+import ProductsHero from "@/components/ProductsHero";
+import { brands, products } from "@/data";
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,13 +14,7 @@ export default function Products() {
 
   return (
     <>
-      <PageHero
-        testId="products-hero"
-        eyebrow="Our Products"
-        title={<>Three brands.<br /><em>One promise of purity.</em></>}
-        intro="Milk, curd, paneer, khova and more — pasteurised, homogenised and made for the way families eat, celebrate and care for one another."
-        image={assets.productsHero}
-      />
+      <ProductsHero />
 
       <section className="products section-pad" data-testid="products-page-section">
         <div className="filter-row" data-testid="product-filters">
@@ -48,8 +42,10 @@ export default function Products() {
       </section>
 
       <section className="cta-band section-pad" data-testid="products-enquiry-cta">
-        <h2>Interested in bulk supply<br /><em>or distribution?</em></h2>
-        <p>We serve retail markets as well as bulk buyers — hotels, caterers and institutions. Tell us what you need.</p>
+        <div className="cta-copy">
+          <h2>Interested in bulk supply<br /><em>or distribution?</em></h2>
+          <p>We serve retail markets as well as bulk buyers — hotels, caterers and institutions. Tell us what you need.</p>
+        </div>
         <Link className="button button-dark" to="/contact" data-testid="products-enquiry-button">Send an enquiry <ArrowUpRight size={16} /></Link>
       </section>
     </>
