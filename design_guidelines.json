@@ -1,0 +1,47 @@
+{
+  "app_name": "Sairaksha Dairy Products Pvt Ltd",
+  "app_type": "marketing_site",
+  "archetype": "ORGANIC & EARTHY",
+  "typography": {
+    "heading_font": "Playfair Display, serif",
+    "body_font": "Inter, sans-serif",
+    "mono_font": "JetBrains Mono, monospace"
+  },
+  "colors": {
+    "primary": "#1E4620",
+    "primary_hover": "#143116",
+    "secondary": "#D4A373",
+    "accent": "#FAEDCD",
+    "background": "#F4F1DE",
+    "surface": "#FFFFFF",
+    "text": "#283618",
+    "muted": "#606C38"
+  },
+  "visual_enhancers": {
+    "border_radius": "12px",
+    "shadows": "0 10px 30px rgba(30, 70, 32, 0.08)",
+    "glassmorphism": "backdrop-blur-xl bg-white/80 border border-white/40"
+  },
+  "grids": {
+    "bento_marketing": "grid-cols-1 md:grid-cols-12 gap-8"
+  },
+  "layouts": {
+    "max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  },
+  "motion": {
+    "default_transition": "transition-all duration-300 ease-in-out"
+  },
+  "accessibility": {
+    "min_contrast_ratio": "4.5:1",
+    "focus_ring": "focus:ring-2 focus:ring-[#1E4620]"
+  },
+  "media": {
+    "hero_max_height": "max-h-[85vh]"
+  },
+  "image_urls": {
+    "hero_milk_splash": "https://images.unsplash.com/photo-1637382752225-d7f97e1ddd03?q=85&w=1200&auto=format&fit=crop",
+    "farmer_trust": "https://images.unsplash.com/photo-1609252509102-aa73ff792667?q=85&w=800&auto=format&fit=crop",
+    "factory_kuppam": "https://images.unsplash.com/photo-1663841365334-06805f34af15?q=85&w=800&auto=format&fit=crop",
+    "dairy_assortment": "https://images.unsplash.com/photo-1667645895855-2d3f7000a7be?q=85&w=800&auto=format&fit=crop"
+  }
+}

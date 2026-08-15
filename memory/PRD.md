@@ -1,0 +1,51 @@
+# PRD — Sairaksha Dairy Products Pvt Ltd Website
+
+## Original problem statement
+Build a website for Sairaksha Dairy Products Pvt Ltd (brands: Gomukhi, Amogh, Sri Lakshmi) to showcase the company profile, factory infrastructure, and product range, and to attract distributors/bulk enquiries. The user liked the initial "organic & earthy" template, colors and hero section and asked to keep them unchanged. The site must have 5 pages — Home, About Us, Products, Farmers, Contact Us — with content/layouts referenced from screenshots of the user's drafted Lovable project and media from their Google Drive.
+
+## User personas
+- Retail customers discovering the brands and product range
+- Distributors / bulk buyers (hotels, caterers, institutions) sending enquiries
+- Dairy farmers evaluating a procurement partnership
+- Business visitors verifying credibility (licences, turnover, infrastructure)
+
+## Architecture
+- Frontend: React 19 + react-router-dom (BrowserRouter), 5 routed pages, custom CSS (organic & earthy theme, Playfair Display + Inter), lucide-react icons
+- Backend: FastAPI with /api prefix, MongoDB via motor (MONGO_URL / DB_NAME from env)
+- Data: static content in src/data.js; enquiries persisted in MongoDB `enquiries` collection
+
+## Pages
+- Home: hero (preserved), brand strip, story preview, product preview, 4-Point Purity Checkpoint, promise section, Inside Kuppam gallery + lightbox, SMP 2027 future section, contact CTA
+- About Us: company profile, directors, metrics, "The Values Behind Sairaksha" section (Sai Baba + founders photos, compressed 1.8MB→55KB / 1.4MB→78KB), 2012-2027 timeline, licences grid, vision banner
+- 2026-08-13 (hero v3 per user's sample image): full-bleed photographic hero using the Gomukhi curd scene with cream gradient wash, headline "Goodness that comes full circle.", icon-led stats (70k+/23/200), no parallax/stamp; products section = centered "Our Products / Made for everyday goodness." + 4 clean white rounded cards (Curd, Butter Milk, Paneer, Full Cream Milk) + bottom CTA strip "From our farms to your home, quality you can trust, every day." (compressed to 28KB webp); Home "Three names, one promise" brand strip removed; green banners redesigned per user reference images — Home future is now a full-width photo banner (aerial plant shot, gold CTA, Target 2027) and About promise is a two-col card with plant photo + dark 2012 stamp and Quality/Integrity/Purpose icon row; About compressed vertically — scale grid merged into a 4-stat rail beside the profile copy (3-col layout), timeline is now a horizontal 6-stop journey with icons, section paddings tightened — OUR SCALE 8-metric grid, new leadership bios, Values section untouched, Quality & Food Safety section (only FSSAI 10118010000287; other licence numbers removed), Our Promise closing banner. Cross-site: Kuppam = 2,00,000 litres/day processing, sales = 70,000 litres/day, Thirupathur CC = 50,000 litres/day, plant order Kuppam→Rayakotai→Thirupathur→Indure, 4 states incl. Telangana, factory address Plot No. 18/3A Kanamala Doddi Village, Santhipuram Mandal, Chittoor Dist, AP - 517423, "L" replaced by "litres" everywhere, green banner side labels removed (compact 2-col layout), Farmers heading side paragraphs removed
+- Products: banner hero, brand filter (All / Gomukhi / Amogh / Sri Lakshmi) via ?brand= param, 11-product catalog with tags, bulk enquiry CTA
+- Farmers: hero, direct procurement model, stats, 6 empowerment programs, collection network (3 chilling centres + Kuppam unit), farmer CTA
+- Contact Us: contact cards (placeholders for phone/WhatsApp/email), locations grid. NOTE (2026-08-13): user chose a fully static site — enquiry form removed per user request; frontend no longer calls the backend, so the site can deploy on Vercel alone
+
+## Key API endpoints
+- POST /api/enquiries — create enquiry (name, phone, email, interest, message)
+- GET /api/enquiries — list enquiries
+- GET /api/ , GET/POST /api/status — template health endpoints
+
+## Implemented (2026-08-13)
+- Restructured single-page app into 5 routed pages with shared Layout (topline, nav, footer), preserving template, colors and hero
+- Added 4-Point Purity Checkpoint section (from user's reference site) to Home
+- Full product catalog (11 SKUs across 3 brands) with brand filtering and URL params
+- Farmers page with procurement model, empowerment programs and collection network
+- Contact page with working enquiry form wired to MongoDB backend
+- About page with real company data (2012 incorporation, ₹100cr turnover, directors, licences, timeline)
+- Verified: POST/GET /api/enquiries via curl; navigation, filters, form submission via browser automation; mobile menu
+- Home page redesign per user feedback (2026-08-13): hero now cycles 4 product shots with float/spin animations; Our Story section removed (lives on About); THE COLLECTION renamed OUR PRODUCTS with clean caption-free cards; all side paragraphs removed; section spacing tightened (~72px); gallery rebuilt as caption-free masonry; Purity In Motion moved next to products, videos autoplay muted on scroll (IntersectionObserver) with no play buttons, click opens lightbox with sound; scroll-reveal animations site-wide via Layout observer; videos transcoded to WebM/VP9 (public/videos) with MP4+H.264 as first source for Safari/Chrome compatibility
+
+## Backlog
+- P0: Contact details DONE (2026-08-13): mobile 88844 48402 (tel: link) + landline 080-27839900, WhatsApp 99025 81903 (wa.me one-tap chat), email sairakshadairy@yahoo.com (mailto: link), registered office Jigani, Bangalore + main plant Kuppam on Contact page; footer shows mobile + email. All contact details now complete
+- P0: Add remaining product/factory photos and videos — Google Drive links are bot-blocked (reCAPTCHA); user uploads images directly in batches of 5. DONE (2026-08-13): batch 1 added — Amogh Curd, Amogh Curd Bucket, Amogh Paneer, Gomukhi Double Toned Milk, Gomukhi Standardized Milk now show their real pack shots. Batch 2 added — Gomukhi Toned Milk real shot; Sri Lakshmi range expanded with Full Cream Milk, Standardised Milk, Butter Milk and Curd (catalog now 15 products). Batch 3 added — factory entrance, plant lawns, campus shrine, dusk pathway and packing-floor hygiene shots. Batch 4 added — farm trellis (also now the Farmers page feature image), processing hall interior, milk tanker, garlanded fleet and aerial plant view; gallery is now 14 tiles with lightbox. Batch 5 (videos) added — 4 factory films now live in a "Purity, In Motion" section on Home with generated poster thumbnails and click-to-play lightbox (posters extracted via imageio-ffmpeg into frontend/public/posters).
+- P1: "Purity, In Motion" video section once the user shares the short factory videos
+- P1: Admin view or email notification for incoming enquiries
+- P2: Year-wise financial performance table on About page
+- P2: SEO metadata per page
+
+## Next tasks
+1. Collect official contact details and activate WhatsApp/call/email actions
+2. Collect remaining media via direct upload and populate gallery + product images
+3. Optional: enquiry email notifications
