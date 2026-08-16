@@ -14,6 +14,7 @@ import {
   GraduationCap,
   IndianRupee,
   Leaf,
+  MapPin,
   Recycle,
   RefreshCw,
   RotateCw,
@@ -270,32 +271,88 @@ export default function Sustainability() {
 
       </section>
 
-      {/* SECTION: DIRECT FARMER PROCUREMENT */}
-      <section className="quality section-pad" id="farmers" data-testid="procurement-section">
-        <div className="quality-copy">
-          <div className="section-kicker">
-            <span>02</span>
-            <span className="kicker-rule" />
-            <span>DIRECT FARMER PROCUREMENT</span>
+      {/* SECTION: DIRECT FARMER PROCUREMENT (MUTUAL GROWTH) */}
+      <section className="procurement-section section-pad" id="farmers" data-testid="procurement-section">
+        
+        {/* STORY & VISUAL DUAL LAYOUT */}
+        <div className="procurement-layout">
+          <div className="procurement-copy">
+            <div className="section-kicker">
+              <span>02</span>
+              <span className="kicker-rule" />
+              <span>DIRECT FARMER PROCUREMENT</span>
+            </div>
+            <h2>Mutual growth,<br /><em>from the ground up.</em></h2>
+            <p>
+              Our procurement model is built on the principle of mutual growth. We work directly with small and marginal dairy farming families across four states, eliminating middlemen and ensuring reliable, dignified livelihoods.
+            </p>
+            <p>
+              Through our village-level collection network, fresh milk is collected twice daily and transferred to immediate source chilling. Transparent automated testing based on fat and SNF guarantees every farmer fair value for every drop.
+            </p>
           </div>
-          <h2>Mutual growth,<br /><em>from the ground up.</em></h2>
-          <p>
-            Our procurement model is built on the principle of mutual growth. We work with small and marginal dairy farmers across four states, eliminating middlemen and ensuring fair prices.
-          </p>
-          <p>
-            Through our village-level collection centres, we pick up fresh milk twice daily, so farmers never face wastage. Our transparent pricing, based on fat and SNF content, guarantees every farmer fair value for their produce.
-          </p>
-          <div className="metric-row farmers-stats" data-testid="farmer-stats">
-            <div><strong>4</strong><small>states of collection</small></div>
-            <div><strong>3</strong><small>chilling centres</small></div>
-            <div><strong>2x</strong><small>milk collected daily</small></div>
-            <div><strong>100<span>%</span></strong><small>fair trade</small></div>
+
+          <div className="procurement-visual">
+            <div className="procurement-photo-frame">
+              <img 
+                src={assets.farmerProcurement} 
+                alt="Farmer handing over a milk can at a Sairaksha collection centre" 
+                data-testid="farmers-feature-image" 
+              />
+              <div className="procurement-photo-badge">
+                <span className="badge-dot" />
+                <span>Village Collection · Twice Daily</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="quality-photo">
-          <img src={assets.farmerProcurement} alt="Farmer handing over a milk can at a Sairaksha collection centre" data-testid="farmers-feature-image" />
-          <span className="photo-caption">Village collection · Twice daily</span>
+
+        {/* REDESIGNED 4-CARD PROCUREMENT DATA METRICS */}
+        <div className="procurement-stats-grid" data-testid="farmer-stats">
+          <div className="procurement-stat-card">
+            <div className="stat-card-top">
+              <span className="stat-num">4</span>
+              <div className="stat-icon-wrap"><MapPin size={19} /></div>
+            </div>
+            <div className="stat-card-body">
+              <h4>States of Collection</h4>
+              <p>Active dairy farmer networks across AP, Karnataka, Tamil Nadu &amp; Telangana.</p>
+            </div>
+          </div>
+
+          <div className="procurement-stat-card">
+            <div className="stat-card-top">
+              <span className="stat-num">3</span>
+              <div className="stat-icon-wrap"><Snowflake size={19} /></div>
+            </div>
+            <div className="stat-card-body">
+              <h4>Chilling Centres</h4>
+              <p>Source-level chilling units preserving farm-fresh quality within hours of milking.</p>
+            </div>
+          </div>
+
+          <div className="procurement-stat-card">
+            <div className="stat-card-top">
+              <span className="stat-num">2x</span>
+              <div className="stat-icon-wrap"><RotateCw size={19} /></div>
+            </div>
+            <div className="stat-card-body">
+              <h4>Milk Collected Daily</h4>
+              <p>Morning and evening scheduled pickups preventing spoilage and storage loss.</p>
+            </div>
+          </div>
+
+          <div className="procurement-stat-card">
+            <div className="stat-card-top">
+              <span className="stat-num">100<span>%</span></span>
+              <div className="stat-icon-wrap"><ShieldCheck size={19} /></div>
+            </div>
+            <div className="stat-card-body">
+              <h4>Direct Fair Trade</h4>
+              <p>Transparent fat &amp; SNF testing ensuring fair compensation and prompt farmer payouts.</p>
+            </div>
+          </div>
         </div>
+
       </section>
 
       {/* SECTION: HOW WE EMPOWER FARMERS */}

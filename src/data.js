@@ -71,21 +71,21 @@ export const plantVideos = [
 ];
 
 export const products = [
-  { name: "Full Cream Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Rich, creamy and full of natural goodness.", tags: [] },
-  { name: "Standardized Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiStandardized, note: "Consistent richness in every pouch.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
-  { name: "Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiToned, note: "Multiple pouch sizes for every family.", tags: ["Balanced Fat", "Multiple Packs", "Daily Fresh"] },
-  { name: "Double Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiDtMilk, note: "Light on fat, full on nutrition.", tags: ["Low Fat"] },
-  { name: "Fresh Curd", brand: "Gomukhi", category: "Fresh Curd", image: assets.curd, note: "Made with pure cow milk — thick and naturally set.", tags: ["Cow Milk", "Naturally Set", "Fresh & Healthy"] },
-  { name: "Curd", brand: "Amogh", category: "Fresh Curd", image: assets.amoghCurd, note: "Convenient family pouches — farm fresh for a healthy family.", tags: ["Multiple Packs", "Protein Rich", "Farm Fresh"] },
-  { name: "Bucket Curd", brand: "Amogh", category: "Fresh Curd", image: assets.amoghCurdBucket, note: "Bulk buckets for households, hotels and caterers.", tags: ["Bulk Pack", "HoReCa Friendly"] },
-  { name: "Paneer", brand: "Amogh", category: "Dairy foods", image: assets.amoghPaneer, note: "Soft, power-packed protein — perfect for curries, tikka and salads.", tags: ["High Protein", "Soft Texture", "500g – 1Kg Packs"] },
-  { name: "Lite Paneer", brand: "Amogh", category: "Dairy foods", image: assets.paneer, note: "Power packed protein, lighter on fat.", tags: ["High Protein", "Lite", "Everyday Use"] },
-  { name: "Unsweetened Khova", brand: "Amogh", category: "Dairy foods", image: assets.khova, note: "For healthy sweets and festive cooking.", tags: ["Pure Milk", "No Added Sugar", "Festive Ready"] },
-  { name: "Full Cream Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slFullCream, note: "Rich and creamy — care for your health in every glass.", tags: [] },
-  { name: "Standardised Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slStandardised, note: "Consistent quality, pasteurised and homogenised.", tags: ["Consistent Quality", "Homogenised", "Everyday Use"] },
-  { name: "Double Toned Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.toned, note: "Pasteurised & homogenised — care for your health.", tags: ["Low Fat", "Daily Fresh"] },
-  { name: "Butter Milk", brand: "Sri Lakshmi", category: "Butter Milk", image: assets.slButterMilk, note: "Light, refreshing and cooling — the everyday thirst quencher.", tags: ["Refreshing", "Light", "Daily Fresh"] },
-  { name: "Curd", brand: "Sri Lakshmi", category: "Fresh Curd", image: assets.slCurd, note: "Thick, naturally set curd in family pouches.", tags: ["Naturally Set", "Fresh & Healthy", "Multiple Packs"] },
+  { name: "Full Cream Milk", brand: "Gomukhi", category: "Milk", image: assets.milk, note: "Rich, creamy and full of natural goodness." },
+  { name: "Standardized Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiStandardized, note: "Consistent richness in every pouch." },
+  { name: "Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiToned, note: "Multiple pouch sizes for every family." },
+  { name: "Double Toned Milk", brand: "Gomukhi", category: "Milk", image: assets.gomukhiDtMilk, note: "Light on fat, full on nutrition." },
+  { name: "Fresh Curd", brand: "Gomukhi", category: "Fresh Curd", image: assets.curd, note: "Made with pure cow milk — thick and naturally set." },
+  { name: "Curd", brand: "Amogh", category: "Fresh Curd", image: assets.amoghCurd, note: "Convenient family pouches — farm fresh for a healthy family." },
+  { name: "Bucket Curd", brand: "Amogh", category: "Fresh Curd", image: assets.amoghCurdBucket, note: "Bulk buckets for households, hotels and caterers." },
+  { name: "Paneer", brand: "Amogh", category: "Dairy foods", image: assets.amoghPaneer, note: "Soft, power-packed protein — perfect for curries, tikka and salads." },
+  { name: "Lite Paneer", brand: "Amogh", category: "Dairy foods", image: assets.paneer, note: "Power packed protein, lighter on fat." },
+  { name: "Unsweetened Khova", brand: "Amogh", category: "Dairy foods", image: assets.khova, note: "For healthy sweets and festive cooking." },
+  { name: "Full Cream Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slFullCream, note: "Rich and creamy — care for your health in every glass." },
+  { name: "Standardised Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.slStandardised, note: "Consistent quality, pasteurised and homogenised." },
+  { name: "Double Toned Milk", brand: "Sri Lakshmi", category: "Milk", image: assets.toned, note: "Pasteurised & homogenised — care for your health." },
+  { name: "Butter Milk", brand: "Sri Lakshmi", category: "Butter Milk", image: assets.slButterMilk, note: "Light, refreshing and cooling — the everyday thirst quencher." },
+  { name: "Curd", brand: "Sri Lakshmi", category: "Fresh Curd", image: assets.slCurd, note: "Thick, naturally set curd in family pouches." },
 ];
 
 export const brands = [
