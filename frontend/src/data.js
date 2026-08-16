@@ -29,8 +29,10 @@ export const assets = {
   tanker: "/images/Fleet-tanker.webp",
   aerial: "/images/Factory_ariel.webp",
   fleetGarland: "/images/Fleet-garland.webp",
-  image1: "/images/Factory_2.webp",
-  image5: "/images/Factory_4.webp",
+  image1: "/images/1.jpg",
+  image5: "/images/5.jpg",
+  workersTeam: "/images/1.jpg",
+  workersFloor: "/images/5.jpg",
   videoPlant: "/videos/film1.mp4",
   videoPacking: "/videos/film2.mp4",
   videoControl: "/videos/film3.mp4",
@@ -55,12 +57,12 @@ export const factoryGallery = [
   { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
   { title: "Milk on the move", caption: "Tankers linking chilling centres to the main plant", image: assets.tanker },
   { title: "Straight from the farm", caption: "Green fields and kitchen gardens at our partner farms", image: assets.farm },
-  { title: "People behind every pack", caption: "Careful packing and quality checks on the floor", image: assets.production },
+  { title: "Bulk storage & silos", caption: "Temperature-controlled stainless steel holding tanks and automated milk circuits", image: assets.production },
   { title: "Evenings at the plant", caption: "Stone pathways leading to the processing halls", image: assets.dusk },
   { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
   { title: "Kuppam from above", caption: "Silos, chillers and processing halls under one blue roof", image: assets.aerial },
-  { title: "Plant operations", caption: "Continuous quality supervision and operational excellence", image: assets.image1 },
-  { title: "Dairy processing facility", caption: "Advanced machinery and processing halls at Sairaksha Dairy", image: assets.image5 },
+  { title: "Our dedicated dairy team", caption: "The frontline workers and operators ensuring quality and hygiene in every batch", image: assets.image1 },
+  { title: "Precision on the processing floor", caption: "Skilled plant technicians operating modern packaging and quality control lines", image: assets.image5 },
 ];
 
 export const plantVideos = [

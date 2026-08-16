@@ -19,7 +19,7 @@ export const galleryCategories = [
   { id: "all", label: "All Photos" },
   { id: "plant", label: "Plant & Facilities" },
   { id: "fleet", label: "Cold Chain & Fleet" },
-  { id: "hygiene", label: "Hygiene & Packing" },
+  { id: "hygiene", label: "Team & Hygiene" },
   { id: "campus", label: "Campus & Farm" },
 ];
 
@@ -34,12 +34,12 @@ const categoryMap = {
   "Built for precision": "plant",
   "Milk on the move": "fleet",
   "Straight from the farm": "campus",
-  "People behind every pack": "hygiene",
+  "Bulk storage & silos": "plant",
   "Evenings at the plant": "campus",
   "Hygiene on the floor": "hygiene",
   "Kuppam from above": "plant",
-  "Plant operations": "plant",
-  "Dairy processing facility": "plant",
+  "Our dedicated dairy team": "hygiene",
+  "Precision on the processing floor": "hygiene",
 };
 
 export const enrichedGallery = factoryGallery.map((item, idx) => ({
