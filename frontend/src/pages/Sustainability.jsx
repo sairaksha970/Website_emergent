@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import SustainabilityHero from "@/components/SustainabilityHero";
 import FacilityCarousel from "@/components/FacilityCarousel";
-import { assets, empowerment, locations } from "@/data";
+import { assets, empowerment } from "@/data";
 
 const empowerIcons = { IndianRupee, GraduationCap, Stethoscope, TrendingUp, Users, ShieldCheck };
 
@@ -374,38 +374,6 @@ export default function Sustainability() {
               </article>
             );
           })}
-        </div>
-      </section>
-
-      {/* SECTION: THE REGIONAL COLLECTION NETWORK */}
-      <section className="licences section-pad" data-testid="collection-network-section">
-        <div className="section-heading">
-          <div>
-            <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>THE COLLECTION NETWORK</span></div>
-            <h2>Chilled at the source,<br /><em>close to the farm.</em></h2>
-          </div>
-        </div>
-        <div className="location-grid" data-testid="location-grid">
-          {locations.map((location) => (
-            <div 
-              className={`location-card ${location.isMain ? "main-hub" : ""}`} 
-              key={location.name} 
-              data-testid={`location-${location.name.toLowerCase().replaceAll(" ", "-")}`}
-            >
-              <div className="location-card-top">
-                <span className="location-icon-badge">
-                  {location.isMain ? <Factory size={20} /> : <Snowflake size={20} />}
-                </span>
-                <span className="location-role-tag">{location.role}</span>
-              </div>
-              <h3 className="location-title">{location.name}</h3>
-              <p className="location-region">{location.region}</p>
-              <div className="location-capacity-pill">
-                <small>DAILY CAPACITY</small>
-                <b>{location.capacity}</b>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
