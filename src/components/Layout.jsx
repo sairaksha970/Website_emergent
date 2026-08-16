@@ -20,7 +20,7 @@ export default function Layout() {
 
     // Robust observer that attaches reliably after page mount
     const observeElements = () => {
-      const items = document.querySelectorAll(".reveal-on-scroll:not(.in-view)");
+      const items = document.querySelectorAll(".reveal-on-scroll:not(.in-view), .reveal-scale:not(.in-view)");
       if (!items.length) return;
 
       if (!("IntersectionObserver" in window)) {
@@ -42,14 +42,8 @@ export default function Layout() {
 
       items.forEach((item) => observer.observe(item));
 
-      // Fallback safeguard: reveal any stuck elements after 600ms
-      const fallbackTimer = setTimeout(() => {
-        items.forEach((item) => item.classList.add("in-view"));
-      }, 600);
-
       return () => {
         observer.disconnect();
-        clearTimeout(fallbackTimer);
       };
     };
 
