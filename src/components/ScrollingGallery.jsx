@@ -209,21 +209,6 @@ export default function ScrollingGallery({
         </div>
       </div>
 
-      {/* Bottom helper strip */}
-      <div className="sg-bottom-bar">
-        <p className="sg-hint">
-          <span>Continuous scrolling stream</span> · Hover to pause · Click any photo for full view
-        </p>
-        <button
-          type="button"
-          className="sg-bottom-link"
-          onClick={() => setIsModalOpen(true)}
-          data-testid="open-full-gallery-bottom-link"
-        >
-          Explore All {enrichedGallery.length} Photos in High-Res <ArrowUpRight size={14} />
-        </button>
-      </div>
-
       {/* Full Gallery Modal */}
       <AnimatePresence>
         {isModalOpen && (

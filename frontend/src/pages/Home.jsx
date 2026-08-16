@@ -434,9 +434,6 @@ export default function Home() {
               Where the work<br /><em>comes together.</em>
             </h2>
           </div>
-          <p className="factory-gallery-intro reveal-on-scroll">
-            Experience our Kuppam processing facility, automated packaging lines, and dedicated cold chain fleet in continuous motion.
-          </p>
         </div>
 
         <ScrollingGallery
