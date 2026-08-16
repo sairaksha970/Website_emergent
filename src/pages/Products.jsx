@@ -33,7 +33,11 @@ export default function Products() {
                   <small>{product.brand}</small>
                   <h3>{product.name}</h3>
                   <p>{product.note}</p>
-                  <div className="product-tags">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  {product.tags && product.tags.length > 0 && (
+                    <div className="product-tags">
+                      {product.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                  )}
                 </div>
               </div>
             </article>
