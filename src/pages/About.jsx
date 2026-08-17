@@ -74,7 +74,7 @@ export default function About() {
       <section className="about section-pad" data-testid="about-profile-section">
         <div className="about-metrics-container">
           <div className="about-metrics-header">
-            <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>OUR DAILY SCALE</span></div>
+            <div className="section-kicker"><span>OUR DAILY SCALE</span></div>
             <h2>Operational scale,<br /><em>every single day.</em></h2>
           </div>
           <div className="about-metrics-grid" data-testid="about-rail">
@@ -143,7 +143,7 @@ export default function About() {
       <section className="directors section-pad" data-testid="directors-section">
         <div className="directors-layout">
           <div className="directors-head">
-            <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>OUR LEADERSHIP</span></div>
+            <div className="section-kicker"><span>OUR LEADERSHIP</span></div>
             <h2>The people<br /><em>behind the promise.</em></h2>
             <p className="directors-sub">Guiding Sairaksha Dairy with industry experience, financial discipline and long-term vision.</p>
           </div>
@@ -179,7 +179,7 @@ export default function About() {
       </section>
 
       <section className="values section-pad" data-testid="values-section">
-        <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>THE VALUES BEHIND SAIRAKSHA</span></div>
+        <div className="section-kicker"><span>THE VALUES BEHIND SAIRAKSHA</span></div>
         <h2 className="values-tagline">Inspired by faith.<br /><em>Built by family. Driven by purity.</em></h2>
         <div className="flourish" aria-hidden="true"><span /></div>
         <div className="values-grid">
@@ -224,7 +224,7 @@ export default function About() {
       </section>
 
       <section className="story-timeline section-pad" data-testid="timeline-section">
-        <div className="section-kicker"><span>04</span><span className="kicker-rule" /><span>OUR JOURNEY</span></div>
+        <div className="section-kicker"><span>OUR JOURNEY</span></div>
         <h2 className="timeline-heading">Every year,<br /><em>a step further.</em></h2>
         <div className="journey" data-testid="timeline-list">
           <div className="journey-track-line" aria-hidden="true" />
@@ -279,7 +279,7 @@ export default function About() {
       <section className="licences section-pad" data-testid="quality-standards-section">
         <div className="qs-grid">
           <div>
-            <div className="section-kicker"><span>05</span><span className="kicker-rule" /><span>QUALITY & FOOD SAFETY</span></div>
+            <div className="section-kicker"><span>QUALITY & FOOD SAFETY</span></div>
             <h2 className="values-tagline">Quality is not an option.<br /><em>It is our standard.</em></h2>
             <div className="fssai-chip" data-testid="fssai-chip"><small>FSSAI License No.</small><b>{fssaiNumber}</b></div>
           </div>
@@ -293,7 +293,13 @@ export default function About() {
       </section>
 
       <section className="promise section-pad" data-testid="promise-section">
-        <div className="promise-card reveal-on-scroll">
+        <motion.div
+          className="promise-card"
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="promise-copy">
             <h2>From farmers<br /><em>to families.</em></h2>
             <p>Dairy is more than a business. It is a relationship that connects farmers, employees, partners and consumers.</p>
@@ -306,14 +312,9 @@ export default function About() {
             </div>
           </div>
           <div className="promise-visual">
-            <img src={assets.farmer} alt="Sairaksha farmer partners with their cattle" />
-            <div className="promise-stamp">
-              <small>Sairaksha Dairy</small>
-              <strong>2012</strong>
-              <small>Built slowly · Grown with purpose<br />Driven by quality · Ready for tomorrow</small>
-            </div>
+            <img src={assets.farmersToFamilies || assets.farmer} alt="From farmers to families - Sairaksha Dairy" />
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

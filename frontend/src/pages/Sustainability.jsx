@@ -38,12 +38,12 @@ const empowerIcons = { IndianRupee, GraduationCap, Stethoscope, TrendingUp, User
 // Curated image sets with 2 relevant photos each
 const cipGalleryImages = [
   { src: assets.plantInterior, caption: "CIP Stainless Steel Processing Lines & Silos" },
-  { src: assets.processing, caption: "Automated Fluid Circuits & Pasteurisation Tanks" },
+  { src: assets.milkProcessingLine, caption: "Automated Milk Processing Line & Circuits" },
 ];
 
 const etpGalleryImages = [
-  { src: assets.lawns, caption: "Campus Green Cover & Irrigation Lawns" },
-  { src: assets.farm, caption: "Agricultural Farmlands & Water Reuse" },
+  { src: assets.waterTreatment, caption: "Effluent Water Treatment & Recycling Plant" },
+  { src: assets.etp, caption: "Effluent Treatment Plant (ETP) Facility & Water Reuse" },
 ];
 
 const cipCycles = [
@@ -68,8 +68,6 @@ export default function Sustainability() {
         <div className="section-heading operations-header">
           <div>
             <div className="section-kicker">
-              <span>01</span>
-              <span className="kicker-rule" />
               <span>PLANT &amp; PROCESSING EXCELLENCE</span>
             </div>
             <h2>Modern dairy circuits,<br /><em>closed-loop hygiene.</em></h2>
@@ -278,8 +276,6 @@ export default function Sustainability() {
         <div className="procurement-layout">
           <div className="procurement-copy">
             <div className="section-kicker">
-              <span>02</span>
-              <span className="kicker-rule" />
               <span>DIRECT FARMER PROCUREMENT</span>
             </div>
             <h2>Mutual growth,<br /><em>from the ground up.</em></h2>
@@ -294,8 +290,8 @@ export default function Sustainability() {
           <div className="procurement-visual">
             <div className="procurement-photo-frame">
               <img 
-                src={assets.farmerProcurement} 
-                alt="Farmer handing over a milk can at a Sairaksha collection centre" 
+                src={assets.mutualGrowth || assets.farmerProcurement} 
+                alt="Direct farmer procurement - Mutual growth from the ground up" 
                 data-testid="farmers-feature-image" 
               />
               <div className="procurement-photo-badge">
@@ -359,7 +355,7 @@ export default function Sustainability() {
       <section className="purity section-pad" data-testid="empowerment-section">
         <div className="section-heading">
           <div>
-            <div className="section-kicker"><span>03</span><span className="kicker-rule" /><span>HOW WE EMPOWER FARMERS</span></div>
+            <div className="section-kicker"><span>HOW WE EMPOWER FARMERS</span></div>
             <h2>Partners, not just<br /><em>suppliers.</em></h2>
           </div>
         </div>

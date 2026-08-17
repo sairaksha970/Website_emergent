@@ -9,7 +9,7 @@ export default function Contact() {
 
       <section className="contact section-pad" data-testid="contact-section">
         <div className="contact-top">
-          <div className="section-kicker"><span>01</span><span className="kicker-rule" /><span>GET IN TOUCH</span></div>
+          <div className="section-kicker"><span>GET IN TOUCH</span></div>
           <h2>Start a<br /><em>conversation.</em></h2>
           <p>Call or message us directly — we respond fastest on WhatsApp during working hours.</p>
           <ul className="contact-points" data-testid="contact-points-list">
@@ -30,7 +30,7 @@ export default function Contact() {
       <section className="contact-locations-section section-pad" data-testid="contact-locations-section">
         <div className="section-heading">
           <div>
-            <div className="section-kicker"><span>02</span><span className="kicker-rule" /><span>FIND US</span></div>
+            <div className="section-kicker"><span>FIND US</span></div>
             <h2>One plant,<br /><em>three chilling centres.</em></h2>
           </div>
           <p>All within an 80 km radius of our main packing station at Kuppam.</p>

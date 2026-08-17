@@ -37,12 +37,18 @@ export const assets = {
   videoPacking: "/videos/film2.mp4",
   videoControl: "/videos/film3.mp4",
   videoInspection: "/videos/film4.mp4",
-  farmer: "/images/Farm.webp",
-  farmerProcurement: "/images/Farm.webp",
+  farmer: "/images/farmers_to_families..webp",
+  farmerProcurement: "/images/Mutual_growth.webp",
+  mutualGrowth: "/images/Mutual_growth.webp",
+  farmersToFamilies: "/images/farmers_to_families..webp",
+  waterTreatment: "/images/water-treatment-system.webp",
+  etp: "/images/etp.webp",
+  milkProcessingLine: "/images/milk-processing-line.webp",
+  processingArea: "/images/processing-area.webp",
   sustainabilityHero: "/images/sustainability.webp",
   aboutUsHero: "/images/about_us.webp",
   contactHero: "/images/contactus_hero.webp",
-  valuesBaba: "/images/Temple.webp",
+  valuesBaba: "/images/baba.webp",
   valuesFounders: "/images/Founders.webp",
 };
 
@@ -50,7 +56,7 @@ export const factoryGallery = [
   { title: "The gates of Sairaksha", caption: "Our name on the wall — Santhipuram 7th Mile, Kuppam", image: assets.gate },
   { title: "The Kuppam plant", caption: "Our main processing unit in Kuppam, Andhra Pradesh", image: assets.exterior },
   { title: "A fleet we call our own", caption: "Milk vans blessed and ready for the day's routes", image: assets.fleetGarland },
-  { title: "Green by design", caption: "Lawns and open sky around the main processing block", image: assets.lawns },
+  { title: "Precision on the processing floor", caption: "Skilled plant technicians operating modern packaging and quality control lines", image: assets.lawns },
   { title: "The heart of processing", caption: "Pasteurisation lines and CIP systems in stainless steel", image: assets.plantInterior },
   { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
   { title: "Where every day begins", caption: "The campus shrine at the heart of our plant", image: assets.shrine },
@@ -62,7 +68,7 @@ export const factoryGallery = [
   { title: "Hygiene on the floor", caption: "Masked, gloved and aproned — every pack weighed and checked", image: assets.packing },
   { title: "Kuppam from above", caption: "Silos, chillers and processing halls under one blue roof", image: assets.aerial },
   { title: "Our dedicated dairy team", caption: "The frontline workers and operators ensuring quality and hygiene in every batch", image: assets.image1 },
-  { title: "Precision on the processing floor", caption: "Skilled plant technicians operating modern packaging and quality control lines", image: assets.image5 },
+  { title: "Employee dining area", caption: "Clean and comfortable dining facilities for our dedicated plant staff", image: assets.image5 },
 ];
 
 export const plantVideos = [

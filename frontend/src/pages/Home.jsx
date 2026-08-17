@@ -301,8 +301,8 @@ export default function Home() {
                 </defs>
                 <g className="hero-stamp-rotating-ring">
                   <text className="hero-stamp-curved-text">
-                    <textPath href="#heroCirclePath" startOffset="0%">
-                      PURE BY NATURE • PURE BY NATURE •
+                    <textPath href="#heroCirclePath" startOffset="0%" textLength="276" lengthAdjust="spacing">
+                      {"PURE BY NATURE • PURE BY NATURE • "}
                     </textPath>
                   </text>
                 </g>
@@ -311,6 +311,39 @@ export default function Home() {
                 </text>
               </svg>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero to Promise Separator */}
+      <div className="hero-promise-divider" aria-hidden="true">
+        <div className="hero-divider-track">
+          <span className="hero-divider-leaf">✦</span>
+          <span className="hero-divider-label">PURE BY NATURE · KUPPAM</span>
+          <span className="hero-divider-leaf">✦</span>
+        </div>
+      </div>
+
+      <section className="quality section-pad" id="quality" data-testid="quality-section" ref={qualityRef}>
+        <div className="quality-photo reveal-scale" data-testid="quality-photo-container"><img src={assets.exterior} alt="Sairaksha dairy Kuppam processing plant exterior" data-testid="quality-feature-image" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
+        <div className="quality-copy">
+          <div className="section-kicker reveal-on-scroll"><span>THE SAIRAKSHA PROMISE</span></div>
+          <h2 className="reveal-on-scroll">Closer to the source.<br /><em>Stricter about quality.</em></h2>
+          <p className="reveal-on-scroll">Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
+          <ul>
+            {[
+              "Pasteurised & homogenised processing",
+              "A connected cold chain from village to home",
+              "Licensed and equipped to food safety standards"
+            ].map((item, idx) => (
+              <li key={item} className="reveal-on-scroll" style={{ transitionDelay: `${idx * 100}ms` }}>
+                <span><Check size={13} /></span>{item}
+              </li>
+            ))}
+          </ul>
+          <div className="facility-callout reveal-on-scroll" style={{ transitionDelay: "300ms" }}>
+            <strong data-testid="quality-stat-number">{qualityLitres.toLocaleString("en-IN")}</strong>
+            <span>litres processed daily<br />at our main plant</span>
           </div>
         </div>
       </section>
@@ -366,7 +399,6 @@ export default function Home() {
       </section>
 
       <section className="plant-films section-pad" data-testid="plant-films-section" ref={filmsRef}>
-        <div className="section-kicker reveal-on-scroll"><span>02</span><span className="kicker-rule" /><span>PURITY, IN MOTION</span></div>
         <h2 className="reveal-on-scroll">A glimpse inside<br /><em>our plant.</em></h2>
         <div className="video-grid" data-testid="video-grid">
           {plantVideos.map((film, index) => (
@@ -380,32 +412,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quality section-pad" id="quality" data-testid="quality-section" ref={qualityRef}>
-        <div className="quality-photo reveal-scale" data-testid="quality-photo-container"><img src={assets.exterior} alt="Sairaksha dairy Kuppam processing plant exterior" data-testid="quality-feature-image" /><span className="photo-caption">Kuppam · Andhra Pradesh</span></div>
-        <div className="quality-copy">
-          <div className="section-kicker reveal-on-scroll"><span>03</span><span className="kicker-rule" /><span>THE SAIRAKSHA PROMISE</span></div>
-          <h2 className="reveal-on-scroll">Closer to the source.<br /><em>Stricter about quality.</em></h2>
-          <p className="reveal-on-scroll">Our milk is collected from farmers, chilled at the source and carefully directed to our main plant. Every batch is processed with food safety and freshness in mind.</p>
-          <ul>
-            {[
-              "Pasteurised & homogenised processing",
-              "A connected cold chain from village to home",
-              "Licensed and equipped to food safety standards"
-            ].map((item, idx) => (
-              <li key={item} className="reveal-on-scroll" style={{ transitionDelay: `${idx * 100}ms` }}>
-                <span><Check size={13} /></span>{item}
-              </li>
-            ))}
-          </ul>
-          <div className="facility-callout reveal-on-scroll" style={{ transitionDelay: "300ms" }}>
-            <strong data-testid="quality-stat-number">{qualityLitres.toLocaleString("en-IN")}</strong>
-            <span>litres processed daily<br />at our main plant</span>
-          </div>
-        </div>
-      </section>
-
       <section className="purity section-pad" data-testid="purity-section">
-        <div className="section-kicker reveal-on-scroll"><span>04</span><span className="kicker-rule" /><span>4-POINT PURITY CHECKPOINT</span></div>
         <h2 className="reveal-on-scroll">Every drop,<br /><em>checked with care.</em></h2>
         <div className="purity-grid" data-testid="purity-grid">
           {purityChecks.map((check, index) => {
@@ -425,11 +432,6 @@ export default function Home() {
       <section className="factory-gallery section-pad" data-testid="factory-gallery-section">
         <div className="factory-gallery-head">
           <div>
-            <div className="section-kicker reveal-on-scroll">
-              <span>05</span>
-              <span className="kicker-rule" />
-              <span>INSIDE KUPPAM</span>
-            </div>
             <h2 className="reveal-on-scroll">
               Where the work<br /><em>comes together.</em>
             </h2>

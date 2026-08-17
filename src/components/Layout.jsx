@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, MapPin, Phone, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 const navItems = [
   { to: "/", label: "Home", testId: "nav-home-link" },
@@ -77,7 +78,17 @@ export default function Layout() {
         </nav>
       </header>
 
-      <Outlet />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Outlet />
+        </motion.div>
+      </AnimatePresence>
 
       <footer className="site-footer" data-testid="site-footer">
         <div className="footer-sleek section-pad">

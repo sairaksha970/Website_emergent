@@ -9,7 +9,6 @@ import {
   LayoutGrid, 
   X, 
   ArrowUpRight,
-  Sparkles,
   SlidersHorizontal
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -105,11 +104,7 @@ export default function ScrollingGallery({
   return (
     <div className="scrolling-gallery-wrapper" data-testid="scrolling-gallery-container">
       {/* Gallery Header Controls */}
-      <div className="sg-header-actions">
-        <div className="sg-count-badge">
-          <Sparkles size={13} className="text-copper" />
-          <span>{enrichedGallery.length} Plant & Facility Photographs</span>
-        </div>
+      <div className="sg-header-actions justify-end">
 
         <div className="sg-controls-group">
           {/* Play / Pause auto-scroll button */}
