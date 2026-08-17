@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight, Check, ChevronLeft, ChevronRight, FlaskConical, Milk, PackageCheck, ShieldCheck, Thermometer, X } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "framer-motion";
 import ProductShowcaseCard from "@/components/ProductShowcaseCard";
 import ScrollingGallery from "@/components/ScrollingGallery";
 import { assets, factoryGallery, plantVideos, products, purityChecks } from "@/data";

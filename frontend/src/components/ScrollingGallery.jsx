@@ -12,7 +12,7 @@ import {
   Sparkles,
   SlidersHorizontal
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { factoryGallery } from "@/data";
 
 export const galleryCategories = [
