@@ -1,0 +1,10 @@
+# Ensure binary files are never modified by git line-ending filters
+* text=auto
+*.webp binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.mp4 binary
+*.webm binary
+*.ico binary
+*.pdf binary

@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import ProductsHero from "@/components/ProductsHero";
 import { brands, products } from "@/data";
 

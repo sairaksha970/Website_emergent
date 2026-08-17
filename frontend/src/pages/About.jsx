@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Award, Droplets, Factory, Flag, Handshake, MapPin, Milk, Package, Snowflake, Sprout, TrendingUp, Truck } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "framer-motion";
 import AboutHero from "@/components/AboutHero";
 import { assets, fssaiNumber, timeline } from "@/data";
 

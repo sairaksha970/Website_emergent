@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function AboutHero() {
   const shouldReduceMotion = useReducedMotion();
