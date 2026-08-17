@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Products from "@/pages/Products";
-import Farmers from "@/pages/Farmers";
+import Sustainability from "@/pages/Sustainability";
 import Contact from "@/pages/Contact";
 
 function App() {
@@ -15,7 +15,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/farmers" element={<Farmers />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/farmers" element={<Sustainability />} />
+          <Route path="/operations" element={<Sustainability />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
