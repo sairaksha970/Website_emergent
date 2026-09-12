@@ -34,8 +34,8 @@ export default function Home() {
   const heroParallaxRef = useRef(null);
   const statsRef = useRef(null);
   const qualityRef = useRef(null);
-  const [stats, setStats] = useState({ litres: 70, vehicles: 23, people: 200 });
-  const [qualityLitres, setQualityLitres] = useState(200000);
+  const [stats, setStats] = useState({ litres: 70, vehicles: 40, people: 200 });
+  const [qualityLitres, setQualityLitres] = useState(100000);
 
   // Hero carousel auto-advance
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function Home() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setStats({ litres: 70, vehicles: 23, people: 200 });
+      setStats({ litres: 70, vehicles: 40, people: 200 });
       return;
     }
 
@@ -90,7 +90,7 @@ export default function Home() {
 
       const duration = 1600;
       const startTime = performance.now();
-      const targets = { litres: 70, vehicles: 23, people: 200 };
+      const targets = { litres: 70, vehicles: 40, people: 200 };
       const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
       const step = (currentTime) => {
@@ -138,18 +138,18 @@ export default function Home() {
     };
   }, []);
 
-  // Quality section 2,00,000 litres processed daily count-up hook (Pattern C)
+  // Quality section 1,00,000 litres processed daily count-up hook (Pattern C)
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
-      setQualityLitres(200000);
+      setQualityLitres(100000);
       return;
     }
 
     setQualityLitres(0);
     let animFrameId = null;
     let hasAnimated = false;
-    const targetLitres = 200000;
+    const targetLitres = 100000;
     const duration = 1600;
 
     const startCountUp = () => {

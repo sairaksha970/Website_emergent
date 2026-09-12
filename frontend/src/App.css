@@ -1245,11 +1245,86 @@ h1 em, h2 em { color: var(--copper); font-style: italic; font-weight: 400; }
 .sustainability-banner-wrap,
 .products-banner-wrap,
 .contact-banner-wrap,
-.about-banner-wrap { width: 100%; max-width: var(--site-max-width); margin: 0 auto; display: flex; justify-content: center; }
+.about-banner-wrap { width: 100%; max-width: var(--site-max-width); margin: 0 auto; display: flex; justify-content: center; position: relative; }
 .sustainability-hero-img,
 .products-hero-img,
 .contact-hero-img,
 .about-hero-img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 860px; }
+
+/* About Hero Text Overlay matching exact layout on public/images/about.webp */
+.about-hero-overlay {
+  position: absolute;
+  top: 10.5%;
+  left: 4.2%;
+  width: 34%;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.about-hero-heading {
+  margin-bottom: clamp(20px, 3.8vw, 55px);
+}
+
+.hero-title-main {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(20px, 2.65vw, 46px);
+  color: var(--forest, #173f2a);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-title-sub {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(20px, 2.65vw, 46px);
+  color: var(--copper, #bc5a36);
+  line-height: 1.15;
+  margin: 2px 0 0 0;
+  letter-spacing: -0.02em;
+}
+
+.about-hero-text-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.65vw, 10px);
+}
+
+.about-hero-text-body p {
+  font-family: var(--font-body, 'Inter', -apple-system, sans-serif);
+  font-size: clamp(9.5px, 0.76vw, 13.5px);
+  line-height: 1.38;
+  color: #354238;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-banner-wrap {
+    flex-direction: column;
+  }
+  .about-hero-overlay {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    bottom: auto;
+    padding: 24px 20px 32px;
+    background: var(--cream, #fbf8f1);
+  }
+  .hero-title-main,
+  .hero-title-sub {
+    font-size: 28px;
+  }
+  .about-hero-text-body p {
+    font-size: 14px;
+  }
+}
 
 .sustainability-showcase { background: var(--paper-light, #fbf7ee); border-bottom: 1px solid var(--line); }
 .operations-header { margin-bottom: 48px; }

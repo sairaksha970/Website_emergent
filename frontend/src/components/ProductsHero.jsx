@@ -7,7 +7,7 @@ export default function ProductsHero() {
     <section className="products-banner-hero" data-testid="products-hero">
       <div className="products-banner-wrap">
         <motion.img 
-          src="/images/Product_hero.webp" 
+          src="/images/product_hero.webp" 
           alt="Sairaksha Dairy Products - Gomukhi, Sri Lakshmi, and Amogh" 
           className="products-hero-img"
           loading="eager"

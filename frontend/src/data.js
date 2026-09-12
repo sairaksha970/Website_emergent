@@ -8,7 +8,7 @@ export const assets = {
   exterior: "/images/Factory_0.webp",
   processing: "/images/Factory_2.webp",
   production: "/images/Factory_4.webp",
-  productsHero: "/images/Product_hero.webp",
+  productsHero: "/images/product_hero.webp",
   amoghCurd: "/images/amogh_curd.webp",
   amoghCurdBucket: "/images/amogh_curd_bucket.webp",
   amoghPaneer: "/images/Amogh_paneer.webp",
@@ -46,7 +46,7 @@ export const assets = {
   milkProcessingLine: "/images/milk-processing-line.webp",
   processingArea: "/images/processing-area.webp",
   sustainabilityHero: "/images/sustainability.webp",
-  aboutUsHero: "/images/about_us.webp",
+  aboutUsHero: "/images/about.webp",
   contactHero: "/images/contactus_hero.webp",
   valuesBaba: "/images/baba.webp",
   valuesFounders: "/images/Founders.webp",
@@ -58,7 +58,7 @@ export const factoryGallery = [
   { title: "A fleet we call our own", caption: "Milk vans blessed and ready for the day's routes", image: assets.fleetGarland },
   { title: "Precision on the processing floor", caption: "Skilled plant technicians operating modern packaging and quality control lines", image: assets.lawns },
   { title: "The heart of processing", caption: "Pasteurisation lines and CIP systems in stainless steel", image: assets.plantInterior },
-  { title: "A connected cold chain", caption: "23 insulated vehicles carrying freshness forward", image: assets.fleet },
+  { title: "A connected cold chain", caption: "40 insulated vehicles carrying freshness forward", image: assets.fleet },
   { title: "Where every day begins", caption: "The campus shrine at the heart of our plant", image: assets.shrine },
   { title: "Built for precision", caption: "Stainless steel processing and storage systems", image: assets.processing },
   { title: "Milk on the move", caption: "Tankers linking chilling centres to the main plant", image: assets.tanker },
@@ -123,7 +123,7 @@ export const fssaiNumber = "10118010000287";
 export const locations = [
   { 
     name: "Kuppam Packing Unit", 
-    capacity: "2,00,000 litres / day", 
+    capacity: "1,00,000 litres / day",  
     role: "Main Plant", 
     region: "Santhipuram Mandal, Chittoor Dist",
     isMain: true 

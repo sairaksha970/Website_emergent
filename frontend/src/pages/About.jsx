@@ -8,7 +8,7 @@ const railStats = [
   { icon: Milk, numericValue: 70000, suffix: " litres", staticValue: "70,000 litres", label: "Milk & curd sold every day" },
   { icon: Package, numericValue: 2000, suffix: " kg", staticValue: "2,000 kg", label: "Paneer produced every day" },
   { icon: Snowflake, numericValue: 3, suffix: "", staticValue: "3", label: "Chilling centres within 80 km radius" },
-  { icon: Truck, numericValue: 23, suffix: "", staticValue: "23", label: "Owned insulated vehicles" },
+  { icon: Truck, numericValue: 40, suffix: "", staticValue: "40", label: "Owned insulated vehicles" },
 ];
 
 const journeyIcons = { Flag, Snowflake, MapPin, TrendingUp, Award, Factory };
